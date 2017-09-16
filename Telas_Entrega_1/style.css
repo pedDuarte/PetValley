@@ -1,0 +1,9 @@
+.login{
+    align-content: center;
+    width: 30%;
+    margin-top: 150px
+}
+
+.login .button{
+    width: 100%
+}
