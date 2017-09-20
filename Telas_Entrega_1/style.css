@@ -12,10 +12,14 @@
     text-align: center
 }
 
-.margin-label{
-    margin-top: 15px
+.margem-topo{
+    margin-top: 30px
 }
 
-.form-control.width-form{
-    width: 30px
+.margem-esquerda{
+    margin-left: 10px
+}
+
+.form-control.largura{
+    width: 75px;
 }

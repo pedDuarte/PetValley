@@ -138,128 +138,154 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-offset-5 col-md-2 col-md-offset-5 margin-label">
-                        <div class="form-group">
-                            <input type="submit" class="form-control btn btn-primary" value="Cadastrar">
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="form-control btn btn-primary" value="Cancelar">
+                        <div class="col-md-6">
+                            <div class="page-header">
+                                <h4>Dados de acesso ao site</h4>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="email">E-mail</label>
+                                    <input type="text" class="form-control" id="email" placeholder="E-mail">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="telefone">Digite uma senha</label>
+                                    <input type="text" class="form-control" id="telefone" placeholder="Telefone">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="celular">Digite a senha novamente</label>
+                                    <input type="text" class="form-control" id="celular" placeholder="Celular">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </form>
+                <div class="row">
+                    <div class="col-md-offset-4 col-md-4 col-md-offset-4 margem-topo">
+                        <input type="submit" class="btn btn-primary" value="Cadastrar">
+                        <input type="submit" class="btn btn-primary" value="Cancelar">
+                    </div>
+                </div>
             </div>
             <div id="formularioSE" class="tab-pane">
-                <form class="form-inline">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="numMoradores">1 - Além de você quantas pessoas moram em sua casa:</label>
-                            <input type="number" class="form-control" id="numMoradores">
+                <div class="row">
+                    <form class="form-inline">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="numMoradores">1 - Além de você quantas pessoas moram em sua casa:</label>
+                                <input type="number" class="form-control largura" id="numMoradores">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-12 margin-label">
-                        <div class="form-group">
-                            <label>2 - Você ou sua familia são benéficiarios de Programas Sociais</label>
-                            <label class="radio-inline"><input type="radio" name="optSN">Sim</label>
-                            <label class="radio-inline"><input type="radio" name="optSN">Não</label>
+                        <div class="col-md-12 margem-topo">
+                            <div class="form-group">
+                                <label>2 - Você ou sua familia são benéficiarios de Programas Sociais</label>
+                                <label class="radio-inline"><input type="radio" name="optSN">Sim</label>
+                                <label class="radio-inline"><input type="radio" name="optSN">Não</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-12 margin-label">
-                        <div class="form-group">
-                            <label>3 - Você e sua familia residem?</label>
-                            <label class="radio-inline"><input type="radio" name="optPA">Imóvel Próprio</label>
-                            <label class="radio-inline"><input type="radio" name="optPA">Imóvel Alugado</label>
+                        <div class="col-md-12 margem-topo">
+                            <div class="form-group">
+                                <label>3 - Você e sua familia residem?</label>
+                                <label class="radio-inline"><input type="radio" name="optPA">Imóvel Próprio</label>
+                                <label class="radio-inline"><input type="radio" name="optPA">Imóvel Alugado</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-offset-1 col-md-11">
-                        <div class="form-group">
-                            <label>3.1 - Qual tipo?</label>
-                            <label class="radio-inline"><input type="radio" name="optCA">Casa</label>
-                            <label class="radio-inline"><input type="radio" name="optCA">Apartamento</label>
+                        <div class="col-md-offset-1 col-md-11">
+                            <div class="form-group">
+                                <label>3.1 - Qual tipo?</label>
+                                <label class="radio-inline"><input type="radio" name="optCA">Casa</label>
+                                <label class="radio-inline"><input type="radio" name="optCA">Apartamento</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-12 margin-label">
-                        <div class="form-group">
-                            <label>4 - Sua casa possui quintal ?</label>
-                            <label class="radio-inline"><input type="radio" name="optPA">Sim</label>
-                            <label class="radio-inline"><input type="radio" name="optPA">Não</label>
+                        <div class="col-md-12 margem-topo">
+                            <div class="form-group">
+                                <label>4 - Sua casa possui quintal ?</label>
+                                <label class="radio-inline"><input type="radio" name="optPA">Sim</label>
+                                <label class="radio-inline"><input type="radio" name="optPA">Não</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-offset-1 col-md-11">
-                        <div class="form-group">
-                            <label>Marque as caratéristicas que melhor descrevem o quintal da sua casa</label>
+                        <div class="col-md-offset-1 col-md-11">
+                            <div class="form-group">
+                                <label>Marque as caratéristicas que melhor descrevem o quintal da sua casa</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-offset-1 col-md-11">
-                        <div class="form-group">
-                            <label>4.1 - Possui piso de:</label>
-                            <label class="radio-inline"><input type="radio" name="optPiso">Piso</label>
-                            <label class="radio-inline"><input type="radio" name="optPiso">Terra</label>
-                            <label class="radio-inline"><input type="radio" name="optPiso">Cimento</label>
+                        <div class="col-md-offset-1 col-md-11">
+                            <div class="form-group">
+                                <label>4.1 - Possui piso de:</label>
+                                <label class="radio-inline"><input type="radio" name="optPiso">Piso</label>
+                                <label class="radio-inline"><input type="radio" name="optPiso">Terra</label>
+                                <label class="radio-inline"><input type="radio" name="optPiso">Cimento</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-offset-1 col-md-11">
-                        <div class="form-group">
-                            <label>4.2 - Local coberto para o pet:</label>
-                            <label class="radio-inline"><input type="radio" name="optLC">Sim</label>
-                            <label class="radio-inline"><input type="radio" name="optLC">Não</label>
+                        <div class="col-md-offset-1 col-md-11">
+                            <div class="form-group">
+                                <label>4.2 - Local coberto para o pet:</label>
+                                <label class="radio-inline"><input type="radio" name="optLC">Sim</label>
+                                <label class="radio-inline"><input type="radio" name="optLC">Não</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-12 margin-label">
-                        <div class="form-group">
-                            <label>5 - Você trabalha atualmente ?</label>
-                            <label class="radio-inline"><input type="radio" name="optPA">Sim</label>
-                            <label class="radio-inline"><input type="radio" name="optPA">Não</label>
+                        <div class="col-md-12 margem-topo">
+                            <div class="form-group">
+                                <label>5 - Você trabalha atualmente ?</label>
+                                <label class="radio-inline"><input type="radio" name="optPA">Sim</label>
+                                <label class="radio-inline"><input type="radio" name="optPA">Não</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-offset-1 col-md-11">
-                        <div class="form-group">
-                            <label for="onde">Onde?</label>
-                            <input type="text" class="form-control" id="onde">
+                        <div class="col-md-offset-1 col-md-11">
+                            <div class="form-group">
+                                <label for="onde">Onde?</label>
+                                <input type="text" class="form-control" id="onde">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-12 margin-label">
-                        <div class="form-group">
-                            <label for="mediaSalarial">6 - Média salarial da familia:</label>
-                            <input type="number" class="form-control" id="mediaSalarial">
+                        <div class="col-md-12 margem-topo">
+                            <div class="form-group">
+                                <label for="mediaSalarial">6 - Média salarial da familia:</label>
+                                <input type="number" class="form-control" id="mediaSalarial">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-12 margin-label">
-                        <div class="form-group">
-                            <label>7 - Possui pets atualmente?</label>
-                            <label class="radio-inline"><input type="radio" name="optPP">Sim</label>
-                            <label class="radio-inline"><input type="radio" name="optPP">Não</label>
+                        <div class="col-md-12 margem-topo">
+                            <div class="form-group">
+                                <label>7 - Possui pets atualmente?</label>
+                                <label class="radio-inline"><input type="radio" name="optPP">Sim</label>
+                                <label class="radio-inline"><input type="radio" name="optPP">Não</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-offset-1 col-md-11">
-                        <div class="form-group">
-                            <label>7.1 - Qual Espécie?</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="">Cachorro</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="">Gato</label>
-                            <label class="checkbox-inline"><input type="checkbox" value="">Outro</label>
+                        <div class="col-md-offset-1 col-md-11">
+                            <div class="form-group">
+                                <label>7.1 - Qual Espécie?</label>
+                                <label class="checkbox-inline"><input type="checkbox" value="">Cachorro</label>
+                                <label class="checkbox-inline"><input type="checkbox" value="">Gato</label>
+                                <label class="checkbox-inline"><input type="checkbox" value="">Outro</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-offset-1 col-md-11">
-                        <div class="form-group">
-                            <label>7.2 - Quantos?</label>
+                        <div class="col-md-offset-1 col-md-11">
+                            <div class="form-group">
+                                <label>7.2 - Quantos?</label>
 
-                            <label for="cachorro">Cachorro</label>
-                            <input type="number" class="form-control" id="cachorro">
-           
-                            <label for="gato"> Gato</label>
-                            <input type="number" class="form-control" id="gato">
+                                <label for="cachorro" class="margem-esquerda">Cachorro</label>
+                                <input type="number" class="form-control largura" id="cachorro">
+            
+                                <label for="gato" class="margem-esquerda"> Gato</label>
+                                <input type="number" class="form-control largura" id="gato">
 
-                            <label for="outro">Outro</label>      
-                            <input type="number" class="form-control" id="outro">
+                                <label for="outro" class="margem-esquerda">Outro</label>      
+                                <input type="number" class="form-control largura" id="outro">
+                            </div>
                         </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <div class="col-md-offset-4 col-md-4 col-md-offset-4 margem-topo">
+                        <input type="submit" class="btn btn-primary" value="Cadastrar">
+                        <input type="submit" class="btn btn-primary" value="Cancelar">
                     </div>
-                    <div class="form-group col-md-offset-4 col-md-4 col-md-offset-4 margin-label">
-                        <input type="submit" class="form-control btn btn-primary" value="Cadastrar">
-                        <input type="submit" class="form-control btn btn-primary" value="Cancelar">
-                    </div>
-                </form>
-            </div> 
-        </div>
+                </div>
+            </div>
+        </div> 
+    </div>
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- Latest compiled JavaScript -->
