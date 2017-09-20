@@ -1,0 +1,88 @@
+/*855b25;3f3e3d;6E6E6E*/
+
+.navbar-custom {
+    background: #855b25;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+  }
+  .navbar-custom .navbar-brand {
+    padding: 0
+  }
+
+  .navbar-custom .navbar-brand img {
+    max-width:160x;
+    max-height:60px;
+    width: auto;
+    height: auto;
+  }
+
+  .navbar-custom .navbar-nav {
+    letter-spacing: 1px;
+  }
+  .navbar-custom .navbar-nav li a {
+    color: white;
+  }
+  .navbar-custom .navbar-nav li a:hover {
+    color: #232322;
+  }
+  .navbar-custom .navbar-nav li a:focus,
+  .navbar-custom .navbar-nav li a:active {
+    color: #232322;
+  }
+ /* .navbar-custom .navbar-nav li.active a {
+    color: white;
+    background: #18BC9C;
+  }
+  .navbar-custom .navbar-nav li.active a:hover,
+  .navbar-custom .navbar-nav li.active a:focus,
+  .navbar-custom .navbar-nav li.active a:active {
+    color: white;
+    background: #18BC9C;
+  }*/
+  .navbar-custom .navbar-toggle {
+    color: white;
+    text-transform: uppercase;
+    font-size: 10px;
+    border-color: white;
+  }
+  .navbar-custom .navbar-toggle:hover,
+  .navbar-custom .navbar-toggle:focus {
+    background-color: #FFFFFF;
+    color: #855b25;
+    border-color: #FFFFFF;
+  }
+  
+
+  @media (min-width: 768px) {
+    .navbar-custom {
+      padding: 25px 0;
+      -webkit-transition: padding 0.3s;
+      -moz-transition: padding 0.3s;
+      transition: padding 0.3s;
+    }
+    .navbar-custom .navbar-brand {
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+    .navbar-custom.affix {
+      padding: 10px 0;
+    }
+    .navbar-custom.affix .navbar-brand {
+      font-size: 1.5em;
+    }
+  }
+  @media screen and (max-width:800px) {
+    .navbar-custom {
+        padding: 8px 8px;
+    }
+    .navbar-custom .navbar-brand img {
+        max-width:100x;
+        max-height:42px;
+        width: auto;
+        height: auto;
+        margin-top:5px
+    }
+  }

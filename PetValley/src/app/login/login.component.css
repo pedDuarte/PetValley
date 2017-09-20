@@ -1,0 +1,11 @@
+.login{
+    align-content: center;
+    margin-top: 200px;
+}
+.login input{
+    border-radius: 0
+}
+.button{
+    width: 100%;
+    border-radius: 0
+}
