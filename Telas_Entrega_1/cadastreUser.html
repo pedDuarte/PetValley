@@ -14,10 +14,10 @@
         <div class="page-header">
             <h2>Cadastro de usuários</h2> 
         </div>
-        <div class="jumbotron">
-            <ul class="nav nav-pills">
-                <li class="active"><a data-toggle="pill" href="#dadosPessoais">Dados Pessoais</a></li>
-                <li><a data-toggle="pill" href="#formularioSE">Formulario Socio Econômico</a></li>
+        <div>
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#dadosPessoais">Dados Pessoais</a></li>
+                <li><a data-toggle="tab" href="#formularioSE">Formulario Socio Econômico</a></li>
             </ul>
         </div>
         <div class="tab-content">
@@ -76,8 +76,8 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="email">E-mail</label>
-                                    <input type="text" class="form-control" id="email" placeholder="E-mail">
+                                    <label for="email1">E-mail</label>
+                                    <input type="text" class="form-control" id="email1" placeholder="E-mail">
                                 </div>
                             </div>
                         </div>
@@ -144,8 +144,8 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="email">E-mail</label>
-                                    <input type="text" class="form-control" id="email" placeholder="E-mail">
+                                    <label for="email2">E-mail</label>
+                                    <input type="text" class="form-control" id="email2" placeholder="E-mail">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -171,112 +171,117 @@
                 </div>
             </div>
             <div id="formularioSE" class="tab-pane">
-                <div class="row">
-                    <form class="form-inline">
+                <form class="form-inline">
+                    <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="numMoradores">1 - Além de você quantas pessoas moram em sua casa:</label>
-                                <input type="number" class="form-control largura" id="numMoradores">
+                            <div class="page-header">
+                                <h4>Formulário</h4>    
                             </div>
-                        </div>
-                        <div class="col-md-12 margem-topo">
-                            <div class="form-group">
-                                <label>2 - Você ou sua familia são benéficiarios de Programas Sociais</label>
-                                <label class="radio-inline"><input type="radio" name="optSN">Sim</label>
-                                <label class="radio-inline"><input type="radio" name="optSN">Não</label>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="numMoradores">1 - Além de você quantas pessoas moram em sua casa:</label>
+                                    <input type="number" class="form-control largura" id="numMoradores">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-12 margem-topo">
-                            <div class="form-group">
-                                <label>3 - Você e sua familia residem?</label>
-                                <label class="radio-inline"><input type="radio" name="optPA">Imóvel Próprio</label>
-                                <label class="radio-inline"><input type="radio" name="optPA">Imóvel Alugado</label>
+                            <div class="col-md-12 margem-topo">
+                                <div class="form-group">
+                                    <label>2 - Você ou sua familia são benéficiarios de Programas Sociais</label>
+                                    <label class="radio-inline"><input type="radio" name="optSN">Sim</label>
+                                    <label class="radio-inline"><input type="radio" name="optSN">Não</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-offset-1 col-md-11">
-                            <div class="form-group">
-                                <label>3.1 - Qual tipo?</label>
-                                <label class="radio-inline"><input type="radio" name="optCA">Casa</label>
-                                <label class="radio-inline"><input type="radio" name="optCA">Apartamento</label>
+                            <div class="col-md-12 margem-topo">
+                                <div class="form-group">
+                                    <label>3 - Você e sua familia residem?</label>
+                                    <label class="radio-inline"><input type="radio" name="optPA">Imóvel Próprio</label>
+                                    <label class="radio-inline"><input type="radio" name="optPA">Imóvel Alugado</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-12 margem-topo">
-                            <div class="form-group">
-                                <label>4 - Sua casa possui quintal ?</label>
-                                <label class="radio-inline"><input type="radio" name="optPA">Sim</label>
-                                <label class="radio-inline"><input type="radio" name="optPA">Não</label>
+                            <div class="col-md-offset-1 col-md-11">
+                                <div class="form-group">
+                                    <label>3.1 - Qual tipo?</label>
+                                    <label class="radio-inline"><input type="radio" name="optCA">Casa</label>
+                                    <label class="radio-inline"><input type="radio" name="optCA">Apartamento</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-offset-1 col-md-11">
-                            <div class="form-group">
-                                <label>Marque as caratéristicas que melhor descrevem o quintal da sua casa</label>
+                            <div class="col-md-12 margem-topo">
+                                <div class="form-group">
+                                    <label>4 - Sua casa possui quintal ?</label>
+                                    <label class="radio-inline"><input type="radio" name="optPA">Sim</label>
+                                    <label class="radio-inline"><input type="radio" name="optPA">Não</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-offset-1 col-md-11">
-                            <div class="form-group">
-                                <label>4.1 - Possui piso de:</label>
-                                <label class="radio-inline"><input type="radio" name="optPiso">Piso</label>
-                                <label class="radio-inline"><input type="radio" name="optPiso">Terra</label>
-                                <label class="radio-inline"><input type="radio" name="optPiso">Cimento</label>
+                            <div class="col-md-offset-1 col-md-11">
+                                <div class="form-group">
+                                    <label>Marque as caratéristicas que melhor descrevem o quintal da sua casa</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-offset-1 col-md-11">
-                            <div class="form-group">
-                                <label>4.2 - Local coberto para o pet:</label>
-                                <label class="radio-inline"><input type="radio" name="optLC">Sim</label>
-                                <label class="radio-inline"><input type="radio" name="optLC">Não</label>
+                            <div class="col-md-offset-1 col-md-11">
+                                <div class="form-group">
+                                    <label>4.1 - Possui piso de:</label>
+                                    <label class="radio-inline"><input type="radio" name="optPiso">Piso</label>
+                                    <label class="radio-inline"><input type="radio" name="optPiso">Terra</label>
+                                    <label class="radio-inline"><input type="radio" name="optPiso">Cimento</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-12 margem-topo">
-                            <div class="form-group">
-                                <label>5 - Você trabalha atualmente ?</label>
-                                <label class="radio-inline"><input type="radio" name="optPA">Sim</label>
-                                <label class="radio-inline"><input type="radio" name="optPA">Não</label>
+                            <div class="col-md-offset-1 col-md-11">
+                                <div class="form-group">
+                                    <label>4.2 - Local coberto para o pet:</label>
+                                    <label class="radio-inline"><input type="radio" name="optLC">Sim</label>
+                                    <label class="radio-inline"><input type="radio" name="optLC">Não</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-offset-1 col-md-11">
-                            <div class="form-group">
-                                <label for="onde">Onde?</label>
-                                <input type="text" class="form-control" id="onde">
+                            <div class="col-md-12 margem-topo">
+                                <div class="form-group">
+                                    <label>5 - Você trabalha atualmente ?</label>
+                                    <label class="radio-inline"><input type="radio" name="optPA">Sim</label>
+                                    <label class="radio-inline"><input type="radio" name="optPA">Não</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-12 margem-topo">
-                            <div class="form-group">
-                                <label for="mediaSalarial">6 - Média salarial da familia:</label>
-                                <input type="number" class="form-control" id="mediaSalarial">
+                            <div class="col-md-offset-1 col-md-11">
+                                <div class="form-group">
+                                    <label for="onde">Onde?</label>
+                                    <input type="text" class="form-control" id="onde">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-12 margem-topo">
-                            <div class="form-group">
-                                <label>7 - Possui pets atualmente?</label>
-                                <label class="radio-inline"><input type="radio" name="optPP">Sim</label>
-                                <label class="radio-inline"><input type="radio" name="optPP">Não</label>
+                            <div class="col-md-12 margem-topo">
+                                <div class="form-group">
+                                    <label for="mediaSalarial">6 - Média salarial da familia:</label>
+                                    <input type="number" class="form-control" id="mediaSalarial">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-offset-1 col-md-11">
-                            <div class="form-group">
-                                <label>7.1 - Qual Espécie?</label>
-                                <label class="checkbox-inline"><input type="checkbox" value="">Cachorro</label>
-                                <label class="checkbox-inline"><input type="checkbox" value="">Gato</label>
-                                <label class="checkbox-inline"><input type="checkbox" value="">Outro</label>
+                            <div class="col-md-12 margem-topo">
+                                <div class="form-group">
+                                    <label>7 - Possui pets atualmente?</label>
+                                    <label class="radio-inline"><input type="radio" name="optPP">Sim</label>
+                                    <label class="radio-inline"><input type="radio" name="optPP">Não</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-offset-1 col-md-11">
-                            <div class="form-group">
-                                <label>7.2 - Quantos?</label>
+                            <div class="col-md-offset-1 col-md-11">
+                                <div class="form-group">
+                                    <label>7.1 - Qual Espécie?</label>
+                                    <label class="checkbox-inline"><input type="checkbox" value="">Cachorro</label>
+                                    <label class="checkbox-inline"><input type="checkbox" value="">Gato</label>
+                                    <label class="checkbox-inline"><input type="checkbox" value="">Outro</label>
+                                </div>
+                            </div>
+                            <div class="col-md-offset-1 col-md-11">
+                                <div class="form-group">
+                                    <label>7.2 - Quantos?</label>
 
-                                <label for="cachorro" class="margem-esquerda">Cachorro</label>
-                                <input type="number" class="form-control largura" id="cachorro">
-            
-                                <label for="gato" class="margem-esquerda"> Gato</label>
-                                <input type="number" class="form-control largura" id="gato">
+                                    <label for="cachorro" class="margem-esquerda">Cachorro</label>
+                                    <input type="number" class="form-control largura" id="cachorro">
+                
+                                    <label for="gato" class="margem-esquerda"> Gato</label>
+                                    <input type="number" class="form-control largura" id="gato">
 
-                                <label for="outro" class="margem-esquerda">Outro</label>      
-                                <input type="number" class="form-control largura" id="outro">
+                                    <label for="outro" class="margem-esquerda">Outro</label>      
+                                    <input type="number" class="form-control largura" id="outro">
+                                </div>
                             </div>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
                 <div class="row">
                     <div class="col-md-offset-4 col-md-4 col-md-offset-4 margem-topo">
                         <input type="submit" class="btn btn-primary" value="Cadastrar">
