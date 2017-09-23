@@ -11,8 +11,8 @@ import {User} from '../model/user.model';
 export class LoginService {
     constructor(private http: Http) {}
 
-    login(loginUser: User) {
-        return this.http.post('SERVER', JSON.stringify(loginUser))
+    login(loginUser: User): Observable<User> {
+        return this.http.post(`${SERVER}/login`, JSON.stringify(loginUser))
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 let user = response.json();
