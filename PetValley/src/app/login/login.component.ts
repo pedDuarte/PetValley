@@ -25,13 +25,21 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.loginService.login(this.user).
+    /*this.loginService.login(this.user).
     subscribe(
       data => {
       this.router.navigate([this.returnUrl]);
       },
       error => {
           console.log(error);
-      });
+      });*/
+    let login = this.loginService.loginJQuery(this.user);
+    console.log(this.user);
+    console.log(login);
+    if (login !== undefined) {
+      alert('Sucesso!!! Usuário ' + this.user.email + ' autenticado ');
+    } else {
+      alert('Senha ou usuário inválido');
+    }
   }
 }
