@@ -11,8 +11,19 @@ import {User} from '../model/user.model';
 export class LoginService {
     constructor(private http: Http) {}
 
-    login(loginUser: User): Observable<User> {
-        return this.http.post(`${SERVER}/login`, JSON.stringify(loginUser))
+    loginJQuery(loginUser: User) {
+        $.post(`${SERVER}/login`,
+        loginUser,
+        function(data, status){
+            return data;
+        });
+    }
+
+    /*login(loginUser: User): Observable<User> {
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Access-Control-Allow-Origin', '*');
+        return this.http.post(`${SERVER}/login`, loginUser, {headers: headers})
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 let user = response.json();
@@ -22,7 +33,7 @@ export class LoginService {
                 }
                 return user;
             });
-    }
+    }*/
     validateUser(user: User): Observable<User[]> {
         return this.http.get('localhost:3000/')
         .map(response => response.json());

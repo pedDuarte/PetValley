@@ -30,24 +30,25 @@ module.exports = function(app){
     app.post('/login', upload.array(), function (req, res, next) {
         var password = '';
         res.setHeader('Content-Type', 'application/json');
-        /*console.log("metodo post");
+        res.setHeader('Access-Control-Allow-Origin','*');
+        //console.log("metodo post");
+        console.log(req.body);
         console.log(req.body.email);
-        console.log(req.body.password);*/
+        console.log(req.body.password);
 
         user.getLoginParams(req.body.email, function(error, result){
             if(error){
                 res.status(400).json(error);
             }
             else{
-                res.status(200).json(result);
                 password = result[0]['Password'];
-    
+                
                 if(password == req.body.password){
-                    //return deu bom
+                    res.status(200).json(result);
                     console.log("Deu bom");
                 }
                 else{
-                    //return deu ruim
+                    res.status(200).json(null);
                     console.log("Deu ruim");
                 }
             }                
