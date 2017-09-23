@@ -3,7 +3,7 @@ var connection = dbConnection();
 
 var Supply = {
 
-    getAllSupply : function(callback){
+    getSupplies : function(callback){
         return connection.query("SELECT * FROM Supply", callback);
     },
 
