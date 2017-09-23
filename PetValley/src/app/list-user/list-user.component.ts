@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListUserComponent implements OnInit {
 
+  user = {};
+
+  users = [];
+
   constructor() { }
 
   ngOnInit() {
+
+    this.user = {
+      firstname: 'Diogo',
+      lastname: 'Lourenço',
+      email: 'diogo@hotmail.com'
+    }
+
+    this.users.push(this.user);
+    
   }
 
 }

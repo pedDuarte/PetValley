@@ -1,3 +1,28 @@
-<p>
-  list-supply works!
-</p>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-m-6">
+        <h3>Pesquisa de Suprimentos</h3>
+        </div>            
+      <table class="table table-bordered table-hover table-condensed">
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th>Data de validade</th>
+              <th>Quantidade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let supply of supplies">
+              <td>{{supply.type}}</td>
+              <td>{{supply.expirationDate}}</td>
+              <td>{{supply.quantity}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  
+    
