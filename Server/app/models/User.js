@@ -12,7 +12,8 @@ var User = {
     },
 
     addUser : function(user, callback){
-        ///return connection.query("INSER INTO USER VALUES(?,?,?,?,?,?,?,?,?);",[user.name],callback)
+        return connection.query("INSERT INTO USER (CODE_CPF, NAME, SURNAME, BIRTHDATE, SEX, EMAIL, PASSWORD, CREATE_TIME, CELLPHONE, PHONENUMBER, IMAGE, ID_ADDRESS_FK) values (?,?,?,?,?,?,?,?,?,?,?,?);"
+        ,[user.cpf,user.name, user.surname, user.birthdate, user.sex, user.email, user.password, user.create_time, user.cellphone, user.phonenumber, user.image, user.id_address_fk],callback)
     },   
 
     updateUser : function(id, user, callback){
@@ -20,7 +21,7 @@ var User = {
     },
 
     removeUser : function(id, callback){
-        ///return connection.query("DELETE FROM User WHERE Id = ?",[id],callback);
+        return connection.query("DELETE FROM User WHERE Id = ?",[id],callback);
     },
 
     getLoginParams : function(email, callback){

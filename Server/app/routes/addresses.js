@@ -16,5 +16,18 @@ module.exports = function(app){
             if(error)return res.status(400).json(error);
             return res.status(200).json(result);
         })
-    });    
+    });
+
+    app.post('address/add', upload.array(), function (req, res, next) {
+        address.addAddress(req.body, function(error, result){
+            if(error){
+                res.status(400).json(error);
+            }
+            else{
+                res.status(200).json(result);
+            }
+        });
+    });
+
+    
 }
