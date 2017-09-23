@@ -1,4 +1,5 @@
 var user = require('./../models/User');
+var address = require('./../models/Address');
 var multer = require('multer'); // v1.0.5
 var upload = multer(); // for parsing multipart/form-data
 
@@ -53,6 +54,36 @@ module.exports = function(app){
             }                
         })      
         
+    });
+
+    app.post('user/add', upload.array(), function (req, res, next) {
+        //Insere o endereço
+        address.addAddress(req.body.address, function(error, result){
+            if(error){
+                res.status(400).json(error);
+            }
+            else{
+                res.status(200).json(result);
+            }
+        });
+
+        //Recupera o id do endereço inserido
+        var id_address = address.getLastAddressInserted(function(error, result){
+            if(error)return res.status(400).json(error);
+            return res.status(200).json(result);
+        });
+
+        req.body.user.id_address_fk = id_address;
+        
+        //Insere o usuário no BD
+        user.addUser(req.body.user, function(error, result){
+            if(error){
+                res.status(400).json(error);
+            }
+            else{
+                res.status(200).json(result);
+            }
+        });
     });
     
 }

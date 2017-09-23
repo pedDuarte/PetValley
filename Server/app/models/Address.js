@@ -14,7 +14,11 @@ var Address = {
     addAddress : function(address, callback){
         return connection.query('INSERT INTO Address (POSTAL_CODE, LOCATION, TYPE_LOCATION, NEIGHBORHOOD, CITY, STATE, COMPLEMENT, NUMBER_HOUSE) values (?,?,?,?,?,?,?,?)'
         ,[address.postal_code, address.location, address.type_location, address.neighborhood, address.city, address.state, address.complement, address.number_house], callback);
-    }    
+    },
+
+    getLastAddressInserted : function (callback){
+        return connection.query('SELECT ID_ADDRESS FROM Address ORDER BY DESC LIMIT 1', callback);
+    }
 };
 
 module.exports = Address;
