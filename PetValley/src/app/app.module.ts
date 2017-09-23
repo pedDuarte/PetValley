@@ -16,6 +16,7 @@ import { PersonalQuizComponent } from './register-user/personal-quiz/personal-qu
 import { RegisterSupplyComponent } from './register-supply/register-supply.component';
 import { ListUserComponent } from './list-user/list-user.component';
 import { LoginService } from './login/login.service';
+import { ListSupplyComponent } from './list-supply/list-supply.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LoginService } from './login/login.service';
     PersonalQuizComponent,
     RegisterSupplyComponent,
     HomeComponent,
-    ListUserComponent
+    ListUserComponent,
+    ListSupplyComponent
   ],
   imports: [
     BrowserModule,
