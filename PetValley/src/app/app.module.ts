@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { PersonalDataComponent } from './register-user/personal-data/personal-data.component';
 import { PersonalQuizComponent } from './register-user/personal-quiz/personal-quiz.component';
+import { ListUserComponent } from './list-user/list-user.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PersonalQuizComponent } from './register-user/personal-quiz/personal-qu
     HeaderComponent,
     RegisterUserComponent,
     PersonalDataComponent,
-    PersonalQuizComponent
+    PersonalQuizComponent,
+    ListUserComponent
   ],
   imports: [
     BrowserModule,
