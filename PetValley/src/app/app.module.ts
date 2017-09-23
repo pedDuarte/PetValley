@@ -13,6 +13,7 @@ import { PersonalDataComponent } from './register-user/personal-data/personal-da
 import { PersonalQuizComponent } from './register-user/personal-quiz/personal-quiz.component';
 import { RegisterSupplyComponent } from './register-supply/register-supply.component';
 import { HomeComponent } from './home/home.component';
+import { ListUserComponent } from './list-user/list-user.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HomeComponent } from './home/home.component';
     PersonalDataComponent,
     PersonalQuizComponent,
     RegisterSupplyComponent,
-    HomeComponent
+    HomeComponent,
+    ListUserComponent
   ],
   imports: [
     BrowserModule,
