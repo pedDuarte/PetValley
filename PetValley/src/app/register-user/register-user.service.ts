@@ -12,7 +12,8 @@ export class RegisterUserService {
 
     }
 
-    regiterUser() {
+    registerUser(user: User) {
+        
 
     }
 
