@@ -5,6 +5,8 @@ import {RegisterUserComponent} from './register-user/register-user.component';
 import {PersonalDataComponent} from './register-user/personal-data/personal-data.component';
 import {PersonalQuizComponent} from './register-user/personal-quiz/personal-quiz.component';
 import {RegisterSupplyComponent} from './register-supply/register-supply.component';
+import {ListUserComponent} from './list-user/list-user.component';
+import {ListSupplyComponent} from './list-supply/list-supply.component';
 
 
 export const ROUTES: Routes = [
@@ -16,5 +18,7 @@ export const ROUTES: Routes = [
             {path: 'personalData', component: PersonalDataComponent},
             {path: 'personalQuiz', component: PersonalQuizComponent}
     ]},
-    {path: 'registerSupply', component: RegisterSupplyComponent}
+    {path: 'registerSupply', component: RegisterSupplyComponent},
+    {path: 'ListUser', component: ListUserComponent},
+    {path: 'ListSupply', component:ListSupplyComponent}
 ];
