@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule} from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { ROUTES } from './app.routes';
 
@@ -10,6 +11,8 @@ import { HeaderComponent } from './header/header.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { PersonalDataComponent } from './register-user/personal-data/personal-data.component';
 import { PersonalQuizComponent } from './register-user/personal-quiz/personal-quiz.component';
+import { RegisterSupplyComponent } from './register-supply/register-supply.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { PersonalQuizComponent } from './register-user/personal-quiz/personal-qu
     HeaderComponent,
     RegisterUserComponent,
     PersonalDataComponent,
-    PersonalQuizComponent
+    PersonalQuizComponent,
+    RegisterSupplyComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

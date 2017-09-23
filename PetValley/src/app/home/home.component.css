@@ -1,0 +1,11 @@
+.image-home{
+    max-width:400x;
+    max-height:400px;
+    width: auto;
+    height: auto;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top: 10px;
+    margin-left:-200px;
+}
