@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListSupplyComponent implements OnInit {
 
+  supply = {};
+  
+  supplies = [];
+  
   constructor() { }
 
   ngOnInit() {
+
+    this.supply = {
+      type: 'Ração',
+      expirationDate: '23/09/2017',
+      quantity: '10'
+    }
+
+    this.supplies.push(this.supply);
+
   }
 
 }
