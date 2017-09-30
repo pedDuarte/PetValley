@@ -5,7 +5,7 @@ var upload = multer(); // for parsing multipart/form-data
 
 module.exports = function(app){
 
-    app.get('/users', function(req, res){
+    app.get('/user', function(req, res){
         user.getAllUsers(function(error, result){
             if(error)return res.status(400).json(error);
             return res.status(200).json(result);
@@ -74,10 +74,10 @@ module.exports = function(app){
             return res.status(200).json(result);
         });
 
-        req.body.user.id_address_fk = id_address;
+        req.body.address.id_address_fk = id_address;
         
         //Insere o usuário no BD
-        user.addUser(req.body.user, function(error, result){
+        user.addUser(req.body, function(error, result){
             if(error){
                 res.status(400).json(error);
             }
