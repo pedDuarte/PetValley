@@ -4,24 +4,15 @@ import {Http, Headers, Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
+import {SERVER} from '../app.api';
 import {User} from '../model/user.model';
 
 @Injectable()
-export class RegisterUserService {
-    constructor(private http: Http) {
+export class UserService {
+    constructor(private http: Http) {}
 
-    }
-
-    registerUser(user: User) {
-        
-
-    }
-
-    modifyUser() {
-
-    }
-
-    listUser() {
-
+    list() {
+        return this.http.get(`${SERVER}/users`)
+        .map(response => response.json());
     }
 }

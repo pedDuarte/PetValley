@@ -19,6 +19,6 @@ export const ROUTES: Routes = [
             {path: 'personalQuiz', component: PersonalQuizComponent}
     ]},
     {path: 'registerSupply', component: RegisterSupplyComponent},
-    {path: 'ListUser', component: ListUserComponent},
-    {path: 'ListSupply', component:ListSupplyComponent}
+    {path: 'listUser', component: ListUserComponent},
+    {path: 'listSupply', component: ListSupplyComponent}
 ];

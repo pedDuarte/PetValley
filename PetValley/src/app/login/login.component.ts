@@ -4,6 +4,7 @@ import { NgModel } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import {User} from '../model/user.model';
+import {UserService} from '../services/user.service';
 import {LoginService} from './login.service';
 
 @Component({
@@ -33,6 +34,8 @@ export class LoginComponent implements OnInit {
       error => {
           console.log(error);
       });*/
+
+     /*
     let login = this.loginService.loginJQuery(this.user);
     console.log(this.user);
     console.log(login);
@@ -40,6 +43,6 @@ export class LoginComponent implements OnInit {
       alert('Sucesso!!! Usuário ' + this.user.email + ' autenticado ');
     } else {
       alert('Senha ou usuário inválido');
-    }
+    }*/
   }
 }

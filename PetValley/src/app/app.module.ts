@@ -15,7 +15,7 @@ import { PersonalDataComponent } from './register-user/personal-data/personal-da
 import { PersonalQuizComponent } from './register-user/personal-quiz/personal-quiz.component';
 import { RegisterSupplyComponent } from './register-supply/register-supply.component';
 import { ListUserComponent } from './list-user/list-user.component';
-import { LoginService } from './login/login.service';
+import { UserService } from './services/user.service';
 import { ListSupplyComponent } from './list-supply/list-supply.component';
 
 @NgModule({
@@ -37,7 +37,7 @@ import { ListSupplyComponent } from './list-supply/list-supply.component';
     FormsModule,
     HttpModule
   ],
-  providers: [LoginService],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
