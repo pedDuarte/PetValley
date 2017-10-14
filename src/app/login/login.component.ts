@@ -1,11 +1,9 @@
+import { element } from 'protractor';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { NgModel } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 import {User} from '../model/user.model';
-import {UserService} from '../services/user.service';
-import {LoginService} from './login.service';
+//import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'pet-login',
@@ -15,34 +13,19 @@ import {LoginService} from './login.service';
 export class LoginComponent implements OnInit {
 
   private user: User = new User();
-  returnUrl: string;
+  private loginForm: FormGroup;
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private loginService: LoginService) { }
+  constructor(private formBuilder: FormBuilder, /* private userService: UserService*/) { }
 
   ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      email: this.formBuilder.control('', [Validators.required, Validators.email]),
+      password: this.formBuilder.control('', [Validators.required])
+    });
   }
 
-  onSubmit() {
-    /*this.loginService.login(this.user).
-    subscribe(
-      data => {
-      this.router.navigate([this.returnUrl]);
-      },
-      error => {
-          console.log(error);
-      });*/
-
-     /*
-    let login = this.loginService.loginJQuery(this.user);
-    console.log(this.user);
-    console.log(login);
-    if (login !== undefined) {
-      alert('Sucesso!!! Usuário ' + this.user.email + ' autenticado ');
-    } else {
-      alert('Senha ou usuário inválido');
-    }*/
+  onLogin() {
+    /*this.userService.login("email","senha")
+            .subscribe(user => console.log(user));*/
   }
 }

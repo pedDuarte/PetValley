@@ -9,7 +9,8 @@ export class User {
    sex: string;
    cellphone: string;
    phone: string;
+   adress: Adress;
    email: string;
    password: string;
-   adrres: Adress;
+   accessToken: string;
 }

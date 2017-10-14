@@ -1,26 +1,24 @@
-<div class="container login">
-  <div class="row">
-    <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
-      <div class="col-xs-8 col-sm-8 col-md-4 col-lg-4">
-          <div class="form-group">
-            <label for="">Email</label>
-            <input [(ngModel)]="user.email" type="text" class="form-control" id="email" placeholder="">
-          </div>
-          <div class="form-group">
-            <label for="">Senha</label>
-            <input [(ngModel)]="user.password" type="password" class="form-control" id="password" placeholder="">
-          </div>
-      </div>
-    <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
-  </div>
-  <div class="row">
-    <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>
-      <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">
-        <button class="btn btn-primary button" (click)="onSubmit()" >Login</button>
-      </div>
-      <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">
-        <a [routerLink]="['/registerUser']"><button class="btn btn-warning button">Cadastrar</button></a>
-      </div>
-    <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div> 
+<div class="container">
+  <div class="login col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+      <h3>Login</h3>
+      <form [formGroup]="loginForm">
+        <div class="form-group" [class.has-success]="loginForm.get('email').valid && (loginForm.get('email').dirty || loginForm.get('email').touched)"
+                                [class.has-error]="loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+          <label for="">Email</label>
+          <input formControlName="email" type="text" class="form-control" id="email" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="">Senha</label>
+          <input formControlName="password" type="password" class="form-control" id="password" placeholder="">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary button" [disabled]="loginForm.invalid" (click)="onLogin()" >Login</button>
+          <a [routerLink]="['/registerUser']"><button class="btn btn-warning button">Cadastrar</button></a>
+        </div>
+        <div class="form-group">
+          <a>Esqueceu sua senha?</a>
+        </div>
+      </form>
+    <!--<div class="col-xs-2 col-sm-2 col-md-4 col-lg-4"></div>-->
   </div>
 </div>

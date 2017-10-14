@@ -6,7 +6,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">
+                <a class="navbar-brand" [routerLink]="['/']">
                     <img alt="Brand" src="assets/img/petvalley2.png">
                 </a>
             </div>
@@ -14,17 +14,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
+                    <li routerLinkActive="active" class="page-scroll">
+                        <a [routerLink]="['/registerSupply']">Sobre</a>
                     </li>
-                    <li class="page-scroll">
-                        <a routerLinkActive="active" [routerLink]="['/']">Inicio</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a routerLinkActive="active" [routerLink]="['/registerSupply']">Cadastrar Suprimentos</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a routerLinkActive="active" [routerLink]="['/login']">Login / Cadastro</a>
+                    <li routerLinkActive="active" class="page-scroll">
+                        <a [routerLink]="['/login']">Login / Cadastro</a>
                     </li>
                 </ul>
             </div>
