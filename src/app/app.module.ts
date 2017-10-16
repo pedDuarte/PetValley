@@ -19,6 +19,7 @@ import { ListUserComponent } from './list-user/list-user.component';
 import { UserService } from './services/user.service';
 import { ListSupplyComponent } from './list-supply/list-supply.component';
 import { RegisterPetComponent } from './register-pet/register-pet.component';
+import { ListPetComponent } from './list-pet/list-pet.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { RegisterPetComponent } from './register-pet/register-pet.component';
     HomeComponent,
     ListUserComponent,
     ListSupplyComponent,
-    RegisterPetComponent
+    RegisterPetComponent,
+    ListPetComponent
   ],
   imports: [
     BrowserModule,

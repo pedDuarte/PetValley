@@ -8,7 +8,7 @@ import {RegisterSupplyComponent} from './register-supply/register-supply.compone
 import {ListUserComponent} from './list-user/list-user.component';
 import {ListSupplyComponent} from './list-supply/list-supply.component';
 import {RegisterPetComponent} from './register-pet/register-pet.component';
-
+import { ListPetComponent } from './list-pet/list-pet.component';
 
 export const ROUTES: Routes = [
     {path: '', component: HomeComponent},
@@ -22,5 +22,6 @@ export const ROUTES: Routes = [
     {path: 'registerSupply', component: RegisterSupplyComponent},
     {path: 'listUser', component: ListUserComponent},
     {path: 'listSupply', component: ListSupplyComponent},
-    {path: 'registerPet', component: RegisterPetComponent}
+    {path: 'registerPet', component: RegisterPetComponent},
+    {path: 'listPet', component: ListPetComponent}
 ];
