@@ -1,25 +1,30 @@
-<div class="container-fluid">
+<div class="container-fluid page-box">
+  <div class="row" style="margin-top:2%">
+    <div class="col-md-8">
+      <label for="pequisar">Pesquisar</label>
+      <div class="input-group">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+        </span>
+        <input type="text" class="form-control" placeholder="Pesquisar" id="pequisar">
+      </div>
+    </div>
+  </div>
+  <hr>
 	<div class="row">
-		<div class="col-md-12">
-      <div class="col-m-6">
-      <h3>Pesquisa de usuários</h3>
-      </div>            
-    <table class="table table-bordered table-hover table-condensed">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Sobrenome</th>
-            <th>E-mail</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let user of users">
-            <td>{{user.name}}</td>
-            <td>{{user.email}}</td>
-          </tr>
-        </tbody>
-      </table>
-		</div>
+    <div class="col-md-12">  
+      <div class="col-md-4">
+        <div class="w3-card-2">
+        <header class="w3-container w3-white">
+          <h4 style="text-align: center;">Diogo Lourenço Pereira</h4>
+        </header>
+        <hr>
+        <div style="height:150px;" class="w3-container w3-white w3-margin-bottom">
+          <p>Informações do usuario</p>
+        </div>
+        </div>
+      </div>
+    </div>
 	</div>
 </div>
 
