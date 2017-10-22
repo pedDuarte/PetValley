@@ -11,22 +11,169 @@
     </div>
   </div>
   <hr>
-	<div class="row">
-    <div class="col-md-12">  
+  <div class="row">
+    <div class="col-md-12">
       <div class="col-md-4">
-        <div class="w3-card-2">
-        <header class="w3-container w3-white">
-          <h4 style="text-align: center;">Diogo Lourenço Pereira</h4>
-        </header>
-        <hr>
-        <div style="height:150px;" class="w3-container w3-white w3-margin-bottom">
-          <p>Informações do usuario</p>
+        <!-- Inicio do card -->
+        <div class="w3-card-2" style="margin-bottom:5%;">
+          <header class="w3-container w3-white">
+            <h4 class="text-center">Diogo Lourenço Pereira</h4>
+          </header>
+          <hr>
+          <div style="height:100px;" class="w3-container w3-white w3-margin-bottom">
+            <p><strong>Tipo: </strong>Funcionário</p>
+            <p><strong>Sexo: </strong>M</p>
+            <p><strong>Telefone: </strong>(31) 99455-3459</p>
+            <p><strong>E-mail: </strong>diogo@gmail.com</p>
+          </div>
+          <footer class="w3-container w3-white">
+            <button type="button" class="btn btn-default" style="float:right; margin-top:5%; margin-bottom:5%;" data-toggle="modal" data-target="#modalEditar">Editar <span class="glyphicon glyphicon-pencil"></span></button>
+          </footer>
         </div>
+        <!-- Fim do card -->
+      </div>
+    </div>
+  </div>
+  <!-- Inicio Modal Editar Cadastro -->
+  <div class="modal fade" id="modalEditar" role="dialog" aria-hidden="ture">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Editar Cadastro</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <form role="form">
+                <div class="col-md-12">
+                  <div class="col-md-6">
+                    <div class="page-header">
+                      <h4>Dados Pessoais</h4>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input [(ngModel)]="user.name" type="text" class="form-control" id="nome" placeholder="Nome">
+                      </div>
+                      <div class="form-group">
+                        <label for="cpf">CPF</label>
+                        <input [(ngModel)]="user.CPF" type="text" class="form-control" id="cpf" placeholder="CPF">
+                      </div>
+                      <div class="form-group">
+                        <label for="sexo">Sexo</label>
+                        <select [(ngModel)]="user.sex" class="form-control" id="sexo">
+                          <option value="" selected disabled hidden>Sexo</option>
+                          <option>Masculino</option>
+                          <option>Feminino</option>
+                          <option>Outros</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input [(ngModel)]="user.surname" type="text" class="form-control" id="sobrenome" placeholder="Sobrenome">
+                      </div>
+                      <div class="form-group">
+                        <label for="dataNascimento">Data de Nascimento</label>
+                        <input [(ngModel)]="user.birthdate" type="date" class="form-control" id="dataNascimento">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="page-header">
+                      <h4>Contatos</h4>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input [(ngModel)]="user.telephone" type="text" class="form-control" id="telefone" placeholder="Telefone">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="celular">Celular</label>
+                        <input [(ngModel)]="user.cellphone" type="text" class="form-control" id="celular" placeholder="Celular">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input [(ngModel)]="user.email1" type="text" class="form-control" id="email" placeholder="E-mail">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="col-md-6">
+                    <div class="page-header">
+                      <h4>Endereço</h4>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="cep">CEP</label>
+                        <input [(ngModel)]="user.postalcode" type="text" class="form-control" id="cep" placeholder="CEP">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="tipoLogradouro">Tipo Logradouro</label>
+                        <input [(ngModel)]="user.typelocation" type="text" class="form-control" id="tipoLogradouro" placeholder="Tipo Logradouro">
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="form-group">
+                        <label for="logradouro">Logradouro</label>
+                        <input [(ngModel)]="user.location" type="text" class="form-control" id="logradouro" placeholder="Logradouro">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="numero">Numero</label>
+                        <input [(ngModel)]="user.numberhouse" type="text" class="form-control" id="numero" placeholder="Numero">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="complemento">Compl.</label>
+                        <input [(ngModel)]="user.complement" type="text" class="form-control" id="complemento" placeholder="Compl.">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="bairro">Bairro</label>
+                        <input [(ngModel)]="user.neighborhood" type="text" class="form-control" id="bairro" placeholder="Bairro">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="cidade">Cidade</label>
+                        <input [(ngModel)]="user.city" type="text" class="form-control" id="cidade" placeholder="Cidade">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="estado">Estado</label>
+                        <select [(ngModel)]="user.state" class="form-control" id="estado">
+                        <option value="" selected disabled hidden>Estado</option>
+                      </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Salvar <span class="glyphicon glyphicon-floppy-disk"></span></button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar <span class="glyphicon glyphicon-remove"></span></button>
         </div>
       </div>
     </div>
-	</div>
+  </div>
+  <!-- Fim do modal -->
 </div>
-
-
-  
