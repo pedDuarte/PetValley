@@ -1,4 +1,4 @@
-<div class="container-fluid page-box">
+<div class="container page-box">
   <div class="row" style="margin-top:2%">
     <div class="col-md-8">
       <label for="pequisar">Pesquisar</label>
@@ -16,6 +16,7 @@
       <div class="col-md-4">
         <!-- Inicio do card -->
         <div class="w3-card-2" style="margin-bottom:5%;">
+          <br>
           <header class="w3-container w3-white">
             <h4 class="text-center">Diogo Lourenço Pereira</h4>
           </header>
@@ -45,7 +46,7 @@
           <h4 class="modal-title">Editar Cadastro</h4>
         </div>
         <div class="modal-body">
-          <div class="container-fluid">
+          <div class="container">
             <div class="row">
               <form role="form">
                 <div class="col-md-12">
@@ -56,30 +57,31 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input [(ngModel)]="user.name" type="text" class="form-control" id="nome" placeholder="Nome">
+                        <input type="text" class="form-control" id="nome" placeholder="Nome">
+                      </div>
+                      <div class="form-group">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome">
                       </div>
                       <div class="form-group">
                         <label for="cpf">CPF</label>
-                        <input [(ngModel)]="user.CPF" type="text" class="form-control" id="cpf" placeholder="CPF">
+                        <input type="number" class="form-control" id="cpf" placeholder="CPF">
                       </div>
-                      <div class="form-group">
-                        <label for="sexo">Sexo</label>
-                        <select [(ngModel)]="user.sex" class="form-control" id="sexo">
-                          <option value="" selected disabled hidden>Sexo</option>
-                          <option>Masculino</option>
-                          <option>Feminino</option>
-                          <option>Outros</option>
-                        </select>
-                      </div>
+
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="sobrenome">Sobrenome</label>
-                        <input [(ngModel)]="user.surname" type="text" class="form-control" id="sobrenome" placeholder="Sobrenome">
+                        <label for="sexo">Sexo</label>
+                        <select class="form-control" id="sexo">
+                              <option value="" selected disabled hidden>Sexo</option>
+                              <option>Masculino</option>
+                              <option>Feminino</option>
+                              <option>Outros</option>
+                            </select>
                       </div>
                       <div class="form-group">
                         <label for="dataNascimento">Data de Nascimento</label>
-                        <input [(ngModel)]="user.birthdate" type="date" class="form-control" id="dataNascimento">
+                        <input type="date" class="form-control" id="dataNascimento">
                       </div>
                     </div>
                   </div>
@@ -90,19 +92,19 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="telefone">Telefone</label>
-                        <input [(ngModel)]="user.telephone" type="text" class="form-control" id="telefone" placeholder="Telefone">
+                        <input type="text" class="form-control" id="telefone" placeholder="Telefone">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="celular">Celular</label>
-                        <input [(ngModel)]="user.cellphone" type="text" class="form-control" id="celular" placeholder="Celular">
+                        <input type="text" class="form-control" id="celular" placeholder="Celular">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input [(ngModel)]="user.email1" type="text" class="form-control" id="email" placeholder="E-mail">
+                        <input type="email" class="form-control" id="email" placeholder="E-mail">
                       </div>
                     </div>
                   </div>
@@ -115,49 +117,49 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="cep">CEP</label>
-                        <input [(ngModel)]="user.postalcode" type="text" class="form-control" id="cep" placeholder="CEP">
+                        <input type="number" class="form-control" id="cep" placeholder="CEP">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="tipoLogradouro">Tipo Logradouro</label>
-                        <input [(ngModel)]="user.typelocation" type="text" class="form-control" id="tipoLogradouro" placeholder="Tipo Logradouro">
+                        <input type="text" class="form-control" id="tipoLogradouro" placeholder="Tipo Logradouro">
                       </div>
                     </div>
                     <div class="col-md-8">
                       <div class="form-group">
                         <label for="logradouro">Logradouro</label>
-                        <input [(ngModel)]="user.location" type="text" class="form-control" id="logradouro" placeholder="Logradouro">
+                        <input type="text" class="form-control" id="logradouro" placeholder="Logradouro">
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
                         <label for="numero">Numero</label>
-                        <input [(ngModel)]="user.numberhouse" type="text" class="form-control" id="numero" placeholder="Numero">
+                        <input type="number" class="form-control" id="numero" placeholder="Numero">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="complemento">Compl.</label>
-                        <input [(ngModel)]="user.complement" type="text" class="form-control" id="complemento" placeholder="Compl.">
+                        <input type="text" class="form-control" id="complemento" placeholder="Compl.">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="bairro">Bairro</label>
-                        <input [(ngModel)]="user.neighborhood" type="text" class="form-control" id="bairro" placeholder="Bairro">
+                        <input type="text" class="form-control" id="bairro" placeholder="Bairro">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="cidade">Cidade</label>
-                        <input [(ngModel)]="user.city" type="text" class="form-control" id="cidade" placeholder="Cidade">
+                        <input type="text" class="form-control" id="cidade" placeholder="Cidade">
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
                         <label for="estado">Estado</label>
-                        <select [(ngModel)]="user.state" class="form-control" id="estado">
+                        <select class="form-control" id="estado">
                         <option value="" selected disabled hidden>Estado</option>
                       </select>
                       </div>
