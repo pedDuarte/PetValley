@@ -1,0 +1,68 @@
+<div class="col-sm-8 col-md-8 col-lg-8">
+  <h4>Endereço</h4>
+ 
+  <form [formGroup]="personalAddressForm">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="cep">CEP<span class="requiredTag">*</span></label>
+            <input formControlName="postalCode" type="text" class="form-control" id="cep" placeholder="CEP">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="tipoLogradouro">Tipo Logradouro<span class="requiredTag">*</span></label>
+            <input formControlName="typeLocation" type="text" class="form-control" id="tipoLogradouro" placeholder="Tipo Logradouro">
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="form-group">
+            <label for="logradouro">Logradouro<span class="requiredTag">*</span></label>
+            <input formControlName="location" type="text" class="form-control" id="logradouro" placeholder="Logradouro">
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="numero">Numero<span class="requiredTag">*</span></label>
+            <input formControlName="numberHouse" type="text" class="form-control" id="numero" placeholder="Numero">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="complemento">Compl.</label>
+            <input formControlName="complement" type="text" class="form-control" id="complemento" placeholder="Compl.">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="bairro">Bairro<span class="requiredTag">*</span></label>
+            <input formControlName="neighborhood" type="text" class="form-control" id="bairro" placeholder="Bairro">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="cidade">Cidade<span class="requiredTag">*</span></label>
+            <input formControlName="city" type="text" class="form-control" id="cidade" placeholder="Cidade">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="estado">Estado<span class="requiredTag">*</span></label>
+            <select formControlName="state" class="form-control" id="estado">
+                <option value="" selected disabled hidden>Selecione um estado</option>
+                <option>MG</option>
+                <option>SP</option>
+                <option>RJ</option>
+            </select>
+        </div>
+    </div>
+    </form>
+</div>
+
+<div class="button-area col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6"> 
+    <div class="col-sm-6 col-md-6 col-lg-6"> 
+        <button type="submit" class="btn btn-warning button">Cancelar</button> 
+    </div> 
+    <div class="col-sm-6 col-md-6 col-lg-6"> 
+        <button type="submit" class="btn btn-primary button" [disabled]="personalAddressForm.invalid" (click)="onNext()" [routerLink]="['/registerUser/personalLogin']">Próximo</button> 
+    </div> 
+</div>

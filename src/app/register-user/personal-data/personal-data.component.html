@@ -1,150 +1,47 @@
-<div id="dadosPessoais" class="tab-pane">
-  <div class="row">
-      <div class="col-md-6">
-          <div class="page-header">
-              <h4>Dados Pessoais</h4>    
-          </div>
-          <div class="col-md-6">
-              <div class="form-group">
-                  <label for="nome">Nome</label>
-                  <input [(ngModel)]="user.name" type="text" class="form-control" id="nome"placeholder="Nome">
-              </div>
-              <div class="form-group">
-                  <label for="cpf">CPF</label>
-                  <input [(ngModel)]="user.CPF" type="text" class="form-control" id="cpf" placeholder="CPF">
-              </div>
-              <div class="form-group">
-                  <label for="sexo">Sexo</label>
-                  <select [(ngModel)]="user.sex" class="form-control" id="sexo">
-                      <option value="" selected disabled hidden>Sexo</option>
-                      <option>Masculino</option>
-                      <option>Feminino</option>
-                      <option>Outros</option>
-                  </select>
-              </div>
-          </div>
-          <div class="col-md-6">
-              <div class="form-group">
-                  <label for="sobrenome">Sobrenome</label>
-                  <input [(ngModel)]="user.surname" type="text" class="form-control" id="sobrenome"placeholder="Sobrenome">
-              </div>
-              <div class="form-group">
-                  <label for="dataNascimento">Data de Nascimento</label>
-                  <input [(ngModel)]="user.birthdate" type="date" class="form-control" id="dataNascimento">
-              </div>
-          </div>
-      </div>
-      <div class="col-md-6">
-          <div class="page-header">
-              <h4>Contatos</h4>
-          </div>
-          <div class="col-md-6">
-              <div class="form-group">
-                  <label for="telefone">Telefone</label>
-                  <input [(ngModel)]="user.telephone" type="text" class="form-control" id="telefone" placeholder="Telefone">
-              </div>
-          </div>
-          <div class="col-md-6">
-              <div class="form-group">
-                  <label for="celular">Celular</label>
-                  <input [(ngModel)]="user.cellphone" type="text" class="form-control" id="celular" placeholder="Celular">
-              </div>
-          </div>
-          <div class="col-md-12">
-              <div class="form-group">
-                  <label for="email">E-mail</label>
-                  <input [(ngModel)]="user.email1" type="text" class="form-control" id="email" placeholder="E-mail">
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="col-md-6">              
-          <div class="page-header">
-              <h4>Endereço</h4>
-          </div>
-          <div class="col-md-6">
-              <div class="form-group">
-                  <label for="cep">CEP</label>
-                  <input [(ngModel)]="user.postalcode" type="text" class="form-control" id="cep" placeholder="CEP">
-              </div>
-          </div>
-          <div class="col-md-6">
-              <div class="form-group">
-                  <label for="tipoLogradouro">Tipo Logradouro</label>
-                  <input [(ngModel)]="user.typelocation" type="text" class="form-control" id="tipoLogradouro" placeholder="Tipo Logradouro">
-              </div>
-          </div>
-          <div class="col-md-8">
-              <div class="form-group">
-                  <label for="logradouro">Logradouro</label>
-                  <input [(ngModel)]="user.location" type="text" class="form-control" id="logradouro" placeholder="Logradouro">
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div class="form-group">
-                  <label for="numero">Numero</label>
-                  <input [(ngModel)]="user.numberhouse" type="text" class="form-control" id="numero" placeholder="Numero">
-              </div>
-          </div>
-          <div class="col-md-6">
-              <div class="form-group">
-                  <label for="complemento">Compl.</label>
-                  <input [(ngModel)]="user.complement" type="text" class="form-control" id="complemento" placeholder="Compl.">
-              </div>
-          </div>
-          <div class="col-md-6">
-              <div class="form-group">
-                  <label for="bairro">Bairro</label>
-                  <input [(ngModel)]="user.neighborhood" type="text" class="form-control" id="bairro" placeholder="Bairro">
-              </div>
-          </div>
-          <div class="col-md-6">
-              <div class="form-group">
-                  <label for="cidade">Cidade</label>
-                  <input [(ngModel)]="user.city" type="text" class="form-control" id="cidade" placeholder="Cidade">
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div class="form-group">
-                  <label for="estado">Estado</label>
-                  <select [(ngModel)]="user.state" class="form-control" id="estado">
-                      <option value="" selected disabled hidden>Estado</option>
-                  </select>
-              </div>
-          </div>
-      </div>
-      <div class="col-md-6">
-          <div class="page-header">
-              <h4>Dados de acesso ao site</h4>
-          </div>
-          <div class="col-md-12">
-              <div class="form-group">
-                  <label for="email2">E-mail</label>
-                  <input [(ngModel)]="user.email2" type="text" class="form-control" id="email2" placeholder="E-mail">
-              </div>
-          </div>
-          <div class="col-md-6">
-              <div class="form-group">
-                  <label for="senha1">Digite uma senha</label>
-                  <input [(ngModel)]="user.password" type="text" class="form-control" id="senha1">
-              </div>
-          </div>
-          <div class="col-md-6">
-              <div class="form-group">
-                  <label for="senha2">Digite a senha novamente</label>
-                  <input [(ngModel)]="user.password2" type="text" class="form-control" id="senha2">
-              </div>
-          </div>
-      </div>
-  </div>
+<div class="col-sm-8 col-md-8 col-lg-8">
+    <h4>Dados Pessoais</h4>
+    <form [formGroup]="personalDataForm">
+        <div class="form-group col-md-6 col-lg-6">
+            <label for="nome">Nome<span class="requiredTag">*</span></label>
+            <input formControlName="name" type="text" class="form-control" id="nome"placeholder="Nome">
+        </div>
+        <div class="form-group col-md-6 col-lg-6">
+            <label for="sobrenome">Sobrenome<span class="requiredTag">*</span></label>
+            <input formControlName="surname" type="text" class="form-control" id="sobrenome"placeholder="Sobrenome">
+        </div>
+        <div class="form-group col-md-6 col-lg-6">
+            <label for="cpf">CPF<span class="requiredTag">*</span></label>
+            <input formControlName="cpf" type="text" class="form-control" id="cpf" placeholder="CPF">
+        </div>
+        <div class="form-group col-md-6 col-lg-6">
+            <label for="sexo">Sexo<span class="requiredTag">*</span></label>
+            <select formControlName="sex" class="form-control" id="sexo">
+                <option value="" selected disabled hidden>Selecione...</option>
+                <option>Masculino</option>
+                <option>Feminino</option>
+                <option>Outros</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6 col-lg-6">
+            <label for="dataNascimento">Data de Nascimento<span class="requiredTag">*</span></label>
+            <input formControlName="birthday" type="date" class="form-control" id="dataNascimento">
+        </div>
+        <div class="form-group col-md-6 col-lg-6">
+            <label for="telefone">Telefone<span class="requiredTag">*</span></label>
+            <input formControlName="phone" type="text" class="form-control" id="telefone" placeholder="Telefone">
+        </div>
+        <div class="form-group col-md-6 col-lg-6">
+            <label for="celular">Celular</label>
+            <input formControlName="cellphone" type="text" class="form-control" id="celular" placeholder="Celular">
+        </div>
+    </form>
 </div>
 
-<div class="col-md-offset-3 col-md-6"> 
-        <div class="col-md-6"> 
-                <button type="submit" class="btn btn-primary button" (click)="onSubmit()">Cadastrar</button> 
-        </div> 
-        <div class="col-md-6"> 
-                <button type="submit" class="btn btn-primary button">Cancelar</button> 
-        </div> 
+<div class="button-area col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6"> 
+    <div class="col-sm-6 col-md-6 col-lg-6"> 
+        <button type="submit" class="btn btn-warning button">Cancelar</button> 
+    </div> 
+    <div class="col-sm-6 col-md-6 col-lg-6"> 
+        <button type="submit" class="btn btn-primary button" [disabled]="personalDataForm.invalid" (click)="onNext()" [routerLink]="['/registerUser/personalAddress']">Próximo</button> 
+    </div> 
 </div>

@@ -1,4 +1,4 @@
-export class Adress {
+export class Address {
     id: number;
     postalCode: number;
     location: string;

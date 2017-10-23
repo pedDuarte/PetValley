@@ -1,0 +1,31 @@
+<div class="col-sm-8 col-md-8 col-lg-8">
+  <h4>Dados de Acesso</h4>
+
+  <form [formGroup]="personalLoginForm">
+    <div class="col-md-12" *ngIf="personalLoginForm.hasError('emailsIsNotEquals') && (personalLoginForm.get('confirmPassword').dirty || personalLoginForm.get('confirmPassword').touched)" class="alert alert-danger form-group" role="alert">As senhas não corresponde</div>
+    <div class="col-md-12" *ngIf="personalLoginForm.get('email').invalid && (personalLoginForm.get('email').dirty || personalLoginForm.get('email').touched)" class="alert alert-danger form-group" role="alert">Email inválido!!!</div>
+    <div class="form-group col-md-12" [class.has-success]="personalLoginForm.get('email').valid && (personalLoginForm.get('email').dirty || personalLoginForm.get('email').touched)"
+    [class.has-error]="personalLoginForm.get('email').invalid && (personalLoginForm.get('email').dirty || personalLoginForm.get('email').touched)">
+        <label for="email2">E-mail<span class="requiredTag">*</span></label>
+        <input formControlName="email" type="text" class="form-control" id="email2" placeholder="E-mail">
+    </div>
+    <div class="form-group col-md-6" [class.has-success]="personalLoginForm.get('password').valid">
+        <label for="senha1">Digite uma senha<span class="requiredTag">*</span></label>
+        <input formControlName="password" type="password" class="form-control" id="senha1" placeholder="Telefone">
+    </div>
+    <div class="form-group col-md-6" [class.has-success]="!personalLoginForm.hasError('emailsIsNotEquals') && personalLoginForm.get('confirmPassword').valid &&  (personalLoginForm.get('confirmPassword').dirty || personalLoginForm.get('confirmPassword').touched)"
+        [class.has-error]="personalLoginForm.hasError('emailsIsNotEquals') && (personalLoginForm.get('confirmPassword').dirty || personalLoginForm.get('confirmPassword').touched)" >
+        <label for="senha2">Digite a senha novamente<span class="requiredTag">*</span></label>
+        <input class="form-control" formControlName="confirmPassword" type="password" id="senha2" placeholder="Celular">
+    </div>
+    </form>
+</div>
+
+<div class="button-area col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6"> 
+    <div class="col-sm-6 col-md-6 col-lg-6"> 
+        <button type="submit" class="btn btn-warning button">Cancelar</button> 
+    </div> 
+    <div class="col-sm-6 col-md-6 col-lg-6"> 
+        <button type="submit" [disabled]="personalLoginForm.invalid" class="btn btn-primary button" (click)="onRegister()">Cadastrar</button> 
+    </div> 
+</div>

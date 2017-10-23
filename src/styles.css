@@ -7,3 +7,6 @@ body{
     width: 100%;
     border-radius: 0
 }
+.requiredTag{
+    color: red;
+}

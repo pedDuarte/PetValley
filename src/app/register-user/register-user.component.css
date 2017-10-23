@@ -1,3 +1,26 @@
 button{
     margin-top: 20px;
 }
+
+.page-box{
+    background-color: white;
+    padding: 2px 30px 20px 30px;
+    margin-bottom: 10px
+}
+
+.form-area{
+    padding: 1px 20px
+}
+
+.user-area{
+    align-content: center;
+    text-align: center;
+}
+
+.user-img{
+    max-width:200px;
+    max-height:200px;
+    width: auto;
+    height: auto;
+    margin-top:5px;
+}

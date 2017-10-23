@@ -1,4 +1,4 @@
-import { Adress } from './adress.model';
+import { Address } from './address.model';
 
 export class User {
    id: number;
@@ -9,7 +9,7 @@ export class User {
    sex: string;
    cellphone: string;
    phone: string;
-   adress: Adress;
+   adress: Address;
    email: string;
    password: string;
    accessToken: string;
