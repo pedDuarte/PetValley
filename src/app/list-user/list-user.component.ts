@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../model/user.model';
-import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'pet-list-user',
@@ -11,7 +10,7 @@ export class ListUserComponent implements OnInit {
 
   users: User[];
 
-  constructor(private userService: UserService) { }
+  constructor() { }
 
   ngOnInit() {
     /*this.userService.users()
