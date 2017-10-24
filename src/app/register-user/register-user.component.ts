@@ -1,3 +1,4 @@
+import { RegisterUserService } from './register-user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgModel } from '@angular/forms';
@@ -11,17 +12,19 @@ import {User} from '../model/user.model';
 })
 export class RegisterUserComponent implements OnInit {
 
-
   private user: User = new User();
-  returnUrl: string;
 
-  constructor() {}
+  constructor(private registerUserService: RegisterUserService) {}
 
   ngOnInit() {
+    this.registerUserService.registerEmitted$.subscribe(
+      user => this.register(user)
+    );
   }
 
-  onSubmit() {
-    /*this.registerUserService.registerUser(this.user);*/
+  register(user: User) {
+    // Chamar o serviço user para adicionar usuario
+    console.log(user);
   }
 
 }

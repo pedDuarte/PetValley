@@ -1,11 +1,19 @@
-<div class="page-header">
-    <h2>Cadastro de usuários</h2> 
-</div>
 <div>
-    <ul class="nav nav-tabs nav-justified">
-        <li><a data-toggle="tab" routerLinkActive="active" [routerLink]="['personalData']">Dados Pessoais</a></li>
-        <li><a data-toggle="tab" routerLinkActive="active" [routerLink]="['personalQuiz']">Formulario Socio Econômico</a></li>
-    </ul>
-</div>
+    <div class="page-box col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+        <div class="page-header">
+            <h2>Cadastro de usuários</h2> 
+        </div>
         
-<router-outlet></router-outlet>
+        <div class="formArea">
+            <div class="row">
+                
+                <div class="user-area col-sm-4 col-md-4 col-lg-4">
+                    <h4>Foto do Perfil</h4> 
+                    <img class="user-img" src="assets/img/user_default.png" alt="">
+                    <input type="file">
+                </div>
+                <router-outlet (register)="registerEvent($event)"></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

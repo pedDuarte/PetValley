@@ -16,10 +16,14 @@ import { PersonalDataComponent } from './register-user/personal-data/personal-da
 import { PersonalQuizComponent } from './register-user/personal-quiz/personal-quiz.component';
 import { RegisterSupplyComponent } from './register-supply/register-supply.component';
 import { ListUserComponent } from './list-user/list-user.component';
-import { UserService } from './services/user.service';
 import { ListSupplyComponent } from './list-supply/list-supply.component';
 import { RegisterPetComponent } from './register-pet/register-pet.component';
 import { ListPetComponent } from './list-pet/list-pet.component';
+import { PersonalAddressComponent } from './register-user/personal-address/personal-address.component';
+import { PersonalLoginComponent } from './register-user/personal-login/personal-login.component';
+
+import { UserService } from './services/user.service';
+import { RegisterUserService } from './register-user/register-user.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,9 @@ import { ListPetComponent } from './list-pet/list-pet.component';
     ListUserComponent,
     ListSupplyComponent,
     RegisterPetComponent,
-    ListPetComponent
+    ListPetComponent,
+    PersonalAddressComponent,
+    PersonalLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +49,7 @@ import { ListPetComponent } from './list-pet/list-pet.component';
     ReactiveFormsModule,
     HttpModule,
   ],
-  providers: [UserService],
+  providers: [UserService, RegisterUserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
