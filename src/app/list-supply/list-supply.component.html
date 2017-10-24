@@ -1,28 +1,110 @@
-<div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="col-m-6">
-        <h3>Pesquisa de Suprimentos</h3>
-        </div>            
-      <table class="table table-bordered table-hover table-condensed">
-          <thead>
-            <tr>
-              <th>Tipo</th>
-              <th>Data de validade</th>
-              <th>Quantidade</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let supply of supplies">
-              <td>{{supply.type}}</td>
-              <td>{{supply.expirationDate}}</td>
-              <td>{{supply.quantity}}</td>
-            </tr>
-          </tbody>
-        </table>
+<div class="container page-box">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-m-6">
+        <h3 class="text-left">Pesquisa de Suprimentos</h3>
+      </div>
+      <table class="table table-condensed table-bordered">
+        <thead>
+          <tr>
+            <th class="text-center">Tipo</th>
+            <th class="text-center">Data de validade</th>
+            <th class="text-center">Quantidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let supply of supplies">
+            <td class="text-center">{{supply.type}}</td>
+            <td class="text-center">{{supply.expirationDate}}</td>
+            <td class="text-center">{{supply.quantity}}</td>
+            <td class="especial-td">
+              <button class="especial-button" data-toggle="modal" data-target="#modalEditarSuprimentos">
+                <span class="glyphicon glyphicon-pencil"></span> 
+              </button>
+            </td>
+            <td class="especial-td">
+              <button class="especial-button">
+                <span class="glyphicon glyphicon-trash"></span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- Inicio Modal Editar Suprimentos -->
+  <div class="modal fade" id="modalEditarSuprimentos" role="dialog" aria-hidden="ture">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          <h4 class="modal-title">Editar Cadastro</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="page-header">
+              <h4>Cadastro Suprimentos</h4>
+            </div>
+            <form>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="tipo">Tipo</label>
+                  <input type="text" class="form-control" id="tipo" placeholder="Tipo">
+                </div>
+                <div class="form-group">
+                  <label for="nome">Nome</label>
+                  <input type="text" class="form-control" id="nome" placeholder="Nome">
+                </div>
+                <div class="form-group">
+                  <label for="marca">Marca</label>
+                  <input type="text" class="form-control" id="marca" placeholder="Marca">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="quantidade">Quantidade</label>
+                  <input type="number" class="form-control" id="quantidade" placeholder="Quantidade">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="unidade">Unidade</label>
+                  <select class="form-control" id="sexo">
+                    <option value="" selected disabled hidden>Kilos</option>
+                    <option>Kilos</option>
+                    <option>Litros</option>
+                    <option>Outros</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="dataValidade">Data de Validade</label>
+                  <input type="date" class="form-control" id="dataValidade">
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="dataEntrada">Data de Entrada</label>
+                  <input type="date" class="form-control" id="dataEntrada">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="descricao">Descrição</label>
+                  <textarea class="form-control" rows="5" id="descricao"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Salvar <span class="glyphicon glyphicon-floppy-disk"></span></button>
+        </div>
       </div>
     </div>
   </div>
-  
-  
-    
+  <!-- Fim do modal -->
+</div>
