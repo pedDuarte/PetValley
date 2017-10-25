@@ -12,9 +12,7 @@ export class ListUserComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    /*this.userService.users()
-    .subscribe(response => this.users = response);*/
+  ngOnInit() { 
   }
 
 }

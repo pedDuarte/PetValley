@@ -24,6 +24,8 @@ import { PersonalLoginComponent } from './register-user/personal-login/personal-
 
 import { UserService } from './services/user.service';
 import { RegisterUserService } from './register-user/register-user.service';
+import { EditUserComponent } from './edit-user/edit-user.component';
+import { EditSupplyComponent } from './edit-supply/edit-supply.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { RegisterUserService } from './register-user/register-user.service';
     RegisterPetComponent,
     ListPetComponent,
     PersonalAddressComponent,
-    PersonalLoginComponent
+    PersonalLoginComponent,
+    EditUserComponent,
+    EditSupplyComponent
   ],
   imports: [
     BrowserModule,
