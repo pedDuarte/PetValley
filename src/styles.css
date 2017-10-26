@@ -25,3 +25,7 @@ body{
 .requiredTag{
     color: red;
 }
+
+.especial-radio{
+    margin-bottom: 25px;
+}
