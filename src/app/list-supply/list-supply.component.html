@@ -1,28 +1,36 @@
-<div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="col-m-6">
-        <h3>Pesquisa de Suprimentos</h3>
-        </div>            
-      <table class="table table-bordered table-hover table-condensed">
-          <thead>
-            <tr>
-              <th>Tipo</th>
-              <th>Data de validade</th>
-              <th>Quantidade</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let supply of supplies">
-              <td>{{supply.type}}</td>
-              <td>{{supply.expirationDate}}</td>
-              <td>{{supply.quantity}}</td>
-            </tr>
-          </tbody>
-        </table>
+<div class="container page-box">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-m-6">
+        <h3 class="text-left">Pesquisa de Suprimentos</h3>
       </div>
+      <table class="table table-condensed table-bordered">
+        <thead>
+          <tr>
+            <th class="text-center">Tipo</th>
+            <th class="text-center">Data de validade</th>
+            <th class="text-center">Quantidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let supply of supplies">
+            <td class="text-center">{{supply.type}}</td>
+            <td class="text-center">{{supply.expirationDate}}</td>
+            <td class="text-center">{{supply.quantity}}</td>
+            <td class="especial-td">
+              <button class="especial-button" data-toggle="modal" data-target="#modalEditarSuprimentos">
+                <span class="glyphicon glyphicon-pencil"></span> 
+              </button>
+            </td>
+            <td class="especial-td">
+              <button class="especial-button">
+                <span class="glyphicon glyphicon-trash"></span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-  
-  
-    
+  <pet-edit-supply></pet-edit-supply>
+</div>

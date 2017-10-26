@@ -7,6 +7,25 @@ body{
     width: 100%;
     border-radius: 0
 }
+.page-box{
+    background-color: white;
+    padding: 2px 30px 2px;
+}
+
+.especial-button{
+    border:none;
+    background:none;
+}
+
+.especial-td{
+    width: 40px;
+    text-align: left;
+    border: 1px solid black;
+}
 .requiredTag{
     color: red;
+}
+
+.especial-radio{
+    margin-bottom: 25px;
 }

@@ -18,7 +18,7 @@ export class ListSupplyComponent implements OnInit {
     this.supply = {
       type: 'Ração',
       expirationDate: '23/09/2017',
-      quantity: '10'
+      quantity: '10 Kilos'
     }
 
     this.supplies.push(this.supply);
