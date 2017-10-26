@@ -44,6 +44,6 @@ export class PersonalLoginComponent implements OnInit {
 
   onRegister() {
     this.registerUserService.setPersonalLogin(this.personalLoginForm.value);
-    this.registerUserService.emitRegister(this.registerUserService.user);
+    this.registerUserService.emitRegister();
   }
 }
