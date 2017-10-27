@@ -13,101 +13,148 @@
     <div class="col-md-8">
       <div class="col-md-12">
         <div class="form-group">
-          <label for="nome">Nome <span class="requiredTag"> * </span> </label>
+          <label for="nome">Nome <span class="requiredTag">*</span> </label>
           <input type="text" class="form-control" id="nome" placeholder="Nome">
         </div>
       </div>
-      <div class="col-md-6 especial-radio">
-        <div class="form-group">
-          <label class="col-md-4">Especie:</label>
-          <div class="col-md-4">
-            <label class="radio-inline"><input type="radio" name="optA">Cachorro</label>
+      <div class="row">
+        <div class="col-md-6 especial-radio">
+          <div class="form-group">
+            <label class="col-md-4">Especie: <span class="requiredTag">*</span> </label>
+            <div class="col-md-4">
+              <label class="radio-inline"><input type="radio" name="optA">Cachorro</label>
+            </div>
+            <div class="col-md-4">
+              <label class="radio-inline"><input type="radio" name="optA">Gato</label>
+            </div>
           </div>
-          <div class="col-md-4">
-            <label class="radio-inline"><input type="radio" name="optA">Gato</label>
+        </div>
+        <div class="col-md-6 especial-radio">
+          <div class="form-group">
+            <label class="col-md-4">Sexo: <span class="requiredTag">*</span> </label>
+            <div class="col-md-4">
+              <label class="radio-inline"><input type="radio" name="optSex">Macho</label>
+            </div>
+            <div class="col-md-4">
+              <label class="radio-inline"><input type="radio" name="optSex">Femea</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 especial-radio">
+          <div class="form-group">
+            <label class="col-md-4">Vermif.: <span class="requiredTag">*</span> </label>
+            <div class="col-md-4">
+              <label class="radio-inline"><input type="radio" name="optVE">Sim</label>
+            </div>
+            <div class="col-md-4">
+              <label class="radio-inline"><input type="radio" name="optVE">Não</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 especial-radio">
+          <div class="form-group">
+            <label class="col-md-4">Castrado: <span class="requiredTag">*</span> </label>
+            <div class="col-md-4">
+              <label class="radio-inline"><input type="radio" name="optCA">Sim</label>
+            </div>
+            <div class="col-md-4">
+              <label class="radio-inline"><input type="radio" name="optCA">Não</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 especial-radio">
+          <div class="form-group">
+            <label class="col-md-4">Idade: <span class="requiredTag">*</span> </label>
+            <div class="col-md-4">
+              <label class="radio-inline"><input type="radio" name="optID">Filhote</label>
+            </div>
+            <div class="col-md-4">
+              <label class="radio-inline"><input type="radio" name="optID">Adulto</label>
+            </div>
+            <div class="col-md-4">
+              <label class="radio-inline"><input type="radio" name="optID">Idoso</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 especial-radio">
+          <div class="form-group">
+            <label class="col-md-4">Porte: <span class="requiredTag">*</span> </label>
+            <div class="col-md-4">
+              <label class="radio-inline"><input type="radio" name="optPOR">Pequeno</label>
+            </div>
+            <div class="col-md-4">
+              <label class="radio-inline"><input type="radio" name="optPOR">Médio</label>
+            </div>
+            <div class="col-md-4">
+              <label class="radio-inline"><input type="radio" name="optPOR">Grande</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 especial-radio">
+          <div class="form-group">
+            <label class="col-md-4">Pelo: <span class="requiredTag">*</span> </label>
+            <div class="col-md-4">
+              <label class="radio-inline"><input type="radio" name="optVE">Sim</label>
+            </div>
+            <div class="col-md-4">
+              <label class="radio-inline"><input type="radio" name="optVE">Não</label>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6 especial-radio">
-        <div class="form-group">
-          <label class="col-md-4">Sexo:</label>
-          <div class="col-md-4">
-            <label class="radio-inline"><input type="radio" name="optSex">Macho</label>
-          </div>
-          <div class="col-md-4">
-            <label class="radio-inline"><input type="radio" name="optSex">Femea</label>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 especial-radio">
-        <div class="form-group">
-          <label class="col-md-4">Vermifugado:</label>
-          <div class="col-md-4">
-            <label class="radio-inline"><input type="radio" name="optVE">Sim</label>
-          </div>
-          <div class="col-md-4">
-            <label class="radio-inline"><input type="radio" name="optVE">Não</label>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <div class="col-md-12">
+              <label for="descricao">Descrição:</label>
+              <textarea class="form-control" style="margin-bottom: 30px" id="descricao" cols="20" rows="10"></textarea>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-6 especial-radio">
-        <div class="form-group">
-          <label class="col-md-4">Castrado:</label>
-          <div class="col-md-4">
-            <label class="radio-inline"><input type="radio" name="optCA">Sim</label>
-          </div>
-          <div class="col-md-4">
-            <label class="radio-inline"><input type="radio" name="optCA">Não</label>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 especial-radio">
-        <div class="form-group">
-          <label class="col-md-4">Idade</label>
-          <div class="col-md-4">
-            <label class="radio-inline"><input type="radio" name="optID">Filhote</label>
-          </div>
-          <div class="col-md-4">
-            <label class="radio-inline"><input type="radio" name="optID">Adulto</label>
-          </div>
-          <div class="col-md-4">
-            <label class="radio-inline"><input type="radio" name="optID">Idoso</label>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 especial-radio">
-        <div class="form-group">
-          <label class="col-md-4">Porte:</label>
-          <div class="col-md-4">
-            <label class="radio-inline"><input type="radio" name="optPOR">Pequeno</label>
-          </div>
-          <div class="col-md-4">
-            <label class="radio-inline"><input type="radio" name="optPOR">Médio</label>
-          </div>
-          <div class="col-md-4">
-            <label class="radio-inline"><input type="radio" name="optPOR">Grande</label>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 especial-radio">
-        <div class="form-group">
-          <label class="col-md-4">Pelo:</label>
-          <div class="col-md-4">
-            <label class="radio-inline"><input type="radio" name="optVE">Sim</label>
-          </div>
-          <div class="col-md-4">
-            <label class="radio-inline"><input type="radio" name="optVE">Não</label>
+        <div class="col-md-6">
+          <div class="col-md-12">
+            <label>Vacinas: <span class="requiredTag">*</span> </label>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-md-6 checkbox">
+                  <label><input type="checkbox" value="">V8/V10</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-md-6 checkbox">
+                  <label><input type="checkbox" value="">Giardíse</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-md-6 checkbox">
+                  <label><input type="checkbox" value="">Gripe Canina</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-md-6 checkbox">
+                  <label><input type="checkbox" value="">Anti-rábica</label>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </form>
-  <div class="col-md-offset-6">
-    <div class="col-md-4 text-center">
-      <button type="button" class="btn btn-default">Cadastrar <span class="glyphicon glyphicon-floppy-disk"></span></button>
-    </div>
-    <div class="col-md-4 text-center">
-      <button type="button" class="btn btn-default">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
+  <div class="row">
+    <div class="col-md-offset-6">
+      <div class="col-md-4 text-center">
+        <button type="button" class="btn btn-default">Cadastrar <span class="glyphicon glyphicon-floppy-disk"></span></button>
+      </div>
+      <div class="col-md-4 text-center">
+        <button type="button" class="btn btn-default">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
+      </div>
     </div>
   </div>
 </div>
