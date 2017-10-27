@@ -18,8 +18,8 @@ export class RegisterUserService {
     // Observable string streams
     registerEmitted$ = this.emitRegisterSource.asObservable();
     // Service message commands
-    emitRegister(user: User) {
-        this.emitRegisterSource.next(user);
+    emitRegister() {
+        this.emitRegisterSource.next(this.user);
     }
 
     setPersonalData(data: any) {
@@ -48,6 +48,14 @@ export class RegisterUserService {
     setPersonalLogin(data: any) {
         this.user.email = data.email;
         this.user.password = data.password;
+    }
+
+    setImage(data: any) {
+        this.user.image = data;
+    }
+
+    getUser() {
+        return this.user;
     }
 
     hasPersonalData() {
