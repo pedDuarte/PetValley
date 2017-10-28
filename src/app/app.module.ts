@@ -26,6 +26,7 @@ import { UserService } from './services/user.service';
 import { RegisterUserService } from './register-user/register-user.service';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { EditSupplyComponent } from './edit-supply/edit-supply.component';
+import { PetViewComponent } from './pet-view/pet-view.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { EditSupplyComponent } from './edit-supply/edit-supply.component';
     PersonalAddressComponent,
     PersonalLoginComponent,
     EditUserComponent,
-    EditSupplyComponent
+    EditSupplyComponent,
+    PetViewComponent
   ],
   imports: [
     BrowserModule,

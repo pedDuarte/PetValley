@@ -5,62 +5,128 @@
     </div>
   </div>
   <hr>
-  <div class="row">
-    <div class="col-md-2">
-      <!-- Inicio do card de filtro -->
+  <div class="col-md-2">
+    <!-- Inicio do card de filtro -->
+    <div class="w3-card-2" style="margin-bottom:5%;">
+      <header class="w3-container w3-white">
+        <h4 class="text-center">Filtro</h4>
+      </header>
+      <hr>
+      <div class="w3-container w3-white w3-margin-bottom" style="height:100px;">
+        <form action="" role="form">
+          <div class="col-md-12 especial-radio">
+            <div class="form-group">
+              <label class="col-md-12">Especie</label>
+              <div class="col-md-12">
+                <label class="radio-inline"><input type="radio" name="optA">Cachorro</label>
+              </div>
+              <div class="col-md-12">
+                <label class="radio-inline"><input type="radio" name="optA">Gato</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 especial-radio">
+            <div class="form-group">
+              <label class="col-md-12">Sexo</label>
+              <div class="col-md-12">
+                <label class="radio-inline"><input type="radio" name="optSex">Macho</label>
+              </div>
+              <div class="col-md-12">
+                <label class="radio-inline"><input type="radio" name="optSex">Femea</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 especial-radio">
+            <div class="form-group">
+              <label class="col-md-12">Idade</label>
+              <div class="col-md-12">
+                <label class="radio-inline"><input type="radio" name="optID">Filhote</label>
+              </div>
+              <div class="col-md-12">
+                <label class="radio-inline"><input type="radio" name="optID">Adulto</label>
+              </div>
+              <div class="col-md-12">
+                <label class="radio-inline"><input type="radio" name="optID">Idoso</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 especial-radio">
+            <div class="form-group">
+              <label class="col-md-12">Porte</label>
+              <div class="col-md-12">
+                <label class="radio-inline"><input type="radio" name="optPOR">Pequeno</label>
+              </div>
+              <div class="col-md-12">
+                <label class="radio-inline"><input type="radio" name="optPOR">Médio</label>
+              </div>
+              <div class="col-md-12">
+                <label class="radio-inline"><input type="radio" name="optPOR">Grande</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 especial-radio">
+            <div class="form-group">
+              <label class="col-md-12">Pelo</label>
+              <div class="col-md-12">
+                <label class="radio-inline"><input type="radio" name="optPE">Curto</label>
+              </div>
+              <div class="col-md-12">
+                <label class="radio-inline"><input type="radio" name="optPE">Médio</label>
+              </div>
+              <div class="col-md-12">
+                <label class="radio-inline"><input type="radio" name="optPE">Longo</label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <footer class="w3-container w3-white">
+        <div class="col-md-12">
+          <p class="text-center"><button type="button" class="btn btn-default" style="margin-top:5%; margin-bottom:5%;"> Aplicar <span class="glyphicon glyphicon-ok"></span></button></p>
+        </div>
+        <div class="col-md-12">
+          <p class="text-center"><button type="button" class="btn btn-default" style="margin-top:5%; margin-bottom:5%;"> Limpar <span class="glyphicon glyphicon-remove"></span></button></p>
+        </div>
+      </footer>
+    </div>
+    <!-- Fim do card de filtro -->
+  </div>
+  <div class="col-md-10">
+    <div class="col-md-4">
+      <!-- Inicio do card -->
       <div class="w3-card-2" style="margin-bottom:5%;">
         <header class="w3-container w3-white">
-          <h4 class="text-center">Filtro</h4>
+          <div class="text-center col-md-12">
+           <img class="especial-img" src="http://portaldodog.com.br/cachorros/wp-content/uploads/2015/07/pastor-alemao-6-500x375.jpg"/>
+          </div>
         </header>
         <hr>
         <div style="height:100px;" class="w3-container w3-white w3-margin-bottom">
-
+          <div class="col-md-12 text-center">
+            <p>
+              <u> <strong> Nome do pet </strong> </u>
+            </p>
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-8">
+              <p><strong>Idade:</strong>Adulto</p>
+            </div>
+            <div class="col-md-8">
+              <p><strong>Sexo: </strong>M</p>
+            </div>
+            <div class="col-md-8">
+              <p><strong>Pelo: </strong>Curto</p>
+            </div>
+            <div class="col-md-8">
+              <p><strong>Porte: </strong>Médio</p>
+            </div>
+          </div>
         </div>
         <footer class="w3-container w3-white">
-          <div class="col-md-12">
-              <p class="text-center"><button type="button" class="btn btn-default" style="margin-top:5%; margin-bottom:5%;"> Aplicar <span class="glyphicon glyphicon-ok"></span></button></p>
-          </div>
+          <button type="button" class="btn btn-default" style="float:right; margin-top:5%; margin-bottom:5%;" data-toggle="modal" data-target="#modalVisualizarPet"> Visualizar Pet <span class="glyphicon glyphicon-eye-open"></span> </button>
         </footer>
       </div>
-      <!-- Fim do card de filtro -->
-    </div>
-    <div class="col-md-10">
-      <div class="col-md-4">
-        <!-- Inicio do card -->
-        <div class="w3-card-2" style="margin-bottom:5%;">
-          <header class="w3-container w3-white">
-            <div class="col-md-12">
-              <p class="text-center"><img class="especial-img" src="http://portaldodog.com.br/cachorros/wp-content/uploads/2015/07/pastor-alemao-6-500x375.jpg"/></p>
-            </div>
-          </header>
-          <hr>
-          <div style="height:100px;" class="w3-container w3-white w3-margin-bottom">
-            <div class="col-md-12 text-center">
-              <p>
-                <u> <i> <strong> Nome do pet </strong> </i> </u>
-              </p>
-            </div>
-            <div class="col-md-12">
-              <div class="col-md-6">
-                <p><strong>Idade:</strong>Adulto</p>
-              </div>
-              <div class="col-md-6">
-                <p><strong>Sexo: </strong>M</p>
-              </div>
-              <div class="col-md-6">
-                <p><strong>Pelo: </strong>Curto</p>
-              </div>
-              <div class="col-md-6">
-                <p><strong>Porte: </strong>Médio</p>
-              </div>
-            </div>
-          </div>
-          <footer class="w3-container w3-white">
-            <button type="button" class="btn btn-default" style="float:right; margin-top:5%; margin-bottom:5%;" data-toggle="modal" data-target="#modalVisualizarPet"> Visualizar Pet <span class="glyphicon glyphicon-eye-open"></span></button>
-          </footer>
-        </div>
-        <!-- Fim do card -->
-      </div>
+      <!-- Fim do card -->
     </div>
   </div>
   <!-- pet-view-pet></pet-view-pet -->
