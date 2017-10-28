@@ -1,11 +1,11 @@
 export class Address {
     id: number;
-    postalCode: number;
+    postal_code: number;
     location: string;
-    typeLocation: string;
+    type_location: string;
     neighborhood: string;
     city: string;
     state: string;
-    numberHouse: number;
+    number_house: number;
     complement: string;
 }

@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule, ConnectionBackend } from '@angular/http';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule} from '@angular/router';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
@@ -51,7 +50,7 @@ import { EditSupplyComponent } from './edit-supply/edit-supply.component';
     RouterModule.forRoot(ROUTES),
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
+    HttpClientModule
   ],
   providers: [UserService, RegisterUserService],
   bootstrap: [AppComponent]

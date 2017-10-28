@@ -1,16 +1,19 @@
-import { Address } from './../model/address.model';
+import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+import { SERVER } from './../app.api';
 import { User } from './../model/user.model';
-import { UserService } from './../services/user.service';
+import { Address } from './../model/address.model';
+import { PostResponse } from './../model/post-response.model';
 
 @Injectable()
 export class RegisterUserService {
 
     public user: User;
 
-    constructor(private userService: UserService) {
+    constructor(private http: HttpClient) {
     }
 
     // Observable string sources
@@ -26,23 +29,23 @@ export class RegisterUserService {
         this.user = new User();
         this.user.name = data.name;
         this.user.surname = data.surname;
-        this.user.cpf = data.cpf;
-        this.user.birthday = data.birthday;
+        this.user.code_cpf = data.cpf;
+        this.user.birthdate = data.birthday;
         this.user.sex = data.sex;
         this.user.cellphone = data.cellphone;
-        this.user.phone = data.phone;
+        this.user.phone_number = data.phone;
     }
 
     setPessonalAddress(data: any) {
-        this.user.adress = new Address();
-        this.user.adress.postalCode = data.postalCode;
-        this.user.adress.typeLocation = data.typeLocation;
-        this.user.adress.location = data.location;
-        this.user.adress.numberHouse = data.numberHouse;
-        this.user.adress.complement = data.complement !== undefined ? data.complement : undefined;
-        this.user.adress.neighborhood = data.neighborhood;
-        this.user.adress.city = data.city;
-        this.user.adress.state = data.state;
+        this.user.address = new Address();
+        this.user.address.postal_code = data.postalCode;
+        this.user.address.type_location = data.typeLocation;
+        this.user.address.location = data.location;
+        this.user.address.number_house = data.numberHouse;
+        this.user.address.complement = data.complement !== undefined ? data.complement : undefined;
+        this.user.address.neighborhood = data.neighborhood;
+        this.user.address.city = data.city;
+        this.user.address.state = data.state;
     }
 
     setPersonalLogin(data: any) {
@@ -66,7 +69,7 @@ export class RegisterUserService {
     }
 
     hasPersonalAddress() {
-        if (this.user && this.user.adress !== undefined) {
+        if (this.user && this.user.address !== undefined) {
             return true;
         }
         return false;
@@ -79,4 +82,9 @@ export class RegisterUserService {
         return false;
     }
 
+    addUser() {
+        const header = new HttpHeaders();
+        header.append('Access-Control-Allow-Origin', '*');
+        return this.http.post(`${SERVER}/user`, this.user, {headers: header});
+    }
 }

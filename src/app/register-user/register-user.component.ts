@@ -1,3 +1,4 @@
+import { PostResponse } from './../model/post-response.model';
 import { RegisterUserService } from './register-user.service';
 import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
@@ -27,8 +28,10 @@ export class RegisterUserComponent implements OnInit {
   }
 
   register() {
-    // Chamar o serviço user para adicionar usuario
-    document.write(JSON.stringify(this.registerUserService.getUser()));
+    console.log(this.registerUserService.getUser());
+    this.registerUserService.addUser().subscribe((response: PostResponse) => {
+      console.log(response);
+    });
   }
 
   changeImage($event) {

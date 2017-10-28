@@ -4,14 +4,13 @@ export class User {
    id: number;
    name: string;
    surname: string;
-   cpf: number;
-   birthday: Date;
+   code_cpf: number;
+   birthdate: Date;
    sex: string;
    cellphone: string;
-   phone: string;
-   adress: Address;
+   phone_number: string;
+   address: Address;
    email: string;
    password: string;
-   accessToken: string;
    image: any;
 }
