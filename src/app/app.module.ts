@@ -25,6 +25,9 @@ import { UserService } from './services/user.service';
 import { RegisterUserService } from './register-user/register-user.service';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { EditSupplyComponent } from './edit-supply/edit-supply.component';
+import { PetViewComponent } from './pet-view/pet-view.component';
+import { ListEditPetComponent } from './list-edit-pet/list-edit-pet.component';
+import { EditPetComponent } from './edit-pet/edit-pet.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { EditSupplyComponent } from './edit-supply/edit-supply.component';
     PersonalAddressComponent,
     PersonalLoginComponent,
     EditUserComponent,
-    EditSupplyComponent
+    EditSupplyComponent,
+    PetViewComponent,
+    ListEditPetComponent,
+    EditPetComponent
   ],
   imports: [
     BrowserModule,
