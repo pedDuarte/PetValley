@@ -1,18 +1,31 @@
 <div>
     <div class="page-box col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-        <div class="page-header">
-            <h2>Cadastro de usuários</h2> 
-        </div>
-        
-        <div class="formArea">
-            <div class="row">
-                <div class="user-area col-sm-4 col-md-4 col-lg-4">
-                    <h4>Foto do Perfil</h4> 
-                    <img id="photo" class="user-img" src="assets/img/user_default.png" alt="">
-                    <input type="file" (change)="changeImage($event)">
-                </div>
-                <router-outlet></router-outlet>
+        <div class="modal fade" tabindex="-1" role="dialog" id="myModal" data-backdrop="static">
+            <div class="modal-dialog modal-sm" role="document">
+            <div class="text-center" >
+                <img class="img-loading" src="https://static1.squarespace.com/static/5520e514e4b00f468f8d3de4/t/588b5074a5790a7a1f5e0e2a/1485521532793/web-shopping.gif" alt="">
+            </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div *ngIf="hasAdded == false">
+            <div class="page-header">
+                <h2>Cadastro de usuários</h2> 
             </div>
+            
+            <div class="formArea">
+                <div class="row">
+                    <div class="alert alert-danger" *ngIf="hasError" role="alert"><strong>Houve um erro durante o cadastro.</strong> Verifique a conexão com a internet e com o servidor.</div>
+                    <div class="user-area col-sm-4 col-md-4 col-lg-4">
+                        <h4>Foto do Perfil</h4> 
+                        <img id="photo" class="user-img" src="assets/img/user_default.png" alt="">
+                        <input type="file" (change)="changeImage($event)">
+                    </div>
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+        <div class="user-added" *ngIf="hasAdded == true">
+            <h1>Usuário Cadastrado!!!</h1>
         </div>
     </div>
 </div>

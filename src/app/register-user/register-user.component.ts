@@ -14,10 +14,14 @@ export class RegisterUserComponent implements OnInit {
 
   private user: User = new User();
   image: any;
+  hasAdded: boolean;
+  hasError: boolean;
 
   constructor(private registerUserService: RegisterUserService) {}
 
   ngOnInit() {
+    this.hasAdded = false;
+    this.hasError = false;
     // Se inscreve para ouvir o evento componente filho
     this.registerUserService.registerEmitted$.subscribe(
       user => {
@@ -28,9 +32,16 @@ export class RegisterUserComponent implements OnInit {
   }
 
   register() {
+    $('#myModal').modal('show');
     console.log(this.registerUserService.getUser());
     this.registerUserService.addUser().subscribe((response: PostResponse) => {
-      console.log(response);
+      if (response.success === true) {
+        $('#myModal').modal('hide');
+        this.hasAdded = true;
+        this.hasError = false;
+      } else {
+        this.hasError = true;
+      }
     });
   }
 
