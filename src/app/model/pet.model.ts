@@ -8,4 +8,6 @@ export class Pet {
     name: string;
     description: string;
     species: string;
+    sex: string;
+    vaccines: Vaccines;
 }

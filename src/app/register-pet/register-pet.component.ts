@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'pet-register-pet',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterPetComponent implements OnInit {
 
-  constructor() { }
+  private petForm: FormGroup;
+
+  constructor(private FormBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.petForm = this.FormBuilder.group({
+      size: this.FormBuilder.control('',[Validators.required]),
+      coat: this.FormBuilder.control('',[Validators.required]),
+      age: this.FormBuilder.control('',[Validators.required]),
+      neutered: this.FormBuilder.control('',[Validators.required]),
+      vermifuges: this.FormBuilder.control('',[Validators.required]),
+      name: this.FormBuilder.control('',[Validators.required]),
+      description: this.FormBuilder.control('',[Validators.required]),
+      species: this.FormBuilder.control('',[Validators.required]),
+      sex: this.formBuilder.control('',[Validators.required]),
+      v8v10: this.formBuilder.control('',[Validators.required]),
+      giardise: this.formBuilder.control('',[Validators.required]),
+      gripeCanina: this.formBuilder.control('',[Validators.required]),
+      antiRabica: this.formBuilder.control('',[Validators.required]),
+    })
   }
 
 }
