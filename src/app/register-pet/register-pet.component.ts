@@ -1,4 +1,3 @@
-import { Component, OnInit } from '@angular/core';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
@@ -23,11 +22,11 @@ export class RegisterPetComponent implements OnInit {
       name: this.FormBuilder.control('',[Validators.required]),
       description: this.FormBuilder.control('',[Validators.required]),
       species: this.FormBuilder.control('',[Validators.required]),
-      sex: this.formBuilder.control('',[Validators.required]),
-      v8v10: this.formBuilder.control('',[Validators.required]),
-      giardise: this.formBuilder.control('',[Validators.required]),
-      gripeCanina: this.formBuilder.control('',[Validators.required]),
-      antiRabica: this.formBuilder.control('',[Validators.required]),
+      sex: this.FormBuilder.control('',[Validators.required]),
+      v8v10: this.FormBuilder.control('',[Validators.required]),
+      giardise: this.FormBuilder.control('',[Validators.required]),
+      gripeCanina: this.FormBuilder.control('',[Validators.required]),
+      antiRabica: this.FormBuilder.control('',[Validators.required]),
     })
   }
 

@@ -1,3 +1,5 @@
+import { Vaccines } from './vaccines.model';
+
 export class Pet {
     id : number;
     size: string;
