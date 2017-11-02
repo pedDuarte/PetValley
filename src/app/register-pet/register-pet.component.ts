@@ -10,23 +10,23 @@ export class RegisterPetComponent implements OnInit {
 
   private petForm: FormGroup;
 
-  constructor(private FormBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.petForm = this.FormBuilder.group({
-      size: this.FormBuilder.control('',[Validators.required]),
-      coat: this.FormBuilder.control('',[Validators.required]),
-      age: this.FormBuilder.control('',[Validators.required]),
-      neutered: this.FormBuilder.control('',[Validators.required]),
-      vermifuges: this.FormBuilder.control('',[Validators.required]),
-      name: this.FormBuilder.control('',[Validators.required]),
-      description: this.FormBuilder.control('',[Validators.required]),
-      species: this.FormBuilder.control('',[Validators.required]),
-      sex: this.FormBuilder.control('',[Validators.required]),
-      v8v10: this.FormBuilder.control('',[Validators.required]),
-      giardise: this.FormBuilder.control('',[Validators.required]),
-      gripeCanina: this.FormBuilder.control('',[Validators.required]),
-      antiRabica: this.FormBuilder.control('',[Validators.required]),
+    this.petForm = this.formBuilder.group({
+      size: this.formBuilder.control('',[Validators.required]),
+      coat: this.formBuilder.control('',[Validators.required]),
+      age: this.formBuilder.control('',[Validators.required]),
+      neutered: this.formBuilder.control('',[Validators.required]),
+      vermifuges: this.formBuilder.control('',[Validators.required]),
+      name: this.formBuilder.control('',[Validators.required]),
+      description: this.formBuilder.control('',[Validators.required]),
+      species: this.formBuilder.control('',[Validators.required]),
+      sex: this.formBuilder.control('',[Validators.required]),
+      v8v10: this.formBuilder.control('',[Validators.required]),
+      giardise: this.formBuilder.control('',[Validators.required]),
+      gripeCanina: this.formBuilder.control('',[Validators.required]),
+      antiRabica: this.formBuilder.control('',[Validators.required]),
     })
   }
 
