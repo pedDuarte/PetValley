@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { NgModel } from '@angular/forms';
+import { RegisterPetService } from './../services/registerPet.service';
+//import { Vaccines } from './../model/vaccines.model';
+
 
 @Component({
   selector: 'pet-register-pet',
@@ -9,8 +13,9 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class RegisterPetComponent implements OnInit {
 
   private petForm: FormGroup;
+  //private vaccinesForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private registerPetService: RegisterPetService) { }
 
   ngOnInit() {
     this.petForm = this.formBuilder.group({
@@ -22,12 +27,10 @@ export class RegisterPetComponent implements OnInit {
       name: this.formBuilder.control('',[Validators.required]),
       description: this.formBuilder.control('',[Validators.required]),
       species: this.formBuilder.control('',[Validators.required]),
-      sex: this.formBuilder.control('',[Validators.required]),
-      v8v10: this.formBuilder.control('',[Validators.required]),
-      giardise: this.formBuilder.control('',[Validators.required]),
-      gripeCanina: this.formBuilder.control('',[Validators.required]),
-      antiRabica: this.formBuilder.control('',[Validators.required]),
+      sex: this.formBuilder.control('',[Validators.required])
     })
+
+    this.registerPetService.addPet(this.petForm.value);
   }
 
 }

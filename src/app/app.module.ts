@@ -21,6 +21,7 @@ import { ListPetComponent } from './list-pet/list-pet.component';
 import { PersonalAddressComponent } from './register-user/personal-address/personal-address.component';
 import { PersonalLoginComponent } from './register-user/personal-login/personal-login.component';
 
+import { RegisterPetService } from './services/registerPet.service';
 import { UserService } from './services/user.service';
 import { RegisterUserService } from './register-user/register-user.service';
 import { EditUserComponent } from './edit-user/edit-user.component';
@@ -58,7 +59,7 @@ import { EditPetComponent } from './edit-pet/edit-pet.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [UserService, RegisterUserService],
+  providers: [UserService, RegisterUserService, RegisterPetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

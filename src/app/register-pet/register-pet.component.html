@@ -2,19 +2,22 @@
   <div class="page-header">
     <h2>Cadastro de Animais</h2>
   </div>
-  <form>
+  <form [formGroup]="petForm">
     <div class="col-md-4">
-      <div class="col-md-4">
-        <h5> <strong>Foto do Pet</strong> </h5>
-        <img class="user-img" src="" alt="">
-        <input type="file">
+      <div class="row">
+        <div class="text-center col-md-12">
+          <h5> <strong>Foto do Pet</strong> </h5>
+          <img class="img-responsive center-block" src="http://2.bp.blogspot.com/-ESfKU0HPoMg/VYr4iABVeBI/AAAAAAAAAt4/x4F_ZBCaHR8/s1600/pet.png">
+          <input type="file" id="selecionarImagem" style="display:none;">
+          <label class="btn btn-default" for="selecionarImagem">Selecionar <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></label>
+        </div>
       </div>
     </div>
     <div class="col-md-8">
       <div class="col-md-12">
         <div class="form-group">
           <label for="nome">Nome <span class="requiredTag">*</span> </label>
-          <input formControlName="name" type="text" class="form-control" id="nome" placeholder="Nome">
+          <input formControlName="name" type="text"  value="name" class="form-control" id="nome" placeholder="Nome">
         </div>
       </div>
       <div class="row">
@@ -22,10 +25,10 @@
           <div class="form-group">
             <label class="col-md-4">Especie: <span class="requiredTag">*</span> </label>
             <div class="col-md-4">
-              <label class="radio-inline"><input formControlName="species" type="radio" name="optES">Cachorro</label>
+              <label class="radio-inline"><input formControlName="species" type="radio" name="species">Cachorro</label>
             </div>
             <div class="col-md-4">
-              <label class="radio-inline"><input formControlName="species" type="radio" name="optES">Gato</label>
+              <label class="radio-inline"><input formControlName="species" type="radio" name="species">Gato</label>
             </div>
           </div>
         </div>
@@ -33,10 +36,10 @@
           <div class="form-group">
             <label class="col-md-4">Sexo: <span class="requiredTag">*</span> </label>
             <div class="col-md-4">
-              <label class="radio-inline"><input formControlName="sex" type="radio" name="optSex">Macho</label>
+              <label class="radio-inline"><input formControlName="sex" type="radio" name="sex">Macho</label>
             </div>
             <div class="col-md-4">
-              <label class="radio-inline"><input formControlName="sex" type="radio" name="optSex">Femea</label>
+              <label class="radio-inline"><input formControlName="sex" type="radio" name="sex">Femea</label>
             </div>
           </div>
         </div>
@@ -44,10 +47,10 @@
           <div class="form-group">
             <label class="col-md-4">Vermif.: <span class="requiredTag">*</span> </label>
             <div class="col-md-4">
-              <label class="radio-inline"><input formControlName="vermifuges" type="radio" name="optPE">Sim</label>
+              <label class="radio-inline"><input formControlName="vermifuges" type="radio" name="vermifuges">Sim</label>
             </div>
             <div class="col-md-4">
-              <label class="radio-inline"><input formControlName="vermifuges" type="radio" name="optPE">Não</label>
+              <label class="radio-inline"><input formControlName="vermifuges" type="radio" name="vermifuges">Não</label>
             </div>
           </div>
         </div>
@@ -55,10 +58,10 @@
           <div class="form-group">
             <label class="col-md-4">Castrado: <span class="requiredTag">*</span> </label>
             <div class="col-md-4">
-              <label class="radio-inline"><input formControlName="neutered" type="radio" name="optCA">Sim</label>
+              <label class="radio-inline"><input formControlName="neutered" type="radio" name="neutered">Sim</label>
             </div>
             <div class="col-md-4">
-              <label class="radio-inline"><input formControlName="neutered" type="radio" name="optCA">Não</label>
+              <label class="radio-inline"><input formControlName="neutered" type="radio" name="neutered">Não</label>
             </div>
           </div>
         </div>
@@ -66,13 +69,13 @@
           <div class="form-group">
             <label class="col-md-4">Idade: <span class="requiredTag">*</span> </label>
             <div class="col-md-4">
-              <label class="radio-inline"><input formControlName="age" type="radio" name="optID">Filhote</label>
+              <label class="radio-inline"><input formControlName="age" type="radio" name="age">Filhote</label>
             </div>
             <div class="col-md-4">
-              <label class="radio-inline"><input formControlName="age" type="radio" name="optID">Adulto</label>
+              <label class="radio-inline"><input formControlName="age" type="radio" name="age">Adulto</label>
             </div>
             <div class="col-md-4">
-              <label class="radio-inline"><input formControlName="age" type="radio" name="optID">Idoso</label>
+              <label class="radio-inline"><input formControlName="age" type="radio" name="age">Idoso</label>
             </div>
           </div>
         </div>
@@ -80,13 +83,13 @@
           <div class="form-group">
             <label class="col-md-4">Porte: <span class="requiredTag">*</span> </label>
             <div class="col-md-4">
-              <label class="radio-inline"><input formControlName="size" type="radio" name="optPOR">Pequeno</label>
+              <label class="radio-inline"><input formControlName="size" type="radio" name="size">Pequeno</label>
             </div>
             <div class="col-md-4">
-              <label class="radio-inline"><input formControlName="size" type="radio" name="optPOR">Médio</label>
+              <label class="radio-inline"><input formControlName="size" type="radio" name="size">Médio</label>
             </div>
             <div class="col-md-4">
-              <label class="radio-inline"><input formControlName="size" type="radio" name="optPOR">Grande</label>
+              <label class="radio-inline"><input formControlName="size" type="radio" name="size">Grande</label>
             </div>
           </div>
         </div>
@@ -94,13 +97,13 @@
           <div class="form-group">
             <label class="col-md-4">Pelo: <span class="requiredTag">*</span> </label>
             <div class="col-md-4">
-              <label class="radio-inline"><input formControlName="coat" type="radio" name="optPE">Curto</label>
+              <label class="radio-inline"><input formControlName="coat" type="radio" name="coat">Curto</label>
             </div>
             <div class="col-md-4">
-              <label class="radio-inline"><input formControlName="coat" type="radio" name="optPE">Médio</label>
+              <label class="radio-inline"><input formControlName="coat" type="radio" name="coat">Médio</label>
             </div>
             <div class="col-md-4">
-              <label class="radio-inline"><input formControlName="coat" type="radio" name="optPE">Longo</label>
+              <label class="radio-inline"><input formControlName="coat" type="radio" name="coat">Longo</label>
             </div>
           </div>
         </div>
@@ -114,7 +117,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
           <div class="col-md-12">
             <label>Vacinas: <span class="requiredTag">*</span> </label>
             <div class="row">
@@ -146,14 +149,15 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </form>
   <div class="row">
     <div class="col-md-offset-6">
       <div class="col-md-4 text-center">
-        <button type="button" class="btn btn-default">Cadastrar <span class="glyphicon glyphicon-floppy-disk"></span></button>
+        <button type="button" class="btn btn-default" [disabled]="petForm.invalid" (click)="addPet(this.petForm.value)" >Cadastrar <span class="glyphicon glyphicon-floppy-disk"></span></button>
+        {{petForm.invalid}}
       </div>
       <div class="col-md-4 text-center">
         <button type="button" class="btn btn-default">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
