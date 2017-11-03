@@ -11,8 +11,7 @@ import {User} from '../model/user.model';
   styleUrls: ['./register-user.component.css']
 })
 export class RegisterUserComponent implements OnInit {
-
-  private user: User = new User();
+  
   image: any;
   hasAdded: boolean;
   hasError: boolean;

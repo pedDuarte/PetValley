@@ -1,4 +1,4 @@
-import { Vaccines } from './vaccines.model';
+//import { Vaccines } from './vaccines.model';
 
 export class Pet {
     id : number;
@@ -11,5 +11,5 @@ export class Pet {
     description: string;
     species: string;
     sex: string;
-    vaccines: Vaccines;
+    //vaccines: Vaccines;
 }
