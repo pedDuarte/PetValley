@@ -29,8 +29,11 @@ export class RegisterPetComponent implements OnInit {
       species: this.formBuilder.control('',[Validators.required]),
       sex: this.formBuilder.control('',[Validators.required])
     })
-
-    this.registerPetService.addPet(this.petForm.value);
   }
+  onRegister() {
+
+    this.registerPetService.addPet(this.petForm.value).subscribe();
+  }
+
 
 }
