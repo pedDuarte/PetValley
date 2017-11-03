@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       if (user.id) {
         console.log(user);
         this.error = undefined;
-        this.loginService.setUserLogged(user);
+        this.loginService.signIn(user);
       }
       if (user  === 'SENHA INCORRETA') {
         this.error = 'Senha inválida!';
