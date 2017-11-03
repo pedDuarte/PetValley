@@ -1,3 +1,4 @@
+import { LoginService } from './services/login.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -58,7 +59,7 @@ import { EditPetComponent } from './edit-pet/edit-pet.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [UserService, RegisterUserService],
+  providers: [UserService, RegisterUserService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
