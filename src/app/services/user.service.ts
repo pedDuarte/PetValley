@@ -1,3 +1,4 @@
+import { PostResponse } from './../model/post-response.model';
 import { ErrorHandler } from './../app.error-handler';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -13,11 +14,7 @@ import { User } from '../model/user.model';
 export class UserService {
     constructor(private http: HttpClient) {}
 
-   /* login(email: string, password: string): Observable<User> {
-        return this.http.post<User>(`${SERVER}/login`, {email: email, password: password});
-    }*/
-
-    users() {
-        return this.http.get(`${SERVER}/user`);
+    users(): Observable<User[]> {
+        return this.http.get<User[]>(`${SERVER}/user`);
     }
 }
