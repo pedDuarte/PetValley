@@ -1,4 +1,7 @@
 <div class="container">
+  <div class="logo-img text-center col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+      <img alt="Brand" src="assets/img/petvalley.png">
+  </div>
   <div class="login col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
       <h3>Login</h3>
       <form [formGroup]="loginForm">
@@ -13,8 +16,8 @@
           <input formControlName="password" type="password" class="form-control" id="password" placeholder="">
         </div>
         <div class="form-group">
-          <button class="btn btn-primary button" [disabled]="loginForm.invalid" (click)="onLogin()" >Login</button>
-          <a [routerLink]="['/registerUser']"><button class="btn btn-warning button">Cadastrar</button></a>
+          <a><button class="btn btn-primary button" [disabled]="loginForm.invalid" (click)="onLogin()" >Login</button></a>
+          <a><button [routerLink]="['/registerUser']" class="btn btn-warning button">Cadastrar</button></a>
         </div>
         <div class="form-group">
           <a>Esqueceu sua senha?</a>

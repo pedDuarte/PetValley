@@ -6,9 +6,9 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class LoginService {
 
-    private userLogged: User;
+    public userLogged: User;
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) { this.userLogged = undefined; }
 
     login(user: User): Observable<any> {
         return this.http.post<any>(`${SERVER}/login`, user);
@@ -16,9 +16,9 @@ export class LoginService {
 
     isLogged(): boolean {
         if (this.userLogged === undefined) {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
     getUserLogged() {

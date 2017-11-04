@@ -1,4 +1,4 @@
-<header>
+<header *ngIf="loginService.isLogged()">
 <nav id="mainNav" class="navbar navbar-default navbar-custom"><!--navbar-fixed-top-->
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -16,11 +16,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li routerLinkActive="active" class="page-scroll">
                         <a [routerLink]="['/registerSupply']">Cadastro de Suprimentos</a>
-                    </li>
-                    <li routerLinkActive="active" class="page-scroll">
-                        <a [routerLink]="['/login']">Login / Cadastro</a>
-                    </li>
-                    
+                    </li>                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

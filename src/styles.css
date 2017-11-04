@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 body{
-    background-color: rgb(209, 209, 209);
+    background-color: rgb(240, 240, 240);
 }
 .button{
     width: 100%;
@@ -9,7 +9,8 @@ body{
 }
 .page-box{
     background-color: white;
-    padding: 2px 30px 2px;
+    padding: 2px 30px 20px 30px;
+    margin-bottom: 30px;
 }
 
 .especial-button{
