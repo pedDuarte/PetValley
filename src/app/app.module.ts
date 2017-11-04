@@ -1,3 +1,4 @@
+import { LoginService } from './services/login.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -30,6 +31,7 @@ import { EditSupplyComponent } from './edit-supply/edit-supply.component';
 import { PetViewComponent } from './pet-view/pet-view.component';
 import { ListEditPetComponent } from './list-edit-pet/list-edit-pet.component';
 import { EditPetComponent } from './edit-pet/edit-pet.component';
+import { FirstPageComponent } from './first-page/first-page.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,8 @@ import { EditPetComponent } from './edit-pet/edit-pet.component';
     EditSupplyComponent,
     PetViewComponent,
     ListEditPetComponent,
-    EditPetComponent
+    EditPetComponent,
+    FirstPageComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,11 @@ import { EditPetComponent } from './edit-pet/edit-pet.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
+<<<<<<< HEAD
   providers: [UserService, RegisterUserService, RegisterPetService, PetServices],
+=======
+  providers: [UserService, RegisterUserService, LoginService, RegisterPetService],
+>>>>>>> 674a97930cdbab0069052879320cd7aa0fc49b05
   bootstrap: [AppComponent]
 })
 export class AppModule { }
