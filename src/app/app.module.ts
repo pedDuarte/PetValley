@@ -63,11 +63,7 @@ import { FirstPageComponent } from './first-page/first-page.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-<<<<<<< HEAD
-  providers: [UserService, RegisterUserService, RegisterPetService, PetServices],
-=======
-  providers: [UserService, RegisterUserService, LoginService, RegisterPetService],
->>>>>>> 674a97930cdbab0069052879320cd7aa0fc49b05
+  providers: [UserService, RegisterUserService, LoginService, RegisterPetService, PetServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
