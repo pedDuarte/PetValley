@@ -1,10 +1,10 @@
-import { LoginService } from './../services/login.service';
-import { element } from 'protractor';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 
 import {User} from '../model/user.model';
 import {UserService} from '../services/user.service';
+import { LoginService } from './../services/login.service';
 
 @Component({
   selector: 'pet-login',
@@ -19,13 +19,18 @@ export class LoginComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private userService: UserService,
-              private loginService: LoginService) { }
+              private loginService: LoginService,
+              private router: Router) { }
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      email: this.formBuilder.control('', [Validators.required, Validators.email]),
-      password: this.formBuilder.control('', [Validators.required])
-    });
+    if (this.loginService.isLogged()) {
+      this.router.navigate(['/home']);
+    } else {
+      this.loginForm = this.formBuilder.group({
+        email: this.formBuilder.control('', [Validators.required, Validators.email]),
+        password: this.formBuilder.control('', [Validators.required])
+      });
+    }
   }
 
   onLogin() {
@@ -34,6 +39,7 @@ export class LoginComponent implements OnInit {
         console.log(user);
         this.error = undefined;
         this.loginService.signIn(user);
+        this.router.navigate(['/home']);
       }
       if (user  === 'SENHA INCORRETA') {
         this.error = 'Senha inválida!';

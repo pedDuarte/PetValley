@@ -1,8 +1,13 @@
-import { PostResponse } from './../model/post-response.model';
-import { RegisterUserService } from './register-user.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgModel } from '@angular/forms';
 
+import 'rxjs/add/operator/map';
+
+import { LoginService } from './../services/login.service';
+import { RegisterUserService } from './register-user.service';
+
+import { PostResponse } from './../model/post-response.model';
 import {User} from '../model/user.model';
 
 @Component({
@@ -11,36 +16,47 @@ import {User} from '../model/user.model';
   styleUrls: ['./register-user.component.css']
 })
 export class RegisterUserComponent implements OnInit {
-  
+
+  userRegistred: User;
   image: any;
   hasAdded: boolean;
   hasError: boolean;
 
-  constructor(private registerUserService: RegisterUserService) {}
+  constructor(private registerUserService: RegisterUserService,
+              private loginService: LoginService,
+              private router: Router) {}
 
   ngOnInit() {
-    this.hasAdded = false;
-    this.hasError = false;
-    // Se inscreve para ouvir o evento componente filho
-    this.registerUserService.registerEmitted$.subscribe(
-      user => {
-        this.registerUserService.setImage(this.image);
-        this.register();
-      }
-    );
+    if (this.loginService.isLogged()) {
+      this.router.navigate(['/home']);
+    } else {
+      this.hasAdded = false;
+      this.hasError = false;
+      // Se inscreve para ouvir o evento componente filho
+      this.registerUserService.registerEmitted$.subscribe(
+        user => {
+          this.registerUserService.setImage(this.image);
+          this.register();
+        }
+      );
+    }
   }
 
   register() {
     $('#myModal').modal('show');
-    console.log(this.registerUserService.getUser());
     this.registerUserService.addUser().subscribe((response: PostResponse) => {
-      if (response.success === true) {
-        $('#myModal').modal('hide');
+      if (response.success) {
         this.hasAdded = true;
         this.hasError = false;
+
+        console.log(response.details);
+        this.registerUserService.user.id = Number(response.details);
+        this.userRegistred = this.registerUserService.getUser();
+        console.log(this.userRegistred);
       } else {
         this.hasError = true;
       }
+      $('#myModal').modal('hide');
     });
   }
 
@@ -60,5 +76,10 @@ export class RegisterUserComponent implements OnInit {
     } else {
       this.image = undefined;
     }
+  }
+
+  login() {
+    this.loginService.signIn(this.userRegistred);
+    this.router.navigate(['/home']);
   }
 }

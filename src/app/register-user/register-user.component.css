@@ -2,12 +2,6 @@ button{
     margin-top: 20px;
 }
 
-.page-box{
-    background-color: white;
-    padding: 2px 30px 20px 30px;
-    margin-bottom: 10px
-}
-
 .form-area{
     padding: 1px 20px
 }
@@ -40,4 +34,13 @@ button{
 
 div .modal{
     margin-top: 10%;
+}
+
+.logo-img img{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    max-width:350px;
+    max-height:70px;
+    width: auto;
+    height: auto;
 }

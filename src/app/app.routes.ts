@@ -16,6 +16,7 @@ import { FirstPageComponent } from './first-page/first-page.component';
 
 export const ROUTES: Routes = [
     {path: '', component: HomeComponent},
+    {path: 'home', component: HomeComponent},
     {path: 'login', component: LoginComponent},
     {path: 'registerUser', component: RegisterUserComponent,
         children: [

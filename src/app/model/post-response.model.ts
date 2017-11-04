@@ -1,5 +1,5 @@
 export class PostResponse {
     success: boolean;
-    details: string;
+    details: any;
     insertId: string;
 }
