@@ -94,7 +94,7 @@
   <div class="col-md-10">
     <div class="col-md-4">
       <!-- Inicio do card -->
-      <div class="w3-card-2" style="margin-bottom:5%;">
+      <div *ngFor="let pet of pets" class="w3-card-2" style="margin-bottom:5%;">
         <header class="w3-container w3-white">
           <div class="col-md-12" style="margin-top:15px;">
             <img class="img-responsive center-block" src="http://portaldodog.com.br/cachorros/wp-content/uploads/2015/07/pastor-alemao-6-500x375.jpg"
@@ -105,32 +105,32 @@
         <div style="height:100px;" class="w3-container w3-white w3-margin-bottom">
           <div class="col-md-12 text-center">
             <p>
-              <u> <strong> Nome do pet </strong> </u>
+              <u> <strong>{{pet.name}}</strong> </u>
             </p>
           </div>
           <div class="row">
             <div class="col-md-12">
               <div class="col-md-6">
-                <p><strong>Idade:</strong>Adulto</p>
+                <p><strong>Idade:</strong>{{pet.age}}</p>
               </div>
               <div class="col-md-6">
-                <p><strong>Sexo: </strong>M</p>
+                <p><strong>Sexo:</strong>{{pet.sex}}</p>
               </div>
               <div class="col-md-6">
-                <p><strong>Pelo: </strong>Curto</p>
+                <p><strong>Pelo:</strong>{{pet.coat}}</p>
               </div>
               <div class="col-md-6">
-                <p><strong>Porte: </strong>Médio</p>
+                <p><strong>Porte:</strong>{{pet.size}}</p>
               </div>
             </div>
           </div>
         </div>
         <footer class="w3-container w3-white">
-          <button type="button" class="btn btn-default" style="float:right; margin-top:5%; margin-bottom:5%;" data-toggle="modal" data-target="#modalVisualizarPet"> Visualizar Pet <span class="glyphicon glyphicon-eye-open"></span> </button>
+          <button (click)="viewPet(pet)" type="button" class="btn btn-default" style="float:right; margin-top:5%; margin-bottom:5%;" data-toggle="modal" data-target="#modalVisualizarPet"> Visualizar Pet <span class="glyphicon glyphicon-eye-open"></span> </button>
         </footer>
       </div>
       <!-- Fim do card -->
     </div>
   </div>
-  <pet-pet-view></pet-pet-view>
+  <pet-pet-view [pet]="petView"></pet-pet-view>
 </div>

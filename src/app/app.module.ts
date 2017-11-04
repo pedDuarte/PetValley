@@ -22,6 +22,7 @@ import { ListPetComponent } from './list-pet/list-pet.component';
 import { PersonalAddressComponent } from './register-user/personal-address/personal-address.component';
 import { PersonalLoginComponent } from './register-user/personal-login/personal-login.component';
 
+import { PetServices } from './services/petServices.service';
 import { RegisterPetService } from './services/registerPet.service';
 import { UserService } from './services/user.service';
 import { RegisterUserService } from './register-user/register-user.service';
@@ -30,6 +31,7 @@ import { EditSupplyComponent } from './edit-supply/edit-supply.component';
 import { PetViewComponent } from './pet-view/pet-view.component';
 import { ListEditPetComponent } from './list-edit-pet/list-edit-pet.component';
 import { EditPetComponent } from './edit-pet/edit-pet.component';
+import { FirstPageComponent } from './first-page/first-page.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,8 @@ import { EditPetComponent } from './edit-pet/edit-pet.component';
     EditSupplyComponent,
     PetViewComponent,
     ListEditPetComponent,
-    EditPetComponent
+    EditPetComponent,
+    FirstPageComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,7 @@ import { EditPetComponent } from './edit-pet/edit-pet.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [UserService, RegisterUserService, LoginService, RegisterPetService],
+  providers: [UserService, RegisterUserService, LoginService, RegisterPetService, PetServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
