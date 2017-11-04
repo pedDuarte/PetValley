@@ -1,8 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { NgModel } from '@angular/forms';
+import { Router } from '@angular/router';
+import {Location} from '@angular/common';
+
 import { RegisterPetService } from './../services/registerPet.service';
-//import { Vaccines } from './../model/vaccines.model';
+import { LoginService } from './../services/login.service';
+import { NgModel } from '@angular/forms';
 
 
 @Component({
@@ -13,24 +16,33 @@ import { RegisterPetService } from './../services/registerPet.service';
 export class RegisterPetComponent implements OnInit {
 
   private petForm: FormGroup;
-  //private vaccinesForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private registerPetService: RegisterPetService) { }
+  constructor(private formBuilder: FormBuilder,
+              private registerPetService: RegisterPetService,
+              private loginService: LoginService,
+              private router: Router,
+              private location: Location) { }
 
   ngOnInit() {
-    this.petForm = this.formBuilder.group({
-      size: this.formBuilder.control('',[Validators.required]),
-      coat: this.formBuilder.control('',[Validators.required]),
-      age: this.formBuilder.control('',[Validators.required]),
-      name: this.formBuilder.control('',[Validators.required]),
-      species: this.formBuilder.control('',[Validators.required]),
-      sex: this.formBuilder.control('',[Validators.required])
-    })
+    if (!this.loginService.isLogged()) {
+      this.router.navigate(['/login']);
+    } else {
+      this.petForm = this.formBuilder.group({
+        size: this.formBuilder.control('', [Validators.required]),
+        coat: this.formBuilder.control('', [Validators.required]),
+        age: this.formBuilder.control('', [Validators.required]),
+        name: this.formBuilder.control('', [Validators.required]),
+        species: this.formBuilder.control('', [Validators.required]),
+        sex: this.formBuilder.control('', [Validators.required])
+      });
+    }
   }
-  
-  onRegister() {
 
+  onRegister() {
     this.registerPetService.addPet(this.petForm.value).subscribe();
   }
 
+  back() {
+    this.location.back();
+  }
 }
