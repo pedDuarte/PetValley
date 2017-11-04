@@ -30,6 +30,7 @@ import { EditSupplyComponent } from './edit-supply/edit-supply.component';
 import { PetViewComponent } from './pet-view/pet-view.component';
 import { ListEditPetComponent } from './list-edit-pet/list-edit-pet.component';
 import { EditPetComponent } from './edit-pet/edit-pet.component';
+import { FirstPageComponent } from './first-page/first-page.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { EditPetComponent } from './edit-pet/edit-pet.component';
     EditSupplyComponent,
     PetViewComponent,
     ListEditPetComponent,
-    EditPetComponent
+    EditPetComponent,
+    FirstPageComponent
   ],
   imports: [
     BrowserModule,
