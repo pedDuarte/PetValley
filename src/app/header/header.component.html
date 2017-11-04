@@ -15,8 +15,14 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li routerLinkActive="active" class="page-scroll">
-                        <a [routerLink]="['/registerSupply']">Cadastro de Suprimentos</a>
-                    </li>                    
+                        <a [routerLink]="['/listUser']">Usuarios</a>
+                    </li>
+                    <li routerLinkActive="active" class="page-scroll">
+                        <a [routerLink]="['/listPet']">Pet</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a (click)="signOut()" [routerLink]="['/login']">{{loginService.getUserLogged().name}}: Sign-out <i class="fa fa-times" aria-hidden="true"></i></a>
+                    </li>               
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

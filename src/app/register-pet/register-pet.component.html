@@ -159,7 +159,7 @@
         <button type="button" class="btn btn-default" [disabled]="petForm.invalid" (click)="onRegister()" >Cadastrar <span class="glyphicon glyphicon-floppy-disk"></span></button>
       </div>
       <div class="col-md-4 text-center">
-        <button type="button" class="btn btn-default">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
+        <button (click)="back()" type="button" class="btn btn-default">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
       </div>
     </div>
   </div>
