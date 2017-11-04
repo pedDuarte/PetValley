@@ -25,10 +25,6 @@ export class ListPetComponent implements OnInit {
       size: this.formBuilder.control('',[Validators.required]),
       coat: this.formBuilder.control('',[Validators.required]),
       age: this.formBuilder.control('',[Validators.required]),
-      neutered: this.formBuilder.control('',[Validators.required]),
-      vermifuges: this.formBuilder.control('',[Validators.required]),
-      name: this.formBuilder.control('',[Validators.required]),
-      description: this.formBuilder.control('',[Validators.required]),
       species: this.formBuilder.control('',[Validators.required]),
       sex: this.formBuilder.control('',[Validators.required])
     })
@@ -39,9 +35,18 @@ export class ListPetComponent implements OnInit {
       
   }
 
-  filtrosPet()
+  limparFiltros()
   {
-    console.log(this.filtroPetForm)
+    this.filtroPetForm.value.size = "";
+    this.filtroPetForm.value.coat = "";
+    this.filtroPetForm.value.age = "";
+    this.filtroPetForm.value.species = "";
+    this.filtroPetForm.value.sex = "";
+
+    $('input[type=radio]').prop('checked', function () {
+      return this.getAttribute('checked') == 'checked';
+    });
+  
   }  
   viewPet(pet:Pet){
     this.petView = pet;
