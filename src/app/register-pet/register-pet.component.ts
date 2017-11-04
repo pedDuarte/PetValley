@@ -35,5 +35,4 @@ export class RegisterPetComponent implements OnInit {
     this.registerPetService.addPet(this.petForm.value).subscribe();
   }
 
-
 }

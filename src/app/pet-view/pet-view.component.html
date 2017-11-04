@@ -7,7 +7,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         <div class=" text-center">
-          <h3>Nome do Pet</h3>
+          <h3>{{pet.name}}</h3>
         </div>
       </div>
       <div class="modal-body">
@@ -15,12 +15,7 @@
           <div class="row">
             <div class="col-md-4">
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-                essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-                Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
-                of Lorem Ipsum.
+                {{pet.description}}
               </p>
             </div>
             <div class="col-md-8">
@@ -47,20 +42,20 @@
               <div class="row" style="margin-top:15px;">
                 <div class="col-md-12">
                   <div class="col-md-4">
-                    <p><strong>Idade:</strong>Adulto</p>
+                    <p><strong>Idade:</strong>{{pet.age}}</p>
                   </div>
                   <div class="col-md-4">
-                    <p><strong>Sexo: </strong>M</p>
+                    <p><strong>Sexo: </strong>{{pet.sex}}</p>
                   </div>
                   <div class="col-md-4">
-                    <p><strong>Pelo: </strong>Curto</p>
+                    <p><strong>Pelo: </strong>{{pet.coat}}</p>
                   </div>
                   <div class="col-md-4">
-                    <p><strong>Porte: </strong>Médio</p>
+                    <p><strong>Porte: </strong>{{pet.size}}</p>
                   </div>
-                  <div class="col-md-4">
+                  <!-- <div class="col-md-4">
                     <p><strong>Vacinado: </strong>Sim</p>
-                  </div>
+                  </div> -->
                   <div class="col-md-4">
                     <p><strong>Castrado: </strong>Sim</p>
                   </div>
