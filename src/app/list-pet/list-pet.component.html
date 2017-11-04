@@ -13,15 +13,15 @@
       </header>
       <hr>
       <div class="w3-container w3-white w3-margin-bottom" style="height:100px;">
-        <form action="" role="form">
+        <form [formGroup]="filtroPetForm" action="" role="form">
           <div class="col-md-12 especial-radio">
             <div class="form-group">
               <label class="col-md-12">Especie</label>
               <div class="col-md-12">
-                <label class="radio-inline"><input type="radio" name="optA">Cachorro</label>
+                <label class="radio-inline"><input formControlName="species" type="radio" name="species" value="Cachorro">Cachorro</label>
               </div>
               <div class="col-md-12">
-                <label class="radio-inline"><input type="radio" name="optA">Gato</label>
+                <label class="radio-inline"><input formControlName="species" type="radio" name="species" value="Gato">Gato</label>
               </div>
             </div>
           </div>
@@ -29,10 +29,10 @@
             <div class="form-group">
               <label class="col-md-12">Sexo</label>
               <div class="col-md-12">
-                <label class="radio-inline"><input type="radio" name="optSex">Macho</label>
+                <label class="radio-inline"><input formControlName="sex" type="radio" name="sex" value="Macho">Macho</label>
               </div>
               <div class="col-md-12">
-                <label class="radio-inline"><input type="radio" name="optSex">Femea</label>
+                <label class="radio-inline"><input formControlName="sex" type="radio" name="sex" value="Femea">Femea</label>
               </div>
             </div>
           </div>
@@ -40,13 +40,13 @@
             <div class="form-group">
               <label class="col-md-12">Idade</label>
               <div class="col-md-12">
-                <label class="radio-inline"><input type="radio" name="optID">Filhote</label>
+                <label class="radio-inline"><input formControlName="age" type="radio" name="age" value="Filhote">Filhote</label>
               </div>
               <div class="col-md-12">
-                <label class="radio-inline"><input type="radio" name="optID">Adulto</label>
+                <label class="radio-inline"><input formControlName="age" type="radio" name="age" value="Adulto">Adulto</label>
               </div>
               <div class="col-md-12">
-                <label class="radio-inline"><input type="radio" name="optID">Idoso</label>
+                <label class="radio-inline"><input formControlName="age" type="radio" name="age" value="Idoso">Idoso</label>
               </div>
             </div>
           </div>
@@ -54,13 +54,13 @@
             <div class="form-group">
               <label class="col-md-12">Porte</label>
               <div class="col-md-12">
-                <label class="radio-inline"><input type="radio" name="optPOR">Pequeno</label>
+                <label class="radio-inline"><input formControlName="size" type="radio" name="size" value="Pequeno">Pequeno</label>
               </div>
               <div class="col-md-12">
-                <label class="radio-inline"><input type="radio" name="optPOR">Médio</label>
+                <label class="radio-inline"><input formControlName="size" type="radio" name="size" value="Médio">Médio</label>
               </div>
               <div class="col-md-12">
-                <label class="radio-inline"><input type="radio" name="optPOR">Grande</label>
+                <label class="radio-inline"><input formControlName="size" type="radio" name="size" value="Grande">Grande</label>
               </div>
             </div>
           </div>
@@ -68,33 +68,33 @@
             <div class="form-group">
               <label class="col-md-12">Pelo</label>
               <div class="col-md-12">
-                <label class="radio-inline"><input type="radio" name="optPE">Curto</label>
+                <label class="radio-inline"><input formControlName="coat" type="radio" name="coat" value="Curto">Curto</label>
               </div>
               <div class="col-md-12">
-                <label class="radio-inline"><input type="radio" name="optPE">Médio</label>
+                <label class="radio-inline"><input formControlName="coat" type="radio" name="coat" value="Médio">Médio</label>
               </div>
               <div class="col-md-12">
-                <label class="radio-inline"><input type="radio" name="optPE">Longo</label>
+                <label class="radio-inline"><input formControlName="coat" type="radio" name="coat" value="Longo">Longo</label>
               </div>
             </div>
           </div>
         </form>
       </div>
       <footer class="w3-container w3-white">
-        <div class="col-md-12">
-          <p class="text-center"><button type="button" class="btn btn-default" style="margin-top:5%; margin-bottom:5%;"> Aplicar <span class="glyphicon glyphicon-ok"></span></button></p>
+        <!-- <div class="col-md-12">
+          <p class="text-center"><button type="button" class="btn btn-default" style="margin-top:5%; margin-bottom:5%;" (click)="filtrosPet()"> Aplicar <span class="glyphicon glyphicon-ok"></span></button></p>
         </div>
         <div class="col-md-12">
           <p class="text-center"><button type="button" class="btn btn-default" style="margin-top:5%; margin-bottom:5%;"> Limpar <span class="glyphicon glyphicon-remove"></span></button></p>
-        </div>
+        </div> -->
       </footer>
     </div>
     <!-- Fim do card de filtro -->
   </div>
   <div class="col-md-10">
-    <div class="col-md-4">
+    <div *ngFor="let pet of (pets | filtraPetsSex: this.filtroPetForm)" class="col-md-4">
       <!-- Inicio do card -->
-      <div *ngFor="let pet of pets" class="w3-card-2" style="margin-bottom:5%;">
+      <div class="w3-card-2" style="margin-bottom:5%;">
         <header class="w3-container w3-white">
           <div class="col-md-12" style="margin-top:15px;">
             <img class="img-responsive center-block" src="http://portaldodog.com.br/cachorros/wp-content/uploads/2015/07/pastor-alemao-6-500x375.jpg"
@@ -131,6 +131,6 @@
       </div>
       <!-- Fim do card -->
     </div>
+    <pet-pet-view [pet]="petView"></pet-pet-view>
   </div>
-  <pet-pet-view [pet]="petView"></pet-pet-view>
 </div>

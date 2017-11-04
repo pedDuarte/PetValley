@@ -32,6 +32,8 @@ import { PetViewComponent } from './pet-view/pet-view.component';
 import { ListEditPetComponent } from './list-edit-pet/list-edit-pet.component';
 import { EditPetComponent } from './edit-pet/edit-pet.component';
 import { FirstPageComponent } from './first-page/first-page.component';
+import { FiltraPetsPipe } from './customPipes.pipe';
+
 
 @NgModule({
   declarations: [
@@ -54,7 +56,8 @@ import { FirstPageComponent } from './first-page/first-page.component';
     PetViewComponent,
     ListEditPetComponent,
     EditPetComponent,
-    FirstPageComponent
+    FirstPageComponent,
+    FiltraPetsPipe
   ],
   imports: [
     BrowserModule,

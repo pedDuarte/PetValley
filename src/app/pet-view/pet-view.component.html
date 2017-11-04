@@ -1,7 +1,7 @@
 <!-- Inicio Modal Visualizar Pet -->
 <div class="modal fade" id="modalVisualizarPet" role="dialog" aria-hidden="ture">
   <div class="modal-dialog modal-lg">
-    <div class="modal-content">
+    <div *ngIf="pet != undefined;" class="modal-content">
       <div class="modal-header">
         <button class="close" data-dismiss="modal">
             <span aria-hidden="true">&times;</span>
