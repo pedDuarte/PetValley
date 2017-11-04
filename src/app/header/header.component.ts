@@ -1,3 +1,4 @@
+import { User } from './../model/user.model';
 import { LoginService } from './../services/login.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  isDev = false;
+
   constructor(private loginService: LoginService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+      if (this.isDev) {
+        const user: User = new User();
+        user.id = 99999;
+        user.name = 'DEV';
+        this.loginService.signIn(user);
+      }
+   }
 
   signOut() {
     this.loginService.signOut();
