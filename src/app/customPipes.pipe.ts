@@ -1,8 +1,9 @@
+import { User } from './model/user.model';
 import { Pipe, PipeTransform } from '@angular/core';
 import { Pet } from './model/pet.model';
 
 
-@Pipe({name: 'filtraPetsSex',
+@Pipe({name: 'filtraPets',
         pure: false
 })
 export class FiltraPetsPipe implements PipeTransform {
@@ -31,3 +32,13 @@ export class FiltraPetsPipe implements PipeTransform {
 
   }
 }
+
+@Pipe({name: 'filtraUsuarios',
+pure: false
+})
+export class FiltraUsuarios implements PipeTransform {
+  
+    transform(allPets: User[], nomeUsuario:any): any {
+        
+    }
+  }

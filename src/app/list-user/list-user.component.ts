@@ -1,3 +1,4 @@
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -15,9 +16,12 @@ export class ListUserComponent implements OnInit {
 
   users: User[];
 
+  filtroUsuarioForm: FormGroup;
+
   constructor(private userService: UserService,
               private loginService: LoginService,
-              private router: Router) { }
+              private router: Router,
+              private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     if (!this.loginService.isLogged()) {
@@ -25,9 +29,13 @@ export class ListUserComponent implements OnInit {
     } else {
       this.userService.users().subscribe(users => {
         this.users = users;
-        console.log(users);
+      });
+
+      this.filtroUsuarioForm = this.formBuilder.group({
+        nomeUsuario: this.formBuilder.control('', [Validators.required]),
       });
     }
+
   }
 
 }

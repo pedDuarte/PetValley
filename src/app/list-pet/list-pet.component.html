@@ -93,7 +93,7 @@
     <!-- Fim do card de filtro -->
   </div>
   <div class="col-md-10">
-    <div *ngFor="let pet of (pets | filtraPetsSex: this.filtroPetForm)" class="col-md-4">
+    <div *ngFor="let pet of (pets | filtraPets: this.filtroPetForm)" class="col-md-4">
       <!-- Inicio do card -->
       <div class="w3-card-2" style="margin-bottom:5%;">
         <header class="w3-container w3-white">
