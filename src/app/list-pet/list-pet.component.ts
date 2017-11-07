@@ -35,7 +35,6 @@ export class ListPetComponent implements OnInit {
         species: this.formBuilder.control('', [Validators.required]),
         sex: this.formBuilder.control('', [Validators.required])
       });
-
       this.petServices.pets().subscribe(pets => {
         this.pets = pets;
       });

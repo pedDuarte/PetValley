@@ -43,9 +43,12 @@ export class RegisterPetComponent implements OnInit {
 
   onRegister() {
     this.registerPetService.addPet(this.petForm.value).subscribe();
+    this.petForm.reset();
+    
   }
 
   back() {
     this.location.back();
   }
+
 }
