@@ -33,6 +33,7 @@ import { ListEditPetComponent } from './list-edit-pet/list-edit-pet.component';
 import { EditPetComponent } from './edit-pet/edit-pet.component';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { FiltraPetsPipe } from './customPipes.pipe';
+import { FiltraUsuariosPipe } from './customPipes.pipe';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { FiltraPetsPipe } from './customPipes.pipe';
     ListEditPetComponent,
     EditPetComponent,
     FirstPageComponent,
-    FiltraPetsPipe
+    FiltraPetsPipe,
+    FiltraUsuariosPipe
   ],
   imports: [
     BrowserModule,

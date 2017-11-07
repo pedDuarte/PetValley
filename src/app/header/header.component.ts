@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  isDev = false;
+  isDev = true;
 
   constructor(private loginService: LoginService) { }
 

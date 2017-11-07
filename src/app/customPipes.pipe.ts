@@ -36,9 +36,15 @@ export class FiltraPetsPipe implements PipeTransform {
 @Pipe({name: 'filtraUsuarios',
 pure: false
 })
-export class FiltraUsuarios implements PipeTransform {
+export class FiltraUsuariosPipe implements PipeTransform {
   
-    transform(allPets: User[], nomeUsuario:any): any {
+    transform(allPets: User[], filtraUsuarios:any): any {
+      if(allPets == undefined || allPets.length == 0 || filtraUsuarios.value.nomeUsuario == undefined){
+        return allPets;
+      }
+      debugger;
+      let filter = filtraUsuarios.value.nomeUsuario.toLocaleLowerCase();
+      return allPets.filter(p => p.name.toLocaleLowerCase().indexOf(filter) != -1);
         
     }
   }
