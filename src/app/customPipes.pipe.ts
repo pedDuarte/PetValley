@@ -42,7 +42,6 @@ export class FiltraUsuariosPipe implements PipeTransform {
       if(allPets == undefined || allPets.length == 0 || filtraUsuarios.value.nomeUsuario == undefined){
         return allPets;
       }
-      debugger;
       let filter = filtraUsuarios.value.nomeUsuario.toLocaleLowerCase();
       return allPets.filter(p => p.name.toLocaleLowerCase().indexOf(filter) != -1);
         
