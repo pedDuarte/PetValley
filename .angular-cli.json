@@ -12,12 +12,12 @@
         "favicon.ico",
         {
           "glob": "index.js",
-          "input": "./",
+          "input": "./server/",
           "output": "./"
         },
         {
           "glob": "package.json",
-          "input": "./",
+          "input": "./server/",
           "output": "./"
         }
       ],
