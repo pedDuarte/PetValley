@@ -17,6 +17,7 @@ import { NgModel } from '@angular/forms';
 export class RegisterPetComponent implements OnInit {
 
   private petForm: FormGroup;
+  private abrirModal: boolean;
 
   constructor(private formBuilder: FormBuilder,
               private registerPetService: RegisterPetService,
@@ -46,10 +47,8 @@ export class RegisterPetComponent implements OnInit {
     this.registerPetService.addPet(this.petForm.value).subscribe((response: PostResponse)=>{
       if(response.success)
       {
-        debugger;
         this.petForm.reset();
-        let modalAlerta:any = <any>document.getElementById("modalAlerta");
-        modalAlerta.showModal();
+        $('#modalAlerta').modal('show');
       }
     });
   }

@@ -156,7 +156,7 @@
   <div class="row">
     <div class="col-md-offset-6">
       <div class="col-md-4 text-center">
-        <button type="button" class="btn btn-default" [disabled]="petForm.invalid" (click)="onRegister()" >Cadastrar <span class="glyphicon glyphicon-floppy-disk"></span></button>
+        <button type="button" class="btn btn-default" [disabled]="petForm.invalid" (click)="onRegister()">Cadastrar <span class="glyphicon glyphicon-floppy-disk"></span></button>
       </div>
       <div class="col-md-4 text-center">
         <button (click)="back()" type="button" class="btn btn-default">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
@@ -164,18 +164,20 @@
     </div>
   </div>
   <!-- Inicio Modal de Alerta -->
-<div class="modal fade" id="modalAlerta" role="dialog" aria-hidden="ture">
-  <div class="modal-dialog modal-lg">
-    <div *ngIf="COLOCAR UMA VALIDAÇÃO; then " class="modal-content">
+<div class="modal fade" id="modalAlerta" role="dialog" aria-hidden="ture" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
       <div class="modal-header">
-        <button class="close" data-dismiss="modal">
+        <button class="close" data-dismiss="modal" [routerLink]="['/listPet']">
             <span aria-hidden="true">&times;</span>
         </button>
+        <h4>Alerta</h4>
       </div>
       <div class="modal-body">
+        <p class="text-center">Animal registrado com sucesso!</p>
       </div>
       <div class="modal-footer">
-      <p class="text-center"> <button type="button" class="btn btn-default" data-dismiss="modal">Adotar <span class="glyphicon glyphicon-heart"></span> </button> </p>
+      <p class="text-center"> <button type="button" class="btn btn-default" data-dismiss="modal" [routerLink]="['/listPet']">OK <span class="glyphicon glyphicon-ok"></span> </button> </p>
       </div>
     </div>
   </div>
