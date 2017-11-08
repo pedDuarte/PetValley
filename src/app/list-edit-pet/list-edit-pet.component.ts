@@ -1,4 +1,9 @@
+import { Pet } from './../model/pet.model';
+import { PostResponse } from './../model/post-response.model';
+import { PetServices } from './../services/petServices.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from './../services/login.service';
 
 @Component({
   selector: 'pet-list-edit-pet',
@@ -7,9 +12,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListEditPetComponent implements OnInit {
 
-  constructor() { }
+  private pets: Pet[];
+  private currentPet: Pet;
+
+  constructor(  private loginService: LoginService,
+                private router: Router,
+                private petServices: PetServices) {
+    
+   }
 
   ngOnInit() {
+    if (!this.loginService.isLogged()) {
+      this.router.navigate(['/login']);
+    }else {
+      this.petServices.pets().subscribe(pets => {this.pets = pets;});
+    }
   }
+
+  onDelete(pet) {
+    this.petServices.deletePet(pet).subscribe(response =>{
+      if(response.success)
+      {
+        $('#modalAlerta').modal('show');
+        this.petServices.pets().subscribe(pets => {this.pets = pets;});
+      }
+    });
+  }
+
+  sendPet(pet:Pet) {
+    this.currentPet = pet;
+  }
+  
 
 }
