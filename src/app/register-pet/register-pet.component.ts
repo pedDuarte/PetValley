@@ -1,3 +1,4 @@
+import { PostResponse } from './../model/post-response.model';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
@@ -42,9 +43,15 @@ export class RegisterPetComponent implements OnInit {
   }
 
   onRegister() {
-    this.registerPetService.addPet(this.petForm.value).subscribe();
-    this.petForm.reset();
-    
+    this.registerPetService.addPet(this.petForm.value).subscribe((response: PostResponse)=>{
+      if(response.success)
+      {
+        debugger;
+        this.petForm.reset();
+        let modalAlerta:any = <any>document.getElementById("modalAlerta");
+        modalAlerta.showModal();
+      }
+    });
   }
 
   back() {

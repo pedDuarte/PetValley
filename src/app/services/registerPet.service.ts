@@ -13,8 +13,8 @@ export class RegisterPetService{
     constructor(private http: HttpClient) {
     }
 
-addPet(pet:Pet):Observable<Pet>{
-    return this.http.post<Pet>(`${SERVER}/animal`, pet);
+addPet(pet:Pet):Observable<PostResponse>{
+    return this.http.post<PostResponse>(`${SERVER}/animal`, pet);
 }
 
 }
