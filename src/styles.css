@@ -11,6 +11,7 @@ body{
     background-color: white;
     padding: 2px 30px 20px 30px;
     margin-bottom: 30px;
+    width: auto;
 }
 
 .especial-button{
