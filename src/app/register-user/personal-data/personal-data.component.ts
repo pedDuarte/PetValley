@@ -14,7 +14,7 @@ export class PersonalDataComponent implements OnInit {
 
   @Input() user: User;
 
-  private personalDataForm: FormGroup;
+  personalDataForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
     private registerUserService: RegisterUserService,

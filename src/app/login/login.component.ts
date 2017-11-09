@@ -13,9 +13,9 @@ import { LoginService } from './../services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  private user: User = new User();
-  private loginForm: FormGroup;
-  private error = undefined;
+  user: User = new User();
+  loginForm: FormGroup;
+  error = undefined;
 
   constructor(private formBuilder: FormBuilder,
               private userService: UserService,
