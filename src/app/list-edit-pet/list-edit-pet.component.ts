@@ -5,6 +5,9 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { LoginService } from "./../services/login.service";
 
+declare var jquery: any;
+declare var $: any;
+
 @Component({
   selector: "pet-list-edit-pet",
   templateUrl: "./list-edit-pet.component.html",
