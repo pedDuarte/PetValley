@@ -16,8 +16,8 @@ import { NgModel } from '@angular/forms';
 })
 export class RegisterPetComponent implements OnInit {
 
-  private petForm: FormGroup;
-  private abrirModal: boolean;
+  petForm: FormGroup;
+  abrirModal: boolean;
 
   constructor(private formBuilder: FormBuilder,
               private registerPetService: RegisterPetService,

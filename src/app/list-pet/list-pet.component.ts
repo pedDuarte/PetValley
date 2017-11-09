@@ -13,11 +13,11 @@ import { Pet } from './../model/pet.model';
 })
 export class ListPetComponent implements OnInit {
 
-  private pets: Pet[];
+  pets: Pet[];
 
-  private petView: Pet;
+  petView: Pet;
 
-  private filtroPetForm: FormGroup;
+  filtroPetForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
               private petServices: PetServices,
