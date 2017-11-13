@@ -1,1 +1,1 @@
-export const SERVER: String = 'http://localhost:3000';
+export const SERVER: String = 'http://petvalley-psi-com-br.umbler.net';
