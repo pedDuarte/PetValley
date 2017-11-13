@@ -2,8 +2,8 @@
   <div class="row" style="margin-top:2%">
     <div class="col-md-8">
         <h3 class="text-left">Pesquisa de Usuários</h3>
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Pesquisar" id="pequisar">
+      <div class="input-group" [formGroup]="filtroUsuarioForm">
+        <input type="text" formControlName="nomeUsuario" name="nomeUsuario" class="form-control" placeholder="Pesquisar" id="pequisar">
         <span class="input-group-btn">
           <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
         </span>
@@ -13,7 +13,7 @@
   <hr>
   <div class="row">
     <div class="col-md-12">
-      <div class="col-md-4" *ngFor="let user of users" >
+      <div class="col-md-4" *ngFor="let user of (users | filtraUsuarios: this.filtroUsuarioForm)" >
         <!-- Inicio do card -->
         <div class="w3-card-2" style="margin-bottom:5%;">
           <br>

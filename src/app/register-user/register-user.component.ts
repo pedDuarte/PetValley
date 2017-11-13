@@ -1,49 +1,51 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { NgModel } from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { NgModel } from "@angular/forms";
 
-import 'rxjs/add/operator/map';
+import "rxjs/add/operator/map";
 
-import { LoginService } from './../services/login.service';
-import { RegisterUserService } from './register-user.service';
+import { LoginService } from "./../services/login.service";
+import { RegisterUserService } from "./register-user.service";
 
-import { PostResponse } from './../model/post-response.model';
-import {User} from '../model/user.model';
+import { PostResponse } from "./../model/post-response.model";
+import { User } from "../model/user.model";
+
+declare var jquery: any;
+declare var $: any;
 
 @Component({
-  selector: 'pet-register-user',
-  templateUrl: './register-user.component.html',
-  styleUrls: ['./register-user.component.css']
+  selector: "pet-register-user",
+  templateUrl: "./register-user.component.html",
+  styleUrls: ["./register-user.component.css"]
 })
 export class RegisterUserComponent implements OnInit {
-
   userRegistred: User;
   image: any;
   hasAdded: boolean;
   hasError: boolean;
 
-  constructor(private registerUserService: RegisterUserService,
-              private loginService: LoginService,
-              private router: Router) {}
+  constructor(
+    private registerUserService: RegisterUserService,
+    private loginService: LoginService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     if (this.loginService.isLogged()) {
-      this.router.navigate(['/home']);
+      this.router.navigate(["/home"]);
     } else {
       this.hasAdded = false;
       this.hasError = false;
       // Se inscreve para ouvir o evento componente filho
-      this.registerUserService.registerEmitted$.subscribe(
-        user => {
-          this.registerUserService.setImage(this.image);
-          this.register();
-        }
-      );
+      this.registerUserService.registerEmitted$.subscribe(user => {
+        this.registerUserService.setImage(this.image);
+        this.register();
+      });
     }
   }
 
   register() {
-    $('#myModal').modal('show');
+    $("#myModal").modal("show");
     this.registerUserService.addUser().subscribe((response: PostResponse) => {
       if (response.success) {
         this.hasAdded = true;
@@ -56,7 +58,7 @@ export class RegisterUserComponent implements OnInit {
       } else {
         this.hasError = true;
       }
-      $('#myModal').modal('hide');
+      $("#myModal").modal("hide");
     });
   }
 
@@ -69,7 +71,7 @@ export class RegisterUserComponent implements OnInit {
     if (file !== undefined) {
       const myReader: FileReader = new FileReader();
 
-      myReader.onloadend = (e) => {
+      myReader.onloadend = e => {
         this.image = myReader.result;
       };
       myReader.readAsDataURL(file);
@@ -80,6 +82,6 @@ export class RegisterUserComponent implements OnInit {
 
   login() {
     this.loginService.signIn(this.userRegistred);
-    this.router.navigate(['/home']);
+    this.router.navigate(["/home"]);
   }
 }

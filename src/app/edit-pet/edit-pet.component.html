@@ -10,7 +10,7 @@
           <div class="page-header">
             <h4>Dados do Pet</h4>
           </div>
-          <form>
+          <form [formGroup]="petEditForm">
             <div class="col-md-4">
               <div class="row">
                 <div class="text-center col-md-12">
@@ -21,22 +21,22 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8" *ngIf="this.pet != undefined; then loadPet()">
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
                     <label for="nome">Nome</label>
-                    <input type="text" class="form-control" id="nome" placeholder="Nome">
+                    <input type="text" class="form-control" formControlName="name" id="name" placeholder="Nome">
                   </div>
                 </div>
                 <div class="col-md-6 especial-radio">
                   <div class="form-group">
                     <label class="col-md-6">Especie: </label>
                     <div class="col-md-6">
-                      <label class="radio-inline"><input type="radio" name="optES">Cachorro</label>
+                      <label class="radio-inline"><input formControlName="species" type="radio" name="species" value="Cachorro">Cachorro</label>
                     </div>
                     <div class="col-md-6">
-                      <label class="radio-inline"><input type="radio" name="optES">Gato</label>
+                      <label class="radio-inline"><input formControlName="species" type="radio" name="species" value="Gato">Gato</label>
                     </div>
                   </div>
                 </div>
@@ -44,10 +44,10 @@
                   <div class="form-group">
                     <label class="col-md-6">Sexo: </label>
                     <div class="col-md-6">
-                      <label class="radio-inline"><input type="radio" name="optSex">Macho</label>
+                      <label class="radio-inline"><input formControlName="sex" type="radio" name="sex" value="Macho">Macho</label>
                     </div>
                     <div class="col-md-6">
-                      <label class="radio-inline"><input type="radio" name="optSex">Femea</label>
+                      <label class="radio-inline"><input formControlName="sex" type="radio" name="sex" value="Femea">Femea</label>
                     </div>
                   </div>
                 </div>
@@ -55,10 +55,10 @@
                   <div class="form-group">
                     <label class="col-md-6">Vermif.: </label>
                     <div class="col-md-6">
-                      <label class="radio-inline"><input type="radio" name="optPE">Sim</label>
+                      <label class="radio-inline"><input formControlName="vermifuges" type="radio" name="vermifuges" value="Sim">Sim</label>
                     </div>
                     <div class="col-md-6">
-                      <label class="radio-inline"><input type="radio" name="optPE">Não</label>
+                      <label class="radio-inline"><input formControlName="vermifuges" type="radio" name="vermifuges" value="Não">Não</label>
                     </div>
                   </div>
                 </div>
@@ -66,10 +66,10 @@
                   <div class="form-group">
                     <label class="col-md-6">Castrado: </label>
                     <div class="col-md-6">
-                      <label class="radio-inline"><input type="radio" name="optCA">Sim</label>
+                      <label class="radio-inline"><input formControlName="neutered" type="radio" name="neutered" value="Sim">Sim</label>
                     </div>
                     <div class="col-md-6">
-                      <label class="radio-inline"><input type="radio" name="optCA">Não</label>
+                      <label class="radio-inline"><input formControlName="neutered" type="radio" name="neutered" value="Não">Não</label>
                     </div>
                   </div>
                 </div>
@@ -77,13 +77,13 @@
                   <div class="form-group">
                     <label class="col-md-6">Idade: </label>
                     <div class="col-md-6">
-                      <label class="radio-inline"><input type="radio" name="optID">Filhote</label>
+                      <label class="radio-inline"><input formControlName="age" type="radio" name="age" value="Filhote">Filhote</label>
                     </div>
                     <div class="col-md-6">
-                      <label class="radio-inline"><input type="radio" name="optID">Adulto</label>
+                      <label class="radio-inline"><input formControlName="age" type="radio" name="age" value="Adulto">Adulto</label>
                     </div>
                     <div class="col-md-offset-6 col-md-6">
-                      <label class="radio-inline"><input type="radio" name="optID">Idoso</label>
+                      <label class="radio-inline"><input formControlName="age" type="radio" name="age" value="Idoso">Idoso</label>
                     </div>
                   </div>
                 </div>
@@ -91,13 +91,13 @@
                   <div class="form-group">
                     <label class="col-md-6">Porte: </label>
                     <div class="col-md-6">
-                      <label class="radio-inline"><input type="radio" name="optPOR">Pequeno</label>
+                      <label class="radio-inline"><input formControlName="size" type="radio" name="size" value="Pequeno">Pequeno</label>
                     </div>
                     <div class="col-md-6">
-                      <label class="radio-inline"><input type="radio" name="optPOR">Médio</label>
+                      <label class="radio-inline"><input formControlName="size" type="radio" name="size" value="Médio">Médio</label>
                     </div>
                     <div class="col-md-offset-6 col-md-6">
-                      <label class="radio-inline"><input type="radio" name="optPOR">Grande</label>
+                      <label class="radio-inline"><input formControlName="size" type="radio" name="size" value="Grande">Grande</label>
                     </div>
                   </div>
                 </div>
@@ -105,27 +105,27 @@
                   <div class="form-group">
                     <label class="col-md-6">Pelo: </label>
                     <div class="col-md-6">
-                      <label class="radio-inline"><input type="radio" name="optPE">Curto</label>
+                      <label class="radio-inline"><input formControlName="coat" type="radio" name="coat" value="Curto">Curto</label>
                     </div>
                     <div class="col-md-6">
-                      <label class="radio-inline"><input type="radio" name="optPE">Médio</label>
+                      <label class="radio-inline"><input formControlName="coat" type="radio" name="coat" value="Médio">Médio</label>
                     </div>
                     <div class="col-md-offset-6 col-md-6">
-                      <label class="radio-inline"><input type="radio" name="optPE">Longo</label>
+                      <label class="radio-inline"><input formControlName="coat" type="radio" name="coat" value="Longo">Longo</label>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
                     <div class="col-md-12">
                       <label for="descricao">Descrição</label>
-                      <textarea class="form-control" style="margin-bottom: 5%" id="descricao" cols="25" rows="10"></textarea>
+                      <textarea class="form-control" formControlName="description" style="margin-bottom: 5%" id="descricao" cols="25" rows="10"></textarea>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                   <div class="form-group">
                     <label class="col-md-12">Vacinas:</label>
                     <div class="col-md-12 checkbox">
@@ -141,7 +141,7 @@
                       <label><input type="checkbox">Anti-rábica</label>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </form>

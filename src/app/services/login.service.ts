@@ -1,35 +1,37 @@
-import { SERVER } from './../app.api';
-import { Observable } from 'rxjs/Observable';
-import { User } from './../model/user.model';
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { SERVER } from "./../app.api";
+import { Observable } from "rxjs/Observable";
+import { User } from "./../model/user.model";
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+
 @Injectable()
 export class LoginService {
+  public userLogged: User;
 
-    public userLogged: User;
+  constructor(private http: HttpClient) {
+    this.userLogged = undefined;
+  }
 
-    constructor(private http: HttpClient) { this.userLogged = undefined; }
+  login(user: User): Observable<any> {
+    return this.http.post<any>(`${SERVER}/login`, user);
+  }
 
-    login(user: User): Observable<any> {
-        return this.http.post<any>(`${SERVER}/login`, user);
+  isLogged(): boolean {
+    if (this.userLogged === undefined) {
+      return false;
     }
+    return true;
+  }
 
-    isLogged(): boolean {
-        if (this.userLogged === undefined) {
-            return false;
-        }
-        return true;
-    }
+  getUserLogged() {
+    return this.userLogged;
+  }
 
-    getUserLogged() {
-        return this.userLogged;
-    }
+  signIn(user: User) {
+    this.userLogged = user;
+  }
 
-    signIn(user: User) {
-        this.userLogged = user;
-    }
-
-    signOut() {
-        this.userLogged = undefined;
-    }
+  signOut() {
+    this.userLogged = undefined;
+  }
 }
