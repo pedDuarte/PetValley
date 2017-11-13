@@ -13,9 +13,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class EditPetComponent implements OnInit {
   @Input()
 
-  private pet
+  public pet;
 
-  private petEditForm: FormGroup;
+  public petEditForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
               private petServices: PetServices,
