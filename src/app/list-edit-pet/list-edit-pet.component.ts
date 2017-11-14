@@ -26,7 +26,7 @@ export class ListEditPetComponent implements OnInit {
   ngOnInit() {
     if (!this.loginService.isLogged()) {
       this.router.navigate(["/login"]);
-    } else {      
+    } else { 
       this.petServices.pets().subscribe(pets => {
         this.pets = pets;
       });
