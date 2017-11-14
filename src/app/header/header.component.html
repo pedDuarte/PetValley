@@ -20,6 +20,9 @@
                     <li routerLinkActive="active" class="page-scroll">
                         <a [routerLink]="['/listPet']">Pet</a>
                     </li>
+                    <li routerLinkActive="active" class="page-scroll">
+                        <a [routerLink]="['/listEditPet']">Edit Pet</a>
+                    </li>
                     <li class="page-scroll">
                         <a (click)="signOut()" [routerLink]="['/login']">{{loginService.getUserLogged().name}}: Sign-out <i class="fa fa-times" aria-hidden="true"></i></a>
                     </li>               
