@@ -59,7 +59,7 @@ export class EditPetComponent implements OnInit {
   onUpdate(pet) {
     this.petServices.updatePet(pet).subscribe(response => {
       if (response.success) {
-        window.location.reload();
+        //window.location.reload();
       }
     });
   }
