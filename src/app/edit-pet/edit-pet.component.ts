@@ -27,6 +27,7 @@ export class EditPetComponent implements OnInit {
       this.router.navigate(['/login']);
     } else {
       this.petEditForm = this.formBuilder.group({
+        id_animal: this.formBuilder.control('', [Validators.required]),
         size: this.formBuilder.control('', [Validators.required]),
         coat: this.formBuilder.control('', [Validators.required]),
         age: this.formBuilder.control('', [Validators.required]),
@@ -40,17 +41,27 @@ export class EditPetComponent implements OnInit {
     }
   }
 
-  loadPet() {    
-  this.petEditForm.patchValue({
-    size: this.pet.size,
-    coat: this.pet.coat,
-    age:  this.pet.age,
-    neutered: this.pet.neutered,
-    vermifuges: this.pet.vermifuges,
-    name: this.pet.name,
-    description:  this.pet.description,
-    species: this.pet.species,
-    sex: this.pet.sex})
- }
+  loadPet() {
+    this.petEditForm.patchValue({
+      id_animal: this.pet.id_animal,
+      size: this.pet.size,
+      coat: this.pet.coat,
+      age:  this.pet.age,
+      neutered: this.pet.neutered,
+      vermifuges: this.pet.vermifuges,
+      name: this.pet.name,
+      description:  this.pet.description,
+      species: this.pet.species,
+      sex: this.pet.sex});      
+      this.pet = undefined;
+  }
+
+  onUpdate(pet) {
+    this.petServices.updatePet(pet).subscribe(response => {
+      if (response.success) {
+        //window.location.reload();
+      }
+    });
+  }
 
 }

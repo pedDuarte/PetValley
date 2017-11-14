@@ -20,5 +20,10 @@ export class PetServices {
     deletePet(pet:any):Observable<any>{
         let url = `${SERVER}/animal/`+pet.id_animal;
         return this.http.delete<any>(url);
-    }    
+    }
+    
+    updatePet(pet:any):Observable<any>{
+        let url = `${SERVER}/animal`;
+        return this.http.put<any>(url, pet);
+    }
 }
