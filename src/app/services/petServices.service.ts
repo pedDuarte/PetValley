@@ -13,8 +13,7 @@ import { Pet } from './../model/pet.model';
 export class PetServices {
     constructor(private http: HttpClient) {}
 
-    pets():Observable<Pet[]>{
-        debugger;
+    pets():Observable<Pet[]>{        
         return this.http.get<Pet[]>(`${SERVER}/animal`);
     }
 

@@ -40,8 +40,7 @@ export class EditPetComponent implements OnInit {
     }
   }
 
-  loadPet() {
-    debugger;
+  loadPet() {    
   this.petEditForm.patchValue({
     size: this.pet.size,
     coat: this.pet.coat,
