@@ -47,6 +47,7 @@ export class RegisterPetComponent implements OnInit {
   }
 
   onRegister() {
+    debugger;
     this.registerPetService
       .addPet(this.petForm.value)
       .subscribe((response: PostResponse) => {

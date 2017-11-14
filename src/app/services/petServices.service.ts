@@ -14,6 +14,7 @@ export class PetServices {
     constructor(private http: HttpClient) {}
 
     pets():Observable<Pet[]>{
+        debugger;
         return this.http.get<Pet[]>(`${SERVER}/animal`);
     }
 

@@ -41,6 +41,7 @@ export class EditPetComponent implements OnInit {
   }
 
   loadPet() {
+    debugger;
   this.petEditForm.patchValue({
     size: this.pet.size,
     coat: this.pet.coat,
