@@ -17,11 +17,11 @@ export class HeaderComponent implements OnInit {
       const user: User = new User();
       user.id = 99999;
       user.name = "DEV";
-      // this.loginService.signIn(user);
+      this.loginService.signIn(user);
     }
   }
 
   signOut() {
-    // this.loginService.signOut();
+    this.loginService.signOut();
   }
 }
