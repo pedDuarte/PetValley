@@ -47,12 +47,14 @@ export class RegisterPetComponent implements OnInit {
   }
 
   onRegister() {
+    $("#modalCarregamento").modal("show");
     this.registerPetService
       .addPet(this.petForm.value)
       .subscribe((response: PostResponse) => {
         if (response.success) {
-          this.petForm.reset();
+          $("#modalCarregamento").modal("hide");
           $("#modalAlerta").modal("show");
+          this.petForm.reset();
         }
       });
   }

@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Pet } from './../model/pet.model';
 import { Router } from '@angular/router';
 import { PetServices } from './../services/petServices.service';
@@ -20,7 +21,8 @@ export class EditPetComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private petServices: PetServices,
               private loginService: LoginService,
-              private router: Router) { }
+              private router: Router,
+              private location: Location) { }
 
   ngOnInit() {
     if (!this.loginService.isLogged()) {
@@ -59,7 +61,7 @@ export class EditPetComponent implements OnInit {
   onUpdate(pet) {
     this.petServices.updatePet(pet).subscribe(response => {
       if (response.success) {
-        //window.location.reload();
+        
       }
     });
   }

@@ -1,3 +1,4 @@
+import { Subject } from 'rxjs/Subject';
 import { Response } from '@angular/http';
 import { PostResponse } from './../model/post-response.model';
 import { Injectable } from '@angular/core';
@@ -12,6 +13,15 @@ import { Pet } from './../model/pet.model';
 
 export class PetServices {
     constructor(private http: HttpClient) {}
+
+    // Observable string sources
+    private emitPetUpdateSource = new Subject<any>();
+    // Observable string streams
+    PetUpdateEmitted$ = this.emitPetUpdateSource.asObservable();
+    // Service message commands
+    emitUpdate() {
+        this.emitPetUpdateSource.next();
+    }
 
     pets():Observable<Pet[]>{        
         return this.http.get<Pet[]>(`${SERVER}/animal`);
