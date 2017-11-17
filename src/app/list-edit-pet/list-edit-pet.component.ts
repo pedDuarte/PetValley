@@ -21,17 +21,22 @@ export class ListEditPetComponent implements OnInit {
     public loginService: LoginService,
     public router: Router,
     public petServices: PetServices
-  ) {}
+  ) { }
 
   ngOnInit() {
     if (!this.loginService.isLogged()) {
       this.router.navigate(["/login"]);
-    } else { 
+    } else {
       this.petServices.pets().subscribe(pets => {
         this.pets = pets;
       });
-    }
-  }
+      this.petServices.emitPetUpdate.subscribe(response => {
+        this.petServices.pets().subscribe(pets => {
+          this.pets = pets;
+        });
+      });
+    };
+  };
 
   onDelete(pet) {
     this.petServices.deletePet(pet).subscribe(response => {
