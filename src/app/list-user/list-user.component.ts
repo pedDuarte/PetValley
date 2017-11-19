@@ -13,8 +13,8 @@ import { LoginService } from './../services/login.service';
   styleUrls: ['./list-user.component.css']
 })
 export class ListUserComponent implements OnInit {
-
   users: User[];
+  currentUser: User;
 
   filtroUsuarioForm: FormGroup;
 
@@ -35,7 +35,14 @@ export class ListUserComponent implements OnInit {
         nomeUsuario: this.formBuilder.control('', [Validators.required]),
       });
     }
+  }
 
+  onDelete() {
+    
+  }
+
+  sendUser(user: User) {
+    this.currentUser = user;
   }
 
 }
