@@ -34,11 +34,20 @@ export class ListUserComponent implements OnInit {
       this.filtroUsuarioForm = this.formBuilder.group({
         nomeUsuario: this.formBuilder.control('', [Validators.required]),
       });
+      
     }
   }
 
-  onDelete() {
-    
+  onDelete(user) {
+    this.userService.deleteUser(user).subscribe(response => {
+      if(response.success)
+      {
+        this.userService.users().subscribe(users =>{
+          this.users = users;
+        });
+      }
+
+    });
   }
 
   sendUser(user: User) {

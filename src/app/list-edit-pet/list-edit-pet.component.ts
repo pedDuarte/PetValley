@@ -16,6 +16,8 @@ declare var $: any;
 export class ListEditPetComponent implements OnInit {
     pets: Pet[];
     currentPet: Pet;
+    mensagemAlerta: string = "Deseja realmente deletar o animal ?";
+    deletarPet: boolean = false;
 
     constructor(
         public loginService: LoginService,
@@ -33,24 +35,47 @@ export class ListEditPetComponent implements OnInit {
             this.petServices.emitPetUpdate.subscribe(petUpdate => {
                 $("#modalCarregamento").modal("show");
                 this.petServices.pets().subscribe(pets => {
-                    this.pets = pets; 
+                    this.pets = pets;
                     $("#modalCarregamento").modal("hide");
                 });
             });
         };
     };
 
+    onStatusAlerta () {
+
+        $("#modalAlerta").modal("hide");
+
+        this.mensagemAlerta = "Deseja realmente deletar o animal ?";
+
+        this.deletarPet = false;
+    }
+
     onDelete(pet) {
+
+        $("#modalAlerta").modal("hide");
+
         $("#modalCarregamento").modal("show");
+
+        this.mensagemAlerta = "Animal deletado com sucesso!";
+
         this.petServices.deletePet(pet).subscribe(response => {
+
             if (response.success) {
                 $("#modalCarregamento").modal("hide");
-                $("#modalAlerta").modal("show");
+
                 this.petServices.pets().subscribe(pets => {
+
                     this.pets = pets;
+
+                    $("#modalAlerta").modal("show");
+
                 });
             }
         });
+
+        this.deletarPet = true;
+        
     }
 
     sendPet(pet: Pet) {
