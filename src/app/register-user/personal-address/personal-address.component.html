@@ -5,7 +5,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="cep">CEP<span class="requiredTag">*</span></label>
-            <input formControlName="postalCode" type="number" class="form-control" id="cep" placeholder="CEP">
+            <input formControlName="postalCode" type="text" class="form-control" id="cep" placeholder="CEP" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </div>
     </div>
     <div class="col-md-6">
