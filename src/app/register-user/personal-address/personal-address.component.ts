@@ -43,7 +43,7 @@ export class PersonalAddressComponent implements OnInit {
       {
         this.registerUserService.getAddress(postalCode).subscribe(response =>{
 
-          if(response)
+          if(!response.erro)
           {
             var logradouro = response.logradouro.split(" ");
             this.personalAddressForm.patchValue({
@@ -53,6 +53,10 @@ export class PersonalAddressComponent implements OnInit {
               city: response.localidade,
               state: response.uf
             })
+          }
+          else
+          {
+            console.log("cep invalido");
           }
         });
       }

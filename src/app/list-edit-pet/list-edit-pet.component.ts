@@ -43,16 +43,13 @@ export class ListEditPetComponent implements OnInit {
     };
 
     onStatusAlerta () {
-
         $("#modalAlerta").modal("hide");
 
         this.mensagemAlerta = "Deseja realmente deletar o animal ?";
-
         this.deletarPet = false;
     }
 
     onDelete(pet) {
-
         $("#modalAlerta").modal("hide");
 
         $("#modalCarregamento").modal("show");
@@ -60,21 +57,17 @@ export class ListEditPetComponent implements OnInit {
         this.mensagemAlerta = "Animal deletado com sucesso!";
 
         this.petServices.deletePet(pet).subscribe(response => {
-
             if (response.success) {
                 $("#modalCarregamento").modal("hide");
 
                 this.petServices.pets().subscribe(pets => {
-
                     this.pets = pets;
-
                     $("#modalAlerta").modal("show");
-
                 });
+
+                this.deletarPet = true;
             }
         });
-
-        this.deletarPet = true;
         
     }
 
