@@ -13,8 +13,8 @@ import { LoginService } from './../services/login.service';
   styleUrls: ['./list-user.component.css']
 })
 export class ListUserComponent implements OnInit {
-
   users: User[];
+  currentUser: User;
 
   filtroUsuarioForm: FormGroup;
 
@@ -34,8 +34,24 @@ export class ListUserComponent implements OnInit {
       this.filtroUsuarioForm = this.formBuilder.group({
         nomeUsuario: this.formBuilder.control('', [Validators.required]),
       });
+      
     }
+  }
 
+  onDelete(user) {
+    this.userService.deleteUser(user).subscribe(response => {
+      if(response.success)
+      {
+        this.userService.users().subscribe(users =>{
+          this.users = users;
+        });
+      }
+
+    });
+  }
+
+  sendUser(user: User) {
+    this.currentUser = user;
   }
 
 }

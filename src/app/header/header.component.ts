@@ -8,7 +8,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./header.component.css"]
 })
 export class HeaderComponent implements OnInit {
-  isDev = false;
+  isDev = true;
 
   constructor(public loginService: LoginService) {}
 

@@ -61,6 +61,12 @@ export class RegisterUserService {
         return this.user;
     }
 
+    getAddress(cep: any) {
+        const header = new HttpHeaders;
+        header.append('Access-Control-Allow-Origin', '*');
+        return this.http.get<any>("https://viacep.com.br/ws/"+cep+"/json/");
+    }
+
     hasPersonalData() {
         if (this.user && this.user.name !== undefined) {
             return true;

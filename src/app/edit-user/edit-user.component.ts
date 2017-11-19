@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 
 @Component({
-  selector: 'pet-edit-user',
+  selector: 'user-edit-user',
   templateUrl: './edit-user.component.html',
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
+  @Input()
 
-  private userForm: FormGroup;
+  public user;
+  public userForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder){}
 
@@ -17,11 +19,11 @@ export class EditUserComponent implements OnInit {
     this.userForm = this.formBuilder.group({
       name: this.formBuilder.control('', [Validators.required]),
       surname: this.formBuilder.control('',[Validators.required]),
-      cpf: this.formBuilder.control('', [Validators.required]),
-      birthday: this.formBuilder.control('', [Validators.required]),
+      code_cpf: this.formBuilder.control('', [Validators.required]),
+      birthdate: this.formBuilder.control('', [Validators.required]),
       sex: this.formBuilder.control('', [Validators.required]),
-      phone: this.formBuilder.control('', [Validators.required]),
-      cellphhone: this.formBuilder.control('',[]),
+      phone_number: this.formBuilder.control('', [Validators.required]),
+      cellphone: this.formBuilder.control('',[]),
       email: this.formBuilder.control('', [Validators.required, Validators.email]),
       postalcode: this.formBuilder.control('', Validators.required),
       location: this.formBuilder.control('', [Validators.required]),
@@ -33,5 +35,29 @@ export class EditUserComponent implements OnInit {
       complement: this.formBuilder.control('', [Validators.required])
     })
   }
+
+  loadUser() {
+    this.userForm.patchValue({
+      name: this.user.name,
+      surname: this.user.surname,
+      code_cpf: this.user.code_cpf,
+      birthdate:  this.user.birthdate,
+      sex: this.user.sex,
+      phone_number: this.user.phone_number,
+      cellphone: this.user.cellphone,
+      email:  this.user.email,
+      postalcode: this.user.postalcode,
+      location: this.user.location,
+      typeLocation: this.user.typeLocation,
+      neighborhood: this.user.neighborhood,
+      city: this.user.city,
+      state: this.user.state,
+      numberHouse: this.user.numberHouse,
+      complement: this.user.complement
+    });
+    
+      this.user = undefined;
+  }
+
 
 }

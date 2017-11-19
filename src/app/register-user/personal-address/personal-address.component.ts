@@ -32,6 +32,31 @@ export class PersonalAddressComponent implements OnInit {
       numberHouse: this.formBuilder.control('', [Validators.required]),
       complement: this.formBuilder.control('')
     });
+
+    this.onChanges();
+  }
+  
+  onChanges() {
+    this.personalAddressForm.get('postalCode').valueChanges.subscribe(postalCode => {
+
+      if(postalCode != undefined && postalCode.length == 8)
+      {
+        this.registerUserService.getAddress(postalCode).subscribe(response =>{
+
+          if(response)
+          {
+            var logradouro = response.logradouro.split(" ");
+            this.personalAddressForm.patchValue({
+              location: logradouro[1],
+              typeLocation: logradouro[0],
+              neighborhood: response.bairro,
+              city: response.localidade,
+              state: response.uf
+            })
+          }
+        });
+      }
+    });
   }
 
   onNext() {
