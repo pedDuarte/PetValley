@@ -46,6 +46,12 @@ export class PersonalAddressComponent implements OnInit {
           if(!response.erro)
           {
             var logradouro = response.logradouro.split(" ");
+
+            for (var i = 2; i < logradouro.length; i++) 
+            {
+              logradouro[1] += " "+logradouro[i];
+            }
+
             this.personalAddressForm.patchValue({
               location: logradouro[1],
               typeLocation: logradouro[0],

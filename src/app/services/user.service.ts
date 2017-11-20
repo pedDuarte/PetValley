@@ -19,7 +19,7 @@ export class UserService {
     }
 
     deleteUser(user:any):Observable<any>{
-        let url = `${SERVER}/user/`+user.id;
+        let url = `${SERVER}/user/`+user.id_user;
         return this.http.delete<any>(url);
     }
     
