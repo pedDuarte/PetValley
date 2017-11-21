@@ -15,6 +15,8 @@ import { LoginService } from './../services/login.service';
 export class ListUserComponent implements OnInit {
   users: User[];
   currentUser: User;
+  mensagemAlerta: string = "Deseja realmente deletar o usuário ?";
+  deletarUsuario: boolean = false;
 
   filtroUsuarioForm: FormGroup;
 
@@ -34,8 +36,14 @@ export class ListUserComponent implements OnInit {
       this.filtroUsuarioForm = this.formBuilder.group({
         nomeUsuario: this.formBuilder.control('', [Validators.required]),
       });
-      
     }
+  }
+
+  onStatusAlerta () {
+    $("#modalAlerta").modal("hide");
+    
+    this.mensagemAlerta = "Deseja realmente deletar o usuário ?";
+    this.deletarUsuario = false;
   }
 
   onDelete(user) {
@@ -45,6 +53,7 @@ export class ListUserComponent implements OnInit {
         this.userService.users().subscribe(users =>{
           this.users = users;
         });
+        $("#modalCarregamento").modal("hide");
       }
 
     });

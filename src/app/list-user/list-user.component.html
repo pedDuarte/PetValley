@@ -1,7 +1,8 @@
+'
 <div class="container page-box">
   <div class="row" style="margin-top:2%">
     <div class="col-md-8">
-        <h3 class="text-left">Pesquisa de Usuários</h3>
+      <h3 class="text-left">Pesquisa de Usuários</h3>
       <div class="input-group" [formGroup]="filtroUsuarioForm">
         <input type="text" formControlName="nomeUsuario" name="nomeUsuario" class="form-control" placeholder="Pesquisar" id="pequisar">
         <span class="input-group-btn">
@@ -13,7 +14,7 @@
   <hr>
   <div class="row">
     <div class="col-md-12">
-      <div class="col-md-4" *ngFor="let user of (users | filtraUsuarios: this.filtroUsuarioForm)" >
+      <div class="col-md-4" *ngFor="let user of (users | filtraUsuarios: this.filtroUsuarioForm)">
         <!-- Inicio do card -->
         <div class="w3-card-2" style="margin-bottom:5%;">
           <br>
@@ -28,13 +29,54 @@
             <p><strong>E-mail: </strong>{{user.email}}</p>
           </div>
           <footer class="w3-container w3-white">
-            <button type="button" class="btn btn-default" style="float:right; margin-top:5%; margin-bottom:5%;" data-toggle="modal" data-target="#modalEditar" (click)="sendUser(user)"> Editar <span class="glyphicon glyphicon-pencil"></span></button>
-            <button type="button" class="btn btn-default" style="float:right; margin-top:5%; margin-bottom:5%; margin-right:5px" (click)="onDelete(user)"> Excluir <span class="glyphicon glyphicon-trash"></span></button>
+            <button type="button" class="btn btn-default" style="float:right; margin-top:5%; margin-bottom:5%;" data-toggle="modal" data-target="#modalEditar"
+              (click)="sendUser(user)"> Editar <span class="glyphicon glyphicon-pencil"></span></button>
+            <button type="button" class="btn btn-default" style="float:right; margin-top:5%; margin-bottom:5%; margin-right:5px" (click)="onDelete(user)"
+              data-toggle="modal" data-target="#modalCarregamento"> Excluir <span class="glyphicon glyphicon-trash"></span></button>
           </footer>
         </div>
         <!-- Fim do card -->
       </div>
       <user-edit-user [user]="currentUser"></user-edit-user>
     </div>
+    <!-- Inicio Modal de Carregamento -->
+    <div class="modal fade" id="modalCarregamento" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-sm">
+        <div class="row">
+          <div class="col-md-12">
+            <img class="img-responsive center-block" src="assets/img/giphy.gif" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fim do modal -->
+     <!-- Inicio Modal de Alerta -->
+  <div class="modal fade" id="modalAlerta" role="dialog" aria-hidden="ture" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+        </button>
+          <h4>Alerta</h4>
+        </div>
+        <div class="modal-body">
+          <p class="text-center">{{mensagemAlerta}}</p>
+        </div>
+        <div class="modal-footer">
+          <div class="col-md-6">
+            <p class="text-center" *ngIf="!this.deletarPet"> <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onDelete(currentPet)">Confirmar <span class="glyphicon glyphicon-ok"></span> </button> </p>
+          </div>
+          <div class="col-md-6">
+            <p class="text-center" *ngIf="!this.deletarPet"> <button type="button" class="btn btn-default" data-dismiss="modal">Cancel <span class="glyphicon glyphicon-remove"></span> </button> </p>
+          </div>
+          <div class="col-md-12">
+            <p class="text-center" *ngIf="this.deletarPet == true"> <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onStatusAlerta()">OK <span class="glyphicon glyphicon-ok"></span> </button> </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+  <!-- Fim do modal -->
+  </div>
+</div>'
