@@ -70,11 +70,9 @@ export class RegisterPetComponent implements OnInit {
       let file = event.target.files[0];
       reader.readAsDataURL(file);
       reader.onload = () => {
-        this.petForm.get('avatar').patchValue({
-          filename: file.name,
-          filetype: file.type,
-          value: reader.result.split(',')[1]
-        })
+        this.petForm.get('avatar').patchValue(
+          reader.result.split(',')[1]
+        )
       };
     }
   }
