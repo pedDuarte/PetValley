@@ -8,7 +8,7 @@
         <div class="text-center col-md-12">
           <h5> <strong>Foto do Pet</strong> </h5>
           <img class="img-responsive center-block" src="http://2.bp.blogspot.com/-ESfKU0HPoMg/VYr4iABVeBI/AAAAAAAAAt4/x4F_ZBCaHR8/s1600/pet.png">
-          <input type="file" id="selecionarImagem" style="display:none;">
+          <input type="file" id="selecionarImagem" style="display:none;" (change)="changeImage($event)">
           <label class="btn btn-default" for="selecionarImagem">Selecionar <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></label>
         </div>
       </div>

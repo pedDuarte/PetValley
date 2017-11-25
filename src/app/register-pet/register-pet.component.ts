@@ -19,7 +19,7 @@ declare var $: any;
 export class RegisterPetComponent implements OnInit {
   petForm: FormGroup;
   abrirModal: boolean;
-
+  
   constructor(
     private formBuilder: FormBuilder,
     private registerPetService: RegisterPetService,
@@ -41,7 +41,8 @@ export class RegisterPetComponent implements OnInit {
         name: this.formBuilder.control("", [Validators.required]),
         description: this.formBuilder.control("", [Validators.required]),
         species: this.formBuilder.control("", [Validators.required]),
-        sex: this.formBuilder.control("", [Validators.required])
+        sex: this.formBuilder.control("", [Validators.required]),
+        avatar: this.formBuilder.control("", [Validators.required])
       });
     }
   }
@@ -58,6 +59,26 @@ export class RegisterPetComponent implements OnInit {
         }
       });
   }
+
+  changeImage($event) {
+    this.readThis($event);
+  }
+  
+  readThis(event: any): void {
+    let reader = new FileReader();
+    if(event.target.files && event.target.files.length > 0) {
+      let file = event.target.files[0];
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.petForm.get('avatar').patchValue({
+          filename: file.name,
+          filetype: file.type,
+          value: reader.result.split(',')[1]
+        })
+      };
+    }
+  }
+
 
   back() {
     this.location.back();
