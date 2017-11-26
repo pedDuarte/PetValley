@@ -7,6 +7,9 @@ import { Address } from './../model/address.model';
 import { UserService } from './../services/user.service';
 import { LoginService } from './../services/login.service';
 
+declare var jquery: any;
+declare var $: any;
+
 @Component({
   selector: 'pet-list-user',
   templateUrl: './list-user.component.html',

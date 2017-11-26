@@ -5,6 +5,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from './../services/login.service';
 import { Component, OnInit, Input } from '@angular/core';
 
+declare var jquery: any;
+declare var $: any;
+
 @Component({
   selector: 'pet-edit-pet',
   templateUrl: './edit-pet.component.html',
