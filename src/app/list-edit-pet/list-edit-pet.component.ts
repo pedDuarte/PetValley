@@ -66,6 +66,11 @@ export class ListEditPetComponent implements OnInit {
                 });
 
                 this.deletarPet = true;
+            }else {
+                $("#modalCarregamento").modal("hide");
+                this.deletarPet = true;
+                this.mensagemAlerta = "Algo de errado aconteceu.";
+                $("#modalAlerta").modal("show");
             }
         });
         

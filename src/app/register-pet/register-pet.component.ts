@@ -56,7 +56,9 @@ export class RegisterPetComponent implements OnInit {
           $("#modalCarregamento").modal("hide");
           $("#modalAlerta").modal("show");
           this.petForm.reset();
-        }
+        }else {
+          $("#modalCarregamento").modal("hide");
+      }
       });
   }
 
