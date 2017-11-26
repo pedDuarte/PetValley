@@ -73,6 +73,9 @@ export class RegisterPetComponent implements OnInit {
         this.petForm.get('avatar').patchValue(
           reader.result.split(',')[1]
         )
+
+        $("#fotoPet").attr("src", reader.result);
+
       };
     }
   }

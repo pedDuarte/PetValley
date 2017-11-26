@@ -17,6 +17,8 @@ export class EditPetComponent implements OnInit {
 
   public petEditForm: FormGroup;
 
+  public image: any;
+
   constructor(private formBuilder: FormBuilder,
               private petServices: PetServices,
               private loginService: LoginService,
@@ -36,13 +38,36 @@ export class EditPetComponent implements OnInit {
         name: this.formBuilder.control('', [Validators.required]),
         description: this.formBuilder.control('',[Validators.required]),
         species: this.formBuilder.control('', [Validators.required]),
-        sex: this.formBuilder.control('', [Validators.required])
+        sex: this.formBuilder.control('', [Validators.required]),
+        avatar: this.formBuilder.control("", [Validators.required])
+      });
+      this.petServices.emitPetEdit.subscribe(petEdit => {
+        this.pet = petEdit;
+        this.loadPet();
       });
     }
   }
 
+  changeImage($event) {
+    this.readThis($event);
+  }
+  
+  readThis(event: any): void {
+    let reader = new FileReader();
+    if(event.target.files && event.target.files.length > 0) {
+      let file = event.target.files[0];
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.image = reader.result.split(',')[1];
+        $("#modalEditarPet img").attr("src", reader.result);
+      };
+    }
+  }
+
   loadPet() {
-    this.petEditForm.patchValue({
+    if(this.pet)
+    {    
+      this.petEditForm.patchValue({
       id_animal: this.pet.id_animal,
       size: this.pet.size,
       coat: this.pet.coat,
@@ -52,11 +77,17 @@ export class EditPetComponent implements OnInit {
       name: this.pet.name,
       description:  this.pet.description,
       species: this.pet.species,
-      sex: this.pet.sex});      
-      this.pet = undefined;
+      sex: this.pet.sex,
+      avatar: this.pet.avatar});
   }
+}
+
 
   onUpdate(pet) {
+    if(this.petEditForm.value.avatar != this.image)
+    {
+      this.petEditForm.value.avatar = this.image;
+    }
     this.petServices.updatePet(pet).subscribe(response => {
       if (response.success) {
         this.petServices.emitUpdate();

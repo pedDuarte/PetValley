@@ -16,6 +16,12 @@ export class PetServices {
 
     emitPetUpdate = new EventEmitter<any>();
 
+    emitPetEdit = new EventEmitter<any>();
+
+    emitEdit(pet) {
+        this.emitPetEdit.emit(pet);
+    }
+
     emitUpdate() {
         this.emitPetUpdate.emit();
     }

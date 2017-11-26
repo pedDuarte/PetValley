@@ -73,5 +73,6 @@ export class ListEditPetComponent implements OnInit {
 
     sendPet(pet: Pet) {
         this.currentPet = pet;
+        this.petServices.emitEdit(pet);
     }
 }

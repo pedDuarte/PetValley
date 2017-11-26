@@ -15,13 +15,13 @@
               <div class="row">
                 <div class="text-center col-md-12">
                   <h5> <strong>Foto do Pet</strong> </h5>
-                  <img class="img-responsive" src="http://2.bp.blogspot.com/-ESfKU0HPoMg/VYr4iABVeBI/AAAAAAAAAt4/x4F_ZBCaHR8/s1600/pet.png">
-                  <input type="file" id="selecionarImagem" style="display:none;">
+                  <img *ngIf="petEditForm.value.avatar" class="img-responsive" style="margin-top:10%; margin-bottom:10%;" src="http://petvalley-psi-com-br.umbler.net/{{petEditForm.value.avatar}}">
+                  <input type="file" id="selecionarImagem" style="display:none;" (change)="changeImage($event)">
                   <label class="btn btn-default" for="selecionarImagem">Selecionar <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></label>
                 </div>
               </div>
             </div>
-            <div class="col-md-8" *ngIf="this.pet != undefined; then loadPet()">
+            <div class="col-md-8">
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">

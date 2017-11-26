@@ -31,8 +31,8 @@
           <footer class="w3-container w3-white">
             <button type="button" class="btn btn-default" style="float:right; margin-top:5%; margin-bottom:5%;" data-toggle="modal" data-target="#modalEditar"
               (click)="sendUser(user)"> Editar <span class="glyphicon glyphicon-pencil"></span></button>
-            <button type="button" class="btn btn-default" style="float:right; margin-top:5%; margin-bottom:5%; margin-right:5px" (click)="onDelete(user)"
-              data-toggle="modal" data-target="#modalCarregamento"> Excluir <span class="glyphicon glyphicon-trash"></span></button>
+            <button type="button" class="btn btn-default" style="float:right; margin-top:5%; margin-bottom:5%; margin-right:5px"
+              data-toggle="modal" data-target="#modalAlerta" (click)="sendUser(user)"> Excluir <span class="glyphicon glyphicon-trash"></span></button>
           </footer>
         </div>
         <!-- Fim do card -->
@@ -65,13 +65,13 @@
         </div>
         <div class="modal-footer">
           <div class="col-md-6">
-            <p class="text-center" *ngIf="!this.deletarPet"> <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onDelete(currentPet)">Confirmar <span class="glyphicon glyphicon-ok"></span> </button> </p>
+            <p class="text-center" *ngIf="!this.deletarUsuario"> <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onDelete(currentUser)">Confirmar <span class="glyphicon glyphicon-ok"></span> </button> </p>
           </div>
           <div class="col-md-6">
-            <p class="text-center" *ngIf="!this.deletarPet"> <button type="button" class="btn btn-default" data-dismiss="modal">Cancel <span class="glyphicon glyphicon-remove"></span> </button> </p>
+            <p class="text-center" *ngIf="!this.deletarUsuario"> <button type="button" class="btn btn-default" data-dismiss="modal">Cancel <span class="glyphicon glyphicon-remove"></span> </button> </p>
           </div>
           <div class="col-md-12">
-            <p class="text-center" *ngIf="this.deletarPet == true"> <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onStatusAlerta()">OK <span class="glyphicon glyphicon-ok"></span> </button> </p>
+            <p class="text-center" *ngIf="this.deletarUsuario"> <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onStatusAlerta()">OK <span class="glyphicon glyphicon-ok"></span> </button> </p>
           </div>
         </div>
       </div>

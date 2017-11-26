@@ -47,13 +47,23 @@ export class ListUserComponent implements OnInit {
   }
 
   onDelete(user) {
+    this.mensagemAlerta = "Usuário deletado com sucesso!";
+
+    $("#modalAlerta").modal("hide");
+    $("#modalCarregamento").modal("show");
+    
     this.userService.deleteUser(user).subscribe(response => {
-      if(response.success)
-      {
+      if(response.success) {
+        $("#modalCarregamento").modal("hide");
+
         this.userService.users().subscribe(users =>{
           this.users = users;
+
+          this.deletarUsuario = true;
+
+          $("#modalAlerta").modal("show");
         });
-        $("#modalCarregamento").modal("hide");
+    
       }
 
     });

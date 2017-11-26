@@ -56,3 +56,12 @@ body{
     text-align: left;
     vertical-align: middle;
   }
+
+  .especial-img{
+      width: 400px !important;
+      height: 300px !important;
+  }
+
+  .w3-card-2{
+    max-width: 400px;
+  }
