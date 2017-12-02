@@ -1,3 +1,4 @@
+import { SendDocumentsComponent } from './send-documents/send-documents.component';
 import { Routes } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
 import { LoginComponent } from "./login/login.component";
@@ -35,5 +36,6 @@ export const ROUTES: Routes = [
   { path: "registerPet", component: RegisterPetComponent },
   { path: "listPet", component: ListPetComponent },
   { path: "listEditPet", component: ListEditPetComponent },
-  { path: "firstPage", component: FirstPageComponent }
+  { path: "firstPage", component: FirstPageComponent },
+  { path: "sendDocuments", component: SendDocumentsComponent }
 ];

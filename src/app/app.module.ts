@@ -34,6 +34,7 @@ import { EditPetComponent } from "./edit-pet/edit-pet.component";
 import { FirstPageComponent } from "./first-page/first-page.component";
 import { FiltraPetsPipe } from "./customPipes.pipe";
 import { FiltraUsuariosPipe } from "./customPipes.pipe";
+import { SendDocumentsComponent } from './send-documents/send-documents.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { FiltraUsuariosPipe } from "./customPipes.pipe";
     EditPetComponent,
     FirstPageComponent,
     FiltraPetsPipe,
-    FiltraUsuariosPipe
+    FiltraUsuariosPipe,
+    SendDocumentsComponent
   ],
   imports: [
     BrowserModule,
