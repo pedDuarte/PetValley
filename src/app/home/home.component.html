@@ -1,9 +1,12 @@
 <div class="container">
     <div class="card col-md-4" style="margin-bottom:5%;">
       <form>
-        <button type="button" [routerLink]="['/listUser']" class="btn btn-default btn-lg col-md-12" style="margin-bottom: 10px"> Usuarios <span class="glyphicon glyphicon-user"></span></button>
+        <h3 class="text-center">Menu</h3>
+        <hr/>
+        <button type="button" *ngIf="loginService.getUserLogged().email === 'usuario.interno@gmail.com'" [routerLink]="['/listUser']" class="btn btn-default btn-lg col-md-12" style="margin-bottom: 10px"> Usuarios <span class="glyphicon glyphicon-user"></span></button>
         <button type="button" [routerLink]="['/listPet']" class="btn btn-default btn-lg col-md-12" style="margin-bottom: 10px"> PET <span class="glyphicon glyphicon-heart-empty"></span></button>
-        <button type="button" [routerLink]="['/listEditPet']" class="btn btn-default btn-lg col-md-12" style="margin-bottom: 10px"> Editar PET <span class="glyphicon glyphicon glyphicon-edit"></span></button>
+        <button type="button" *ngIf="loginService.getUserLogged().email === 'usuario.interno@gmail.com'" [routerLink]="['/listEditPet']" class="btn btn-default btn-lg col-md-12" style="margin-bottom: 10px"> Editar PET <span class="glyphicon glyphicon glyphicon-edit"></span></button>
+        <button type="button" *ngIf="loginService.getUserLogged().email === 'usuario.interno@gmail.com'" [routerLink]="['/approveAdoption']" class="btn btn-default btn-lg col-md-12" style="margin-bottom: 10px"> Aprovar Adoções <span class="glyphicon glyphicon-check"></span></button>
       </form>   
     </div>
     <div class="col-md-offset-1 col-md-4">

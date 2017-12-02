@@ -1,3 +1,4 @@
+import { AdoptionService } from './services/adoption.service';
 import { SendDocumentService } from './services/sendDocument.service';
 import { LoginService } from "./services/login.service";
 import { BrowserModule } from "@angular/platform-browser";
@@ -36,6 +37,7 @@ import { FirstPageComponent } from "./first-page/first-page.component";
 import { FiltraPetsPipe } from "./customPipes.pipe";
 import { FiltraUsuariosPipe } from "./customPipes.pipe";
 import { SendDocumentsComponent } from './send-documents/send-documents.component';
+import { ApproveAdoptionComponent } from './approve-adoption/approve-adoption.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,8 @@ import { SendDocumentsComponent } from './send-documents/send-documents.componen
     FirstPageComponent,
     FiltraPetsPipe,
     FiltraUsuariosPipe,
-    SendDocumentsComponent
+    SendDocumentsComponent,
+    ApproveAdoptionComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +79,8 @@ import { SendDocumentsComponent } from './send-documents/send-documents.componen
     LoginService,
     RegisterPetService,
     PetServices,
-    SendDocumentService
+    SendDocumentService,
+    AdoptionService
   ],
   bootstrap: [AppComponent]
 })

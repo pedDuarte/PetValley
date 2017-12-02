@@ -14,6 +14,7 @@ import { RegisterPetComponent } from "./register-pet/register-pet.component";
 import { ListPetComponent } from "./list-pet/list-pet.component";
 import { ListEditPetComponent } from "./list-edit-pet/list-edit-pet.component";
 import { FirstPageComponent } from "./first-page/first-page.component";
+import { ApproveAdoptionComponent } from './approve-adoption/approve-adoption.component';
 
 export const ROUTES: Routes = [
   { path: "", component: HomeComponent },
@@ -37,5 +38,6 @@ export const ROUTES: Routes = [
   { path: "listPet", component: ListPetComponent },
   { path: "listEditPet", component: ListEditPetComponent },
   { path: "firstPage", component: FirstPageComponent },
-  { path: "sendDocuments", component: SendDocumentsComponent }
+  { path: "sendDocuments", component: SendDocumentsComponent },
+  { path: "approveAdoption", component: ApproveAdoptionComponent }
 ];

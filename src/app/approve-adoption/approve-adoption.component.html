@@ -1,0 +1,34 @@
+<div class="container page-box">
+    <div class="row" style="margin-top:2%">
+      <div class="col-md-8">
+        <h3 class="text-left">Aprovar animais adotados</h3>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-3" *ngFor="let adoption of adoptions">
+          <!-- Inicio do card -->
+          <div class="w3-card-2" style="margin-bottom:5%;">
+            <br>
+            <header class="w3-container w3-white">
+              <h4 class="text-center">{{adoption.species}}</h4>
+            </header>
+            <hr>
+            <div style="height:100px;" class="w3-container w3-white w3-margin-bottom">
+              <!--<p><strong>Tipo: </strong>Funcionário</p>-->
+              <p><strong>Usuário: </strong>{{adoption.user_name}}</p>
+              <p><strong>Pet: </strong>{{adoption.animal_name}}</p>
+              <p><strong>Data: </strong>{{adoption.adoption_date}}</p>
+            </div>
+            <footer class="w3-container w3-white">
+              <button type="button" (click)="approve(adoption.id_user, adoption.id_animal)" class="btn btn-default" style="float:right; margin-top:5%"> Aprovar <span class="glyphicon glyphicon-ok"></span></button>
+              <button type="button" class="btn btn-default" style="float:right; margin-top:5%; margin-right:5px"> Desaprovar <span class="glyphicon glyphicon-remove"></span></button>
+              <button type="button" class="btn btn-default" style="float:right; margin-top:5%; margin-bottom:5%"> Agendar Visita <span class="glyphicon glyphicon-home"></span></button>
+            </footer>
+          </div>
+          <!-- Fim do card -->
+        </div>
+      </div>
+    </div>
+</div>
