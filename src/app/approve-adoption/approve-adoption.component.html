@@ -1,7 +1,8 @@
 <div class="container page-box">
     <div class="row" style="margin-top:2%">
-      <div class="col-md-8">
-        <h3 class="text-left">Aprovar animais adotados</h3>
+      <div class="col-md-12">
+        <h3 class="text-left pull-left">Aprovar Solicitação de Adoção</h3>
+        <button style="margin-right: 50px"[routerLink]="['/home']" type="button" class="btn btn-default pull-right"> <span class="glyphicon glyphicon-chevron-left"></span> Voltar </button>
       </div>
     </div>
     <hr>
@@ -32,3 +33,31 @@
       </div>
     </div>
 </div>
+
+
+
+<!-- Inicio Modal Editar Cadastro -->
+<div class="modal fade" id="modalVisitHome" role="dialog" aria-hidden="ture">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Agendar Visita a Casa</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <h4>{{adoptionSelect.user_name}}</h4> 
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="edit()"  class="btn btn-default" data-dismiss="modal">Salvar <span class="glyphicon glyphicon-floppy-disk"></span></button>
+          <button type="button" (click)="cancel()" class="btn btn-default" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

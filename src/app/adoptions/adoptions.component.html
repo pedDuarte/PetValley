@@ -1,0 +1,30 @@
+<div class="container page-box">
+    <div class="row" style="margin-top:2%">
+      <div class="col-md-12">
+        <h3 class="text-left pull-left col-md-12">Animais adotados</h3>
+        <button [routerLink]="['/home']" type="button" class="btn btn-default pull-right"> <span class="glyphicon glyphicon-chevron-left"></span> Voltar </button>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-3" *ngFor="let adoption of adoptions">
+          <!-- Inicio do card -->
+          <div class="w3-card-2" style="margin-bottom:5%;">
+            <br>
+            <header class="w3-container w3-white">
+              <h4 class="text-center">{{adoption.species}}</h4>
+            </header>
+            <hr>
+            <div style="height:100px;" class="w3-container w3-white w3-margin-bottom">
+              <!--<p><strong>Tipo: </strong>Funcionário</p>-->
+              <p><strong>Usuário: </strong>{{adoption.user_name}}</p>
+              <p><strong>Pet: </strong>{{adoption.animal_name}}</p>
+              <p><strong>Data: </strong>{{adoption.adoption_date | date: 'dd/MM/yyyy'}}</p>
+            </div>
+          </div>
+          <!-- Fim do card -->
+        </div>
+      </div>
+    </div>
+</div>

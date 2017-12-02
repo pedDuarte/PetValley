@@ -22,4 +22,12 @@ export class AdoptionService {
     approve(idUser, idAnimal) {
         return this.http.put(`${SERVER}/adoption`, {'id_user_fk': idUser, 'id_animal_fk': idAnimal, 'is_approved': true});
     }
+
+    disapprove(idUser, idAnimal) {
+        return this.http.put(`${SERVER}/adoption`, {'id_user_fk': idUser, 'id_animal_fk': idAnimal, 'is_approved': true});
+    }
+
+    getAnimalApproved() {
+        return this.http.get(`${SERVER}/adoptionlist`);
+    }
 }

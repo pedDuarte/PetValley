@@ -41,6 +41,7 @@ import { SendDocumentsComponent } from './send-documents/send-documents.componen
 import { ApproveAdoptionComponent } from './approve-adoption/approve-adoption.component';
 import { ReportAdoptionComponent } from './report-adoption/report-adoption.component';
 import { ChartsModule } from 'ng2-charts';
+import { AdoptionsComponent } from './adoptions/adoptions.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { ChartsModule } from 'ng2-charts';
     FiltraUsuariosPipe,
     SendDocumentsComponent,
     ApproveAdoptionComponent,
-    ReportAdoptionComponent
+    ReportAdoptionComponent,
+    AdoptionsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { AdoptionsComponent } from './adoptions/adoptions.component';
 import { ReportAdoptionComponent } from './report-adoption/report-adoption.component';
 import { SendDocumentsComponent } from './send-documents/send-documents.component';
 import { Routes } from "@angular/router";
@@ -41,5 +42,6 @@ export const ROUTES: Routes = [
   { path: "firstPage", component: FirstPageComponent },
   { path: "sendDocuments", component: SendDocumentsComponent },
   { path: "approveAdoption", component: ApproveAdoptionComponent },
-  { path: "reportAdoption", component: ReportAdoptionComponent }
+  { path: "reportAdoption", component: ReportAdoptionComponent },
+  { path: "adoptions", component: AdoptionsComponent}
 ];

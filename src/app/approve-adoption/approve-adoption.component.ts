@@ -29,4 +29,8 @@ export class ApproveAdoptionComponent implements OnInit {
     });
   }
 
+  disapprove(idUser, idAnimal) {
+
+  }
+
 }
