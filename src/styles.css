@@ -65,10 +65,3 @@ body{
   .w3-card-2{
     max-width: 400px;
   }
-
-  .documento-img{
-    width: 200px;
-    height: 200px;
-    max-width: 200px !important;
-    max-height: 200px !important;
-  }
