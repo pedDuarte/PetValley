@@ -40,6 +40,13 @@ export class ListUserComponent implements OnInit {
         nomeUsuario: this.formBuilder.control('', [Validators.required]),
       });
     }
+
+    // Se inscreve para ouvir o evento componente filho
+    this.userService.editEmitted$.subscribe(user => {
+      this.userService.users().subscribe(userUp => {
+        this.users = userUp;
+      });
+    });
   }
 
   onStatusAlerta () {
@@ -71,6 +78,8 @@ export class ListUserComponent implements OnInit {
 
     });
   }
+
+  
 
   sendUser(user: User) {
     this.currentUser = user;

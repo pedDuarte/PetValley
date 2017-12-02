@@ -8,4 +8,10 @@
     left:50%;
     margin-top: 10px;
     margin-left:-200px;
+    
+}
+
+.card {
+    padding: 20px;
+    background: white
 }

@@ -5,6 +5,9 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 import { User } from './../../model/user.model';
 
+declare var jquery: any;
+declare var $: any;
+
 @Component({
   selector: 'pet-personal-data',
   templateUrl: './personal-data.component.html',
@@ -29,6 +32,12 @@ export class PersonalDataComponent implements OnInit {
       sex: this.formBuilder.control('', [Validators.required]),
       cellphone: this.formBuilder.control(''),
       phone: this.formBuilder.control('', [Validators.required]),
+    });
+
+    $(document).ready(function(){
+      $('#cpf').mask('000.000.000-00', {reverse: true});
+      $('#phone_number').mask('(00) 0000-0000');
+      $('#cellphone').mask('(00) 0000-00000');
     });
   }
 

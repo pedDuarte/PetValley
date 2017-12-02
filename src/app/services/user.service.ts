@@ -1,3 +1,4 @@
+import { Subject } from 'rxjs/Subject';
 import { PostResponse } from './../model/post-response.model';
 import { ErrorHandler } from './../app.error-handler';
 import { Injectable } from '@angular/core';
@@ -14,17 +15,27 @@ import { User } from '../model/user.model';
 export class UserService {
     constructor(private http: HttpClient) {}
 
+    // Observable string sources
+    private emitEditSource = new Subject<any>();
+    // Observable string streams
+    editEmitted$ = this.emitEditSource.asObservable();
+    // Service message commands
+    emitEdit() {
+        this.emitEditSource.next();
+    }
+
+
     users(): Observable<User[]> {
         return this.http.get<User[]>(`${SERVER}/user`);
     }
 
-    deleteUser(user:any):Observable<any>{
-        let url = `${SERVER}/user/`+user.id_user;
+    deleteUser(user: any): Observable<any> {
+        let url = `${SERVER}/user/` + user.id_user;
         return this.http.delete<any>(url);
     }
-    
 
-    /*delete(user: User): Observable<any> {
-        return this.http.delete<any>(`${SERVER}/user`,);
-    }*/
+    edit(user: any): Observable <any> {
+        console.log(user);
+        return this.http.put(`${SERVER}/user`, user);
+    }
 }
