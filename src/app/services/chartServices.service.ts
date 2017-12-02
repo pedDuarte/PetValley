@@ -12,7 +12,6 @@ export class chartServices
     }
 
     getDados():Observable<any>{
-        debugger;
         return this.http.get<any>(`${SERVER}/adoptioncount`);
     }
 }
