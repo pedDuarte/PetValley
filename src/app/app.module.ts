@@ -1,4 +1,5 @@
 import { AdoptionService } from './services/adoption.service';
+import { chartServices } from './services/chartServices.service';
 import { SendDocumentService } from './services/sendDocument.service';
 import { LoginService } from "./services/login.service";
 import { BrowserModule } from "@angular/platform-browser";
@@ -38,6 +39,8 @@ import { FiltraPetsPipe } from "./customPipes.pipe";
 import { FiltraUsuariosPipe } from "./customPipes.pipe";
 import { SendDocumentsComponent } from './send-documents/send-documents.component';
 import { ApproveAdoptionComponent } from './approve-adoption/approve-adoption.component';
+import { ReportAdoptionComponent } from './report-adoption/report-adoption.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -64,14 +67,16 @@ import { ApproveAdoptionComponent } from './approve-adoption/approve-adoption.co
     FiltraPetsPipe,
     FiltraUsuariosPipe,
     SendDocumentsComponent,
-    ApproveAdoptionComponent
+    ApproveAdoptionComponent,
+    ReportAdoptionComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [
     UserService,
@@ -80,7 +85,8 @@ import { ApproveAdoptionComponent } from './approve-adoption/approve-adoption.co
     RegisterPetService,
     PetServices,
     SendDocumentService,
-    AdoptionService
+    AdoptionService,
+    chartServices
   ],
   bootstrap: [AppComponent]
 })
