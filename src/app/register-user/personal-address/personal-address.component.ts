@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 
 import { RegisterUserService } from './../register-user.service';
 
+declare var jquery: any;
+declare var $: any;
+
 @Component({
   selector: 'pet-personal-address',
   templateUrl: './personal-address.component.html',
@@ -31,6 +34,11 @@ export class PersonalAddressComponent implements OnInit {
       state: this.formBuilder.control('', [Validators.required]),
       numberHouse: this.formBuilder.control('', [Validators.required]),
       complement: this.formBuilder.control('')
+    });
+
+    $(document).ready(function(){
+      $('#cep').mask('00000-000');
+      $('#number').mask('0000000');
     });
 
     this.onChanges();

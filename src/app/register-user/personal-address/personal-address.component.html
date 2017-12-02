@@ -11,7 +11,10 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="tipoLogradouro">Tipo Logradouro<span class="requiredTag">*</span></label>
-            <input formControlName="typeLocation" type="text" class="form-control" id="tipoLogradouro" placeholder="Tipo Logradouro">
+            <select formControlName="typeLocation" type="text" class="form-control" id="tipoLogradouro">
+                <option value="Rua">Rua</option>
+                <option value="Av.">Av.</option>
+            </select>
         </div>
     </div>
     <div class="col-md-8">
@@ -23,7 +26,7 @@
     <div class="col-md-4">
         <div class="form-group">
             <label for="numero">Numero<span class="requiredTag">*</span></label>
-            <input formControlName="numberHouse" type="text" pattern="[0-9]*$" class="form-control" id="numero" placeholder="Numero">
+            <input formControlName="numberHouse" type="text" pattern="[0-9]*$" class="form-control" id="number" placeholder="Numero">
         </div>
     </div>
     <div class="col-md-6">
