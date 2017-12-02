@@ -46,6 +46,8 @@ export class RegisterUserComponent implements OnInit {
 
   register() {
     $("#myModal").modal("show");
+    console.log(this.image);
+    this.registerUserService.setImage(this.image);
     this.registerUserService.addUser().subscribe((response: PostResponse) => {
       if (response.success) {
         this.hasAdded = true;
@@ -72,7 +74,7 @@ export class RegisterUserComponent implements OnInit {
       const myReader: FileReader = new FileReader();
 
       myReader.onloadend = e => {
-        this.image = myReader.result;
+        this.image = myReader.result.split(',')[1];
       };
       myReader.readAsDataURL(file);
     } else {
