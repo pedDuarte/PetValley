@@ -24,8 +24,7 @@
             </div>
             <footer class="w3-container w3-white">
               <button type="button" (click)="approve(adoption.id_user, adoption.id_animal)" class="btn btn-default" style="float:right; margin-top:5%"> Aprovar <span class="glyphicon glyphicon-ok"></span></button>
-              <button type="button" class="btn btn-default" style="float:right; margin-top:5%; margin-right:5px"> Desaprovar <span class="glyphicon glyphicon-remove"></span></button>
-              <button type="button" class="btn btn-default" style="float:right; margin-top:5%; margin-bottom:5%"> Agendar Visita <span class="glyphicon glyphicon-home"></span></button>
+              <button type="button" (click)="getUserData(adoption.id_user_fk)" class="btn btn-default" style="float:right; margin-top:5%; margin-bottom:5%"> Agendar Visita <span class="glyphicon glyphicon-home"></span></button>
             </footer>
           </div>
           <!-- Fim do card -->
@@ -33,8 +32,6 @@
       </div>
     </div>
 </div>
-
-
 
 <!-- Inicio Modal Editar Cadastro -->
 <div class="modal fade" id="modalVisitHome" role="dialog" aria-hidden="ture">

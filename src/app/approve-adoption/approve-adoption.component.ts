@@ -1,3 +1,7 @@
+import { Router } from '@angular/router';
+import { ROUTES } from './../app.routes';
+import { LoginService } from './../services/login.service';
+import { UserService } from './../services/user.service';
 import { AdoptionService } from './../services/adoption.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,10 +13,17 @@ import { Component, OnInit } from '@angular/core';
 export class ApproveAdoptionComponent implements OnInit {
 
   adoptions: any;
+  userVisit: any;
 
-  constructor(private adoptionService: AdoptionService) { }
+  constructor(private adoptionService: AdoptionService,
+              private userService: UserService,
+              private loginService: LoginService,
+              private router: Router) { }
 
   ngOnInit() {
+    if (!this.loginService.isLogged()) {
+      this.router.navigate(['/firstPage']);
+    }
     this.getAdoptions();
   }
 
@@ -29,8 +40,12 @@ export class ApproveAdoptionComponent implements OnInit {
     });
   }
 
-  disapprove(idUser, idAnimal) {
-
+  getUserData(idUser) {
+    this.userService.getUser(idUser).subscribe(response => {
+      console.log(response);
+      this.userVisit = response;
+    });
   }
+
 
 }

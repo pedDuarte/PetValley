@@ -38,4 +38,8 @@ export class UserService {
         console.log(user);
         return this.http.put(`${SERVER}/user`, user);
     }
+
+    getUser(userId): Observable <any> {
+        return this.http.get<User[]>(`${SERVER}/user/` + userId);
+    }
 }
