@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private loginService: LoginService,
+  constructor(public loginService: LoginService,
               private router: Router) { }
 
   ngOnInit() {
