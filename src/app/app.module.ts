@@ -1,3 +1,4 @@
+import { SendDocumentService } from './services/sendDocument.service';
 import { LoginService } from "./services/login.service";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
@@ -34,6 +35,7 @@ import { EditPetComponent } from "./edit-pet/edit-pet.component";
 import { FirstPageComponent } from "./first-page/first-page.component";
 import { FiltraPetsPipe } from "./customPipes.pipe";
 import { FiltraUsuariosPipe } from "./customPipes.pipe";
+import { SendDocumentsComponent } from './send-documents/send-documents.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,8 @@ import { FiltraUsuariosPipe } from "./customPipes.pipe";
     EditPetComponent,
     FirstPageComponent,
     FiltraPetsPipe,
-    FiltraUsuariosPipe
+    FiltraUsuariosPipe,
+    SendDocumentsComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +75,8 @@ import { FiltraUsuariosPipe } from "./customPipes.pipe";
     RegisterUserService,
     LoginService,
     RegisterPetService,
-    PetServices
+    PetServices,
+    SendDocumentService
   ],
   bootstrap: [AppComponent]
 })

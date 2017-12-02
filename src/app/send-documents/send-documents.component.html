@@ -1,0 +1,104 @@
+<div class="container page-box">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="page-header">
+        <h1>Adoção de Animais</h1>
+      </div>
+      <div class="col-md-4">
+          <div class="col-md-12">
+            <h3>
+              <u>Documentos Necessários</u>
+            </h3>
+          </div>
+          <div class="col-md-12">
+            <ul type="disc">
+              <li>Ser maior de 21 anos ou estar acompanhado pelos responsáveis</li>
+              <br>
+              <li>Documentos: RG e CPF (Original e Xerox)</li>
+              <br>
+              <li>Comprovante de endereço atualizado (Original e Xerox)</li>
+            </ul>
+          </div>
+          <div class="col-md-12">
+            <h3>
+              <u>No dia da visita:</u>
+            </h3>
+            <ul type="disc">
+              <li>Contribuição de R$50,00</li>
+              <br>
+              <li>Entrevista</li>
+            </ul>
+          </div>
+      </div>
+      <div class="col-md-6 text-center">
+        <div class="text-center col-md-4">
+          <h5>
+            <strong>RG</strong>
+          </h5>
+          <img class="img-responsive img-thumbnail" id="rg" style="margin-top:10%; margin-bottom:10%;" src="">
+          <input type="file" id="selecionarImagemRG" style="display:none;" (change)="changeImageRG($event)">
+          <label class="btn btn-default" for="selecionarImagemRG">Selecionar
+            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+          </label>
+        </div>
+        <!-- <div class="text-center col-md-4">
+          <h5>
+            <strong>CPF</strong>
+          </h5>
+          <img class="img-responsive img-thumbnail" id="cpf" style="margin-top:10%; margin-bottom:10%;" src="">
+          <input type="file" id="selecionarImagemCpf" style="display:none;" (change)="changeImageCPF($event)">
+          <label class="btn btn-default" for="selecionarImagemCpf">Selecionar
+            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+          </label>
+        </div> -->
+        <div class="text-center col-md-4">
+          <h5>
+            <strong>Comprovante de Endereço</strong>
+          </h5>
+          <img class="img-responsive img-thumbnail" id="comprovanteEndereco" style="margin-top:10%; margin-bottom:10%;" src="">
+          <input type="file" id="selecionarImagemComprovanteEndereco" style="display:none;" (change)="changeImageComprovanteEndereco($event)">
+          <label class="btn btn-default" for="selecionarImagemComprovanteEndereco">Selecionar
+            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <input class="btn btn-default" type="button" value="Enviar Documentos" [disabled]="documentForm.invalid" (click)="sendDocuments()">
+      </div>
+    </div>
+  </div>
+  <!-- Inicio Modal de Alerta -->
+<div class="modal fade" id="modalAlerta" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal" [routerLink]="['/listPet']">
+              <span aria-hidden="true">&times;</span>
+          </button>
+          <h4>Alerta</h4>
+        </div>
+        <div class="modal-body">
+          <p class="text-center">Documentos enviados com sucesso!</p>
+        </div>
+        <div class="modal-footer">
+        <p class="text-center"> <button type="button" class="btn btn-default" data-dismiss="modal" [routerLink]="['/listPet']">OK <span class="glyphicon glyphicon-ok"></span> </button> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fim do modal -->
+  <!-- Inicio Modal de Carregamento -->
+  <div class="modal fade" id="modalCarregamento" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm">
+          <div class="row">
+            <div class="col-md-12">
+              <img class="img-responsive center-block" src="assets/img/giphy.gif" alt="">
+            </div>
+          </div>
+    </div>
+  </div>
+  <!-- Fim do modal -->
+</div>
