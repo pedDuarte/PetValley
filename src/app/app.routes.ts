@@ -1,3 +1,4 @@
+import { ReportAdoptionComponent } from './report-adoption/report-adoption.component';
 import { SendDocumentsComponent } from './send-documents/send-documents.component';
 import { Routes } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
@@ -37,5 +38,6 @@ export const ROUTES: Routes = [
   { path: "listPet", component: ListPetComponent },
   { path: "listEditPet", component: ListEditPetComponent },
   { path: "firstPage", component: FirstPageComponent },
-  { path: "sendDocuments", component: SendDocumentsComponent }
+  { path: "sendDocuments", component: SendDocumentsComponent },
+  { path: "reportAdoption", component: ReportAdoptionComponent }
 ];
