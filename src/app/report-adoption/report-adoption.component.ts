@@ -12,42 +12,29 @@ import { debug } from 'util';
 })
 export class ReportAdoptionComponent implements OnInit {
 
-  public bar: any;
-
-  public barChartOptions: any = {
-    scaleShowVerticalLines: false,
-    responsive: true
-  };
-  //public barChartLabels:string[] = ['Adoções', 'Animais'];
-  public barChartType: string = 'bar';
-  public barChartLegend: boolean = true;
-
-  public barChartData: any;
-
   constructor(private chartServices: chartServices) { }
 
   ngOnInit() {
     this.chartServices.getDados().subscribe(Response => {
       if (Response != undefined) {
-        debugger;
         this.bar = Response[0];
-        this.barChartOptions = {
-          scaleShowVerticalLines: false,
-          responsive: true
-        };
         this.barChartData = [
-          {data: this.bar.num_adoptions, label: 'Número de Adoções'},
-          {data: this.bar.num_animals, label: 'Número de animais'}
+          {data: [this.bar.num_adoptions], label: 'Número de Adoções'},
+          {data: [this.bar.num_animals], label: 'Número de animais'}
         ]
     }
     });
   }
 
- 
-
-  // events
-  /*public chartClicked(e:any):void {
-    console.log(e);
-  }*/
+    public bar: any;
+    public barChartOptions = {
+      scaleShowVerticalLines: false,
+      responsive: true
+    };
+    public barChartType = 'bar';
+    public barChartLegend = true;
+    public barChartData: any;
+     
+    
 
 }
