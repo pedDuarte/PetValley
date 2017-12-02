@@ -1,3 +1,4 @@
+import { SendDocumentService } from './services/sendDocument.service';
 import { LoginService } from "./services/login.service";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
@@ -74,7 +75,8 @@ import { SendDocumentsComponent } from './send-documents/send-documents.componen
     RegisterUserService,
     LoginService,
     RegisterPetService,
-    PetServices
+    PetServices,
+    SendDocumentService
   ],
   bootstrap: [AppComponent]
 })
