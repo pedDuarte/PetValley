@@ -33,7 +33,7 @@ export class ReportAdoptionComponent implements OnInit {
     };
     public barChartType = 'bar';
     public barChartLegend = true;
-    public barChartData: any;
+    public barChartData: any[];
      
     
 
